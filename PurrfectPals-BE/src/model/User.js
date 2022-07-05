@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
 
     user_type:{
-        type: Int,
+        type: Number,
     },
 })
 
