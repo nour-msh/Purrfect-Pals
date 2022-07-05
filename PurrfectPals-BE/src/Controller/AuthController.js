@@ -1,7 +1,6 @@
-import { User } from "../model/User";
-import { Jwt } from "jsonwebtoken";
-import {bcrypt} from "bcrypt";
-
+import {User} from "../model/User.js";
+// import { Jwt } from "jsonwebtoken";
+import bcrypt from "bcrypt";
 
 async function addUser(body, hashPassword) {
     const {
@@ -40,3 +39,28 @@ export async function register(req,res){
       console.log(error);
     }
 }
+
+async function getByEmail(email) {
+  return await User.findOne({
+    email
+  });
+}
+
+export async function login(req,res){
+  try {
+    const user = await getByEmail(req.body.email);
+    if (!user) return res.status(400).send('invalid credentials');
+
+    const validPassword = await bcrypt.compare(req.body.password, user.password);
+    if (!validPassword) return res.status(400).send('invalid credentials');
+
+    const token = jwt.sign(
+      {_id: user._id, name: user.name, email: user.email},
+      TOKEN_KEY
+    );
+
+    return res.header('auth-token', token).send(token);
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error);
+  }}
