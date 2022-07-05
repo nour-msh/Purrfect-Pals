@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
-import mongoose from "./src/Database/database.js"
+import mongoose from "./src/Database/database.js";
+const jwt = require('jsonwebtoken');
 dotenv.config();
 
 const port=5000;
