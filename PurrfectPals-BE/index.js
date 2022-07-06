@@ -5,7 +5,7 @@ import jwt from "jsonwebtoken";
 import UserRoutes from "./src/Routes/UserRoutes.js";
 dotenv.config();
 
-const port=5000;
+const port=3030;
 const app = express();
 app.use(express.json());
 

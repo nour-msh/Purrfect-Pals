@@ -1,6 +1,6 @@
 import mongoose from "../Database/database.js";
 const userSchema = new mongoose.Schema(
-    {
+{
         full_name:{
             type: String,
         },
