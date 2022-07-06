@@ -3,6 +3,9 @@ const petSchema= new mongoose.Schema({
     pet_name:  {
         type: String,
     },
+    image: {
+        type: String,
+    },
     breed: {
         type: String,
     },

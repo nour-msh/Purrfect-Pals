@@ -3,7 +3,10 @@ const requestSchema=new mongoose.Schema({
     image:{
         type: String,
     },
-    text:{
+    duration:{
+        type: Number,
+    },
+    description:{
         type: String,
     },
 })
