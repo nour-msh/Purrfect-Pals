@@ -28,7 +28,6 @@ const styles=StyleSheet.create({
     },
     G2:{
         fontSize:15,
-        // marginLeft:112,
         textAlign:'center',
     }
 
