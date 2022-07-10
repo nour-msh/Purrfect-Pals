@@ -1,11 +1,16 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import Logo from "./src/Component/Logo";
+// import Logo from "./src/Component/Logo";
+// import Welcome from './src/Screens/Welcome';
+import Greeting from './src/Screens/Greeting';
 import React from 'react';
 
 export default function App() {
   return (
-    <Logo/>
+    <>
+    {/* <Logo/> */}
+    {/* <Welcome/> */}
+    <Greeting/>
+    </>
   );
 }
 
