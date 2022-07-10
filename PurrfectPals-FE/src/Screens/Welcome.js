@@ -3,7 +3,7 @@ import {StyleSheet,View,Image,Text, Button} from 'react-native'
 function Welcome(){
     return(
         <View>
-            <Text style={styles.welcome}>Welcome to Purrfect Pals.</Text>
+            <Text style={styles.welcome}>Welcome to {'\n'} Purrfect Pals.</Text>
             <Image source={require("../../assets/Purr-Logo.png")}
             style={styles.logo}
             />
@@ -16,7 +16,6 @@ const styles=StyleSheet.create({
     welcome:{
         fontSize: 24,
         textAlign:"center",
-        width: 200,
         marginTop: 64,
         marginLeft: 55,
     },

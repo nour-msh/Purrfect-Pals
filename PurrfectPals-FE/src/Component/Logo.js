@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet,Text, View, Image } from "react-native";
 
 function Logo() {
   return (
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     logo: {
         width: 35,
         height: 35,
-        marginLeft:23,
+        alignItems:'center'
     }
     });
 
