@@ -2,7 +2,7 @@ import {Text,View,Image,StyleSheet,TextInput,Button } from 'react-native';
 import Logo from '../Component/Logo';
 
 
-function Signup(){
+function SignUp(){
     return(
         <View>
             <Logo/>
@@ -38,11 +38,11 @@ const styles=StyleSheet.create({
     member:{
         textAlign:'center',
         color:'#808080',
-        
+
 
     }
 
 
 })
 
-export default Signup
+export default SignUp
