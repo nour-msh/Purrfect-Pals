@@ -25,9 +25,10 @@ const styles=StyleSheet.create({
         width:290,
         height:176,
         marginLeft:33,
-        marginTop:50,
+        marginTop:25,
     },
     input:{
+        fontSize:18,
         height:55,
         width:294,
         borderRadius:5,
@@ -47,7 +48,8 @@ const styles=StyleSheet.create({
     },
     signupButtonText:{
         color:'white',
-        padding:18,
+        fontSize:18,
+        padding:15,
         textAlign:"center",
         fontWeight:"600"
     },
