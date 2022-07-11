@@ -1,4 +1,4 @@
-import {Text,View,Image,StyleSheet,TextInput,Button } from 'react-native';
+import {Text,View,Image,StyleSheet,TextInput,TouchableOpacity } from 'react-native';
 import Logo from '../Component/Logo';
 
 
@@ -12,7 +12,9 @@ function SignUp(){
             <TextInput placeholder='Email' style={styles.input}></TextInput>
             <TextInput placeholder='Password' style={styles.input}></TextInput>
             <TextInput placeholder='Phone number' style={styles.input}></TextInput>
-            <Button title='Sign Up'/>
+            <TouchableOpacity style={styles.signupButton}>
+                <Text style={styles.signupButtonText}>Sign Up</Text>
+            </TouchableOpacity>
             <Text style={styles.member}>Already have an account?</Text>
         </View>
     )
@@ -23,7 +25,7 @@ const styles=StyleSheet.create({
         width:290,
         height:176,
         marginLeft:33,
-        marginTop:103,
+        marginTop:50,
     },
     input:{
         height:55,
@@ -32,14 +34,27 @@ const styles=StyleSheet.create({
         borderWidth: 1,
         marginTop:0,
         marginLeft:33,
-        padding:20,
+        padding:15,
         marginBottom:10,
+    },
+    signupButton:{
+        marginLeft:33,
+        width:294,
+        height:55,
+        borderRadius:5,
+        backgroundColor:'#FF914A',
+        marginTop:15
+    },
+    signupButtonText:{
+        color:'white',
+        padding:18,
+        textAlign:"center",
+        fontWeight:"600"
     },
     member:{
         textAlign:'center',
         color:'#808080',
-
-
+        padding:5
     }
 
 

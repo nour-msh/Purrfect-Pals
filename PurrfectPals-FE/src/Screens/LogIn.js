@@ -1,4 +1,4 @@
-import {View,TextInput,Text,Image,StyleSheet,Button} from 'react-native';
+import {View,TextInput,Text,Image,StyleSheet,Button,TouchableOpacity} from 'react-native';
 import Logo from '../Component/Logo';
 
 function LogIn(){
@@ -9,8 +9,10 @@ function LogIn(){
             style={styles.kitty}/>
             <TextInput placeholder='Email' style={styles.input}></TextInput>
             <TextInput placeholder='Password' style={styles.input}></TextInput>
-            <Button title='Log In'/>
-            <Text style={styles.login}>I’ve missed {'\n'} you.</Text>
+            <TouchableOpacity style={styles.loginButton}>
+                <Text style={styles.loginButtonText}>Log In</Text>
+            </TouchableOpacity>
+            <Text style={styles.myText}>I’ve missed {'\n'} you.</Text>
         </View>
     )
 }
@@ -20,8 +22,8 @@ const styles=StyleSheet.create({
         width:270,
         height:269,
         marginLeft:74,
-        marginTop:85,
-        marginBottom:30
+        marginTop:55,
+        marginBottom:25
 
     },
     input:{
@@ -31,13 +33,27 @@ const styles=StyleSheet.create({
         borderWidth: 1,
         marginTop:0,
         marginLeft:33,
-        padding:20,
+        padding:15,
         marginBottom:10,
     },
-    login:{
+    loginButton:{
+        marginLeft:33,
+        width:294,
+        height:55,
+        borderRadius:5,
+        backgroundColor:'#FF914A',
+        marginTop:10,
+    },
+    loginButtonText:{
+        color:'white',
+        padding:18,
+        textAlign:"center",
+        fontWeight:"600"
+    },
+    myText:{
         fontSize:28,
-        marginLeft:33
-
+        marginLeft:33,
+        marginTop:10
 
     }
 
