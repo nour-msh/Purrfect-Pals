@@ -4,9 +4,8 @@ import {
   Text,
   Image,
   StyleSheet,
-  Button,
-  TouchableOpacity,
 } from "react-native";
+import AccessButton from "../Component/AccessButton";
 import Logo from "../Component/Logo";
 
 function LogIn() {
@@ -19,9 +18,7 @@ function LogIn() {
       />
       <TextInput placeholder="Email" style={styles.input}></TextInput>
       <TextInput placeholder="Password" style={styles.input}></TextInput>
-      <TouchableOpacity style={styles.loginButton}>
-        <Text style={styles.loginButtonText}>Log In</Text>
-      </TouchableOpacity>
+      <AccessButton buttonTitle='Log In'/>
       <Text style={styles.myText}>I’ve missed {"\n"} you.</Text>
     </View>
   );
@@ -41,24 +38,11 @@ const styles = StyleSheet.create({
     width: 294,
     borderRadius: 5,
     borderWidth: 1,
+    borderColor:'#808080',
     marginTop: 0,
     marginLeft: 33,
     padding: 15,
     marginBottom: 10,
-  },
-  loginButton: {
-    marginLeft: 33,
-    width: 294,
-    height: 55,
-    borderRadius: 5,
-    backgroundColor: "#FF914A",
-  },
-  loginButtonText: {
-    color: "white",
-    fontSize:18,
-    padding:15,
-    textAlign: "center",
-    fontWeight: "600",
   },
   myText: {
     fontSize: 26,
