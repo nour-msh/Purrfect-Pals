@@ -15,6 +15,9 @@ const petSchema= new mongoose.Schema({
     pet_type: {
         type: String,
     },
+    pet_owner_id:{
+        type:String,
+    },
 })
 
 export const Pet= mongoose.model("Pet", petSchema)

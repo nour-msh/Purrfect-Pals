@@ -6,6 +6,12 @@ const reviewSchema= new mongoose.Schema({
     rating:{
         type: Number,
     },
+    entity_id:{
+        type: String,
+    },
+    entity_type:{
+        type: String,
+    },
 
 })
 

@@ -9,6 +9,12 @@ const requestSchema=new mongoose.Schema({
     description:{
         type: String,
     },
+    pet_id: {
+        type: String,
+    },
+    pet_owner_id:{
+        type: String,
+    },
 })
 
 export const Request= mongoose.model("Request",requestSchema)
