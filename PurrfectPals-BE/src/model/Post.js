@@ -1,10 +1,10 @@
 import mongoose from "../Database/database.js";
-const requestSchema=new mongoose.Schema({
-    image:{
-        type: String,
-    },
+const postSchema=new mongoose.Schema({
+    // pet_name:{
+    //     type: String,
+    // },
     duration:{
-        type: Number,
+        type: String,
     },
     description:{
         type: String,
@@ -17,4 +17,4 @@ const requestSchema=new mongoose.Schema({
     },
 })
 
-export const Request= mongoose.model("Request",requestSchema)
+export const Post= mongoose.model("Post",postSchema)
