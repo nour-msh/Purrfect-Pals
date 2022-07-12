@@ -21,10 +21,15 @@ const userSchema = new mongoose.Schema(
         user_type:{
             type: Number,
         },
+        pets:[{
+            type: mongoose.Types.ObjectId,
+            ref: 'Pet'
+        }]
     },
     {
         timestamps: true
-    }
+    },
+
 )
 
 export const User = mongoose.model("User", userSchema)
