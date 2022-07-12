@@ -1,5 +1,6 @@
 import {Pet} from '../Model/Pet.js';
 import { Review } from '../Model/Review.js';
+import { Appointment } from '../Model/Appointment.js';
 
 
 export async function addPet(req, res){
@@ -45,3 +46,19 @@ export async function addReview(req,res){
     }
 }
 
+export async function addAppointment(req,res){
+    try{
+        const{
+            date,
+            time,
+        }=req.body;
+        const appointment= new Appointment({
+            date,
+            time,
+        })
+        await appointment.save();
+        res.status(201).send(appointment);
+    } catch (error){
+        res.status(400).json({message:error.message});
+    }
+}
