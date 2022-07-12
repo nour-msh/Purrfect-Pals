@@ -1,5 +1,4 @@
-import {User} from "../Model/User.js";
-
+import {User} from '../Model/User.js';
 
 export async function getVets(req,res){
     try{
