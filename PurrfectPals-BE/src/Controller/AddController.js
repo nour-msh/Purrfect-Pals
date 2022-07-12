@@ -1,6 +1,9 @@
 import {Pet} from '../Model/Pet.js';
 import { Review } from '../Model/Review.js';
 import { Appointment } from '../Model/Appointment.js';
+// import { User } from '../Model/User.js';
+import dotenv from "dotenv";
+dotenv.config();
 
 
 export async function addPet(req, res){
@@ -23,6 +26,13 @@ export async function addPet(req, res){
             pet_owner_id,
         })
         await pet.save();
+
+        const {user_id} = req.body
+        await User.findByIdAndUpdate(
+            user_id,
+            { $push: { pets: pet._id } },
+            { new: true, useFindAndModify: false }
+          );
         res.status(201).send(pet);
     } catch(error){
         res.status(400).json({message:error.message});
