@@ -5,6 +5,7 @@
 // import SecondGreeting from './src/Screens/SecondGreeting';
 import SignUp from './src/Screens/SignUp';
 // import LogIn from './src/Screens/LogIn';
+// import Post from './src/Component/Post';
 import React from 'react';
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
     {/* <SecondGreeting/> */}
     <SignUp/>
     {/* <LogIn/> */}
+    {/* <Post/> */}
     </>
   );
 }

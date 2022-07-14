@@ -1,3 +1,6 @@
+import axios from "axios";
+import { useState } from "react";
+
 import {
   View,
   TextInput,
@@ -9,6 +12,8 @@ import AccessButton from "../Component/AccessButton";
 import Logo from "../Component/Logo";
 
 function LogIn() {
+
+  
   return (
     <View>
       <Logo />
@@ -38,7 +43,7 @@ const styles = StyleSheet.create({
     width: 294,
     borderRadius: 5,
     borderWidth: 1,
-    borderColor:'#808080',
+    borderColor:'#e5e5e5',
     marginTop: 0,
     marginLeft: 33,
     padding: 15,

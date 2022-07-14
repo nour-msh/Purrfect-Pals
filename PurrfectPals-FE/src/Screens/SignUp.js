@@ -1,19 +1,79 @@
-import {Text,View,Image,StyleSheet,TextInput,TouchableOpacity } from 'react-native';
+import {Text,View,Image,StyleSheet,TextInput, ToastAndroid} from 'react-native';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import AccessButton from '../Component/AccessButton';
 import Logo from '../Component/Logo';
 
 
 function SignUp(){
+    const[fullName,setFullname]=useState("");
+    const[email,setEmail]=useState("");
+    const[password,setPassword]=useState("");
+    const[phoneNumber,setPhoneNumber]=useState("");
+
+    const handleSubmitSignup = () => {
+        
+
+        const data = {
+          full_name: fullName,
+          email: email,
+          password: password,
+          phone_number: phoneNumber
+        };
+        //e.preventDefault();
+        axios({
+          method: "POST",
+          data,
+          url: "http://127.0.0.1:5000/user/register",
+        })
+          .then((res) => {ToastAndroid.show(res, ToastAndroid.LONG)})
+          .catch((error) => {ToastAndroid.show(error, ToastAndroid.LONG)});
+      };
+
+      const handleFullNameChange = (value) => {
+        setFullname(value)
+      }
+
+      const handleEmailChange = (value) => {
+        setEmail(value)
+      }
+
+      const handlePasswordChange = (value) => {
+        setPassword(value)
+      }
+
+      const handlePhoneNumberChange = (value) => {
+        setPhoneNumber(value)
+      }
+    
+        
     return(
         <View>
             <Logo/>
             <Image source={require('../../assets/signup-doggy.png')}
             style={styles.dog}/>
-            <TextInput placeholder='Full name' style={styles.input}></TextInput>
-            <TextInput placeholder='Email' style={styles.input}></TextInput>
-            <TextInput placeholder='Password' style={styles.input}></TextInput>
-            <TextInput placeholder='Phone number' style={styles.input}></TextInput>
-            <AccessButton buttonTitle='Sign Up' />
+
+            <TextInput placeholder='Full name' style={styles.input} 
+            value={fullName} onChangeText={handleFullNameChange}
+            ></TextInput>
+
+            <TextInput placeholder='Email' style={styles.input}
+            value={email} onChangeText={handleEmailChange}
+             ></TextInput>
+
+            <TextInput placeholder='Password' style={styles.input} 
+            value={password} onChangeText={handlePasswordChange}
+            ></TextInput>
+
+            <TextInput placeholder='Phone number' style={styles.input} 
+            value={phoneNumber} onChangeText={handlePhoneNumberChange}
+            ></TextInput>
+
+            <AccessButton buttonTitle='Sign Up' 
+             handlePress={handleSubmitSignup} 
+/>
+
             <Text style={styles.member}>Already have an account?</Text>
         </View>
     )
@@ -32,7 +92,7 @@ const styles=StyleSheet.create({
         width:294,
         borderRadius:5,
         borderWidth: 1,
-        borderColor:'#808080',
+        borderColor:'#e5e5e5',
         marginTop:0,
         marginLeft:33,
         padding:15,
@@ -40,7 +100,7 @@ const styles=StyleSheet.create({
     },
     member:{
         textAlign:'center',
-        color:'#808080',
+        color:'#e5e5e5',
         padding:10
     }
 

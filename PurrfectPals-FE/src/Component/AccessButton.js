@@ -2,7 +2,7 @@ import { StyleSheet,Text,TouchableOpacity, View} from "react-native";
 function AccessButton(props){
     return(
         <View>
-            <TouchableOpacity style={styles.accessButton}>
+            <TouchableOpacity style={styles.accessButton} onPress={() =>{props.handlePress()}}>
                 <Text style={styles.accessButtonText}>{props.buttonTitle}</Text>
             </TouchableOpacity>
         </View>

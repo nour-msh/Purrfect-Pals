@@ -1,4 +1,5 @@
 import {StyleSheet,View,Image,Text, Button} from 'react-native'
+import AccessButton from '../Component/AccessButton'
 
 function Welcome(){
     return(
@@ -7,7 +8,8 @@ function Welcome(){
             <Image source={require("../../assets/Purr-Logo.png")}
             style={styles.logo}
             />
-            <Button title="Get Started" style={styles.startBtn}/>
+            {/* <Button title="Get Started" style={styles.startBtn}/> */}
+            <AccessButton buttonTitle='Get Started'/>
         </View>
     )
 }
@@ -26,7 +28,7 @@ const styles=StyleSheet.create({
         height:157
     },
     startBtn:{
-        width: 20,
+        width:40,
         height:55,
         color:"#FF914A",
     }
