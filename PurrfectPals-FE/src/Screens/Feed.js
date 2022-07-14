@@ -1,25 +1,32 @@
-import {Image,Text,View, StyleSheet} from "react-native";
+import {Image,Text,View, StyleSheet, ScrollView} from "react-native";
 import Vet from "../Component/Vet";
 import Post from "../Component/Post"
 function Feed(){
     return(
         <View>
+            <ScrollView style={styles.scrollView}>
+
             <View style={styles.userContainer}>
                 <Image source={require('../../assets/profile-pic.jpeg')}
                 style={styles.profilePic}/>
                 <View style={{flex:0.05}}/>
                 <Text style={styles.userName}>User's Name</Text>
             </View>
-            <View style={styles.Vets}>
-                <Vet/>
-                <Vet/>
-                <Vet/>
-            </View>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+    
+                    <View style={styles.Vets}>
+                        <Vet/>
+                        <Vet/>
+                        <Vet/>
+                    </View>
+                </ScrollView>
             <View style={styles.Posts}>
                 <Post/>
                 <Post/>
                 <Post/>
+                <Post/>
             </View>
+            </ScrollView>
         </View>
     )
 }
