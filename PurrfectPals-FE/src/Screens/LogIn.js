@@ -13,7 +13,23 @@ import Logo from "../Component/Logo";
 
 function LogIn() {
 
-  
+  const [myEmail, setMyEmail] = useState("");
+  const [myPassword, setMyPassword] = useState("");
+
+  const login = (e) => {
+    const data = {
+      email: myEmail,
+      password: myPassword,
+    };
+    e.preventDefault();
+    axios({
+      method: "post",
+      data,
+      url: "http://127.0.0.1:5000/user/login",
+    })
+      .then((res) => {console.log(res)})
+      .catch((error) => console.log(error));
+  };
   return (
     <View>
       <Logo />
@@ -21,9 +37,11 @@ function LogIn() {
         source={require("../../assets/login-kitty.png")}
         style={styles.kitty}
       />
-      <TextInput placeholder="Email" style={styles.input}></TextInput>
-      <TextInput placeholder="Password" style={styles.input}></TextInput>
-      <AccessButton buttonTitle='Log In'/>
+      <TextInput placeholder="Email" style={styles.input}  value={myEmail}
+          onChange={(e) => setMyEmail(e.target.value)}></TextInput>
+      <TextInput placeholder="Password" style={styles.input} value={myPassword}
+          onChange={(e) => setMyPassword(e.target.value)}></TextInput>
+      <AccessButton buttonTitle='Log In' onPress={login}/>
       <Text style={styles.myText}>I’ve missed {"\n"} you.</Text>
     </View>
   );
