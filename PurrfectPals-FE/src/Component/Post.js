@@ -20,7 +20,8 @@ const styles=StyleSheet.create({
     Container:{
     flexDirection:'row',
     justifyContent:'center',
-    padding:100
+    // padding:30
+    marginTop:30
     },
     dog1:{
         width:143,

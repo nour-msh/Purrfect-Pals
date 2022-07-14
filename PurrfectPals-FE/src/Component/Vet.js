@@ -20,7 +20,9 @@ function Vet(){
 const styles=StyleSheet.create({
     container:{
         marginTop:50,
-        alignItems:'center'
+        display:'flex',
+        justifyContent:'center',
+        padding:15
 
     },
     upperContainer:{
@@ -33,7 +35,7 @@ const styles=StyleSheet.create({
         position:'relative'
     },
     imageContainer:{
-        height:200,
+        height:240,
         width:162,
         backgroundColor:'none',
         position:'absolute',

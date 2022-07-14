@@ -1,6 +1,6 @@
 import {Image,Text,View, StyleSheet} from "react-native";
 import Vet from "../Component/Vet";
-
+import Post from "../Component/Post"
 function Feed(){
     return(
         <View>
@@ -11,9 +11,14 @@ function Feed(){
                 <Text style={styles.userName}>User's Name</Text>
             </View>
             <View style={styles.Vets}>
-            <Vet/>
-            <Vet/>
-            <Vet/>
+                <Vet/>
+                <Vet/>
+                <Vet/>
+            </View>
+            <View style={styles.Posts}>
+                <Post/>
+                <Post/>
+                <Post/>
             </View>
         </View>
     )
@@ -42,7 +47,12 @@ const styles=StyleSheet.create({
     Vets:{
         display:'flex',
         flexDirection:'row',
+        marginLeft:20
     },
+    Posts:{
+        marginLeft:20
+
+    }
 
 })
 
