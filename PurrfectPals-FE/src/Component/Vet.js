@@ -21,7 +21,7 @@ function Vet(){
 
 const styles=StyleSheet.create({
     container:{
-        marginTop:100,
+        marginTop:50,
         alignItems:'center'
 
     },
