@@ -7,7 +7,8 @@
 // import LogIn from './src/Screens/LogIn';
 // import Post from './src/Component/Post';
 // import Vet from './src/Component/Vet';
-import Pet from './src/Component/Pet';
+// import Pet from './src/Component/Pet';
+import Feed from './src/Screens/Feed';
 import React from 'react';
 
 export default function App() {
@@ -21,7 +22,8 @@ export default function App() {
     {/* <LogIn/> */}
     {/* <Post/> */}
     {/* <Vet/> */}
-    <Pet/>
+    {/* <Pet/> */}
+    <Feed/>
     </>
   );
 }
