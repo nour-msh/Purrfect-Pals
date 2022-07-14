@@ -11,9 +11,11 @@ const postSchema=new mongoose.Schema({
     },
     pet_id: {
         type: mongoose.Types.ObjectId,
+        ref: "Pet",
     },
     user_id:{
         type: mongoose.Types.ObjectId,
+        ref: "User",
     },
 
 })
