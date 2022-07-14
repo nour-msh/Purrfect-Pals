@@ -12,9 +12,6 @@ const petSchema= new mongoose.Schema({
     age: {
         type: Number,
     },
-    pet_type: {
-        type: String,
-    },
     reviews: [{
         text:{
             type: String,
