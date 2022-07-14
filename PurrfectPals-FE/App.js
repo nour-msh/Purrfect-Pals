@@ -3,9 +3,11 @@
 // import Welcome from './src/Screens/Welcome';
 // import Greeting from './src/Screens/Greeting';
 // import SecondGreeting from './src/Screens/SecondGreeting';
-import SignUp from './src/Screens/SignUp';
+// import SignUp from './src/Screens/SignUp';
 // import LogIn from './src/Screens/LogIn';
 // import Post from './src/Component/Post';
+// import Vet from './src/Component/Vet';
+import Pet from './src/Component/Pet';
 import React from 'react';
 
 export default function App() {
@@ -15,9 +17,11 @@ export default function App() {
     {/* <Welcome/> */}
     {/* <Greeting/> */}
     {/* <SecondGreeting/> */}
-    <SignUp/>
+    {/* <SignUp/> */}
     {/* <LogIn/> */}
     {/* <Post/> */}
+    {/* <Vet/> */}
+    <Pet/>
     </>
   );
 }
