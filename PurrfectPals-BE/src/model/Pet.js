@@ -15,6 +15,14 @@ const petSchema= new mongoose.Schema({
     pet_type: {
         type: String,
     },
+    reviews: [{
+        text:{
+            type: String,
+        },
+        rating:{
+            type: Number,
+        },
+    }],
     users:{
         type: mongoose.Types.ObjectId,
         ref: 'User'

@@ -49,7 +49,7 @@ function SignUp(){
     
         
     return(
-        <View>
+        <View style={styles.container}>
             <Logo/>
             <Image source={require('../../assets/signup-doggy.png')}
             style={styles.dog}/>

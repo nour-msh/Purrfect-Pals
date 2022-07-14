@@ -22,7 +22,7 @@ async function addUser(body,password) {
   }
 
 export async function register(req,res){
-
+  console.log(1)
     try {
       console.log(req.body);
   

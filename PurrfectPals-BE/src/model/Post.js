@@ -10,11 +10,12 @@ const postSchema=new mongoose.Schema({
         type: String,
     },
     pet_id: {
-        type: String,
+        type: mongoose.Types.ObjectId,
     },
-    pet_owner_id:{
-        type: String,
+    user_id:{
+        type: mongoose.Types.ObjectId,
     },
+
 })
 
 export const Post= mongoose.model("Post",postSchema)

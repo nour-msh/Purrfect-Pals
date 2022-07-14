@@ -3,12 +3,10 @@ import {Text, View, StyleSheet, Image} from 'react-native';
 function Vet(){
     return(
         <View style={styles.container}>
-            <View style={styles.upperContainer}>
-                
+            <View style={styles.upperContainer}></View>
             <View style={styles.imageContainer}>
-            <Image source={require("../../assets/Doctor1.png")}
+                <Image source={require("../../assets/Doctor1.png")}
                 style={styles.Doctor1}/>
-            </View>
             </View>
 
             <View style={styles.bottomContainer}>
@@ -32,11 +30,13 @@ const styles=StyleSheet.create({
         borderTopRightRadius:20,
         borderTopLeftRadius:20,
         opacity: 0.7,
+        position:'relative'
     },
     imageContainer:{
         height:200,
         width:162,
         backgroundColor:'none',
+        position:'absolute',
     },
     Doctor1:{
         height:153,

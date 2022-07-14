@@ -19,11 +19,15 @@ const userSchema = new mongoose.Schema(
         },
 
         user_type:{
-            type: Number,
+            type: String,
         },
         pets:[{
             type: mongoose.Types.ObjectId,
             ref: 'Pet'
+        }],
+        posts:[{
+            type: mongoose.Types.ObjectId,
+            ref: 'Post'
         }]
     },
     {
