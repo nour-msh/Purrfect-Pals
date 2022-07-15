@@ -1,4 +1,5 @@
 import { StyleSheet,Text,View, Image} from "react-native";
+import AccessButton from "../Component/AccessButton";
 
 function EditProfile(){
     return(
@@ -14,7 +15,9 @@ function EditProfile(){
                 <Text style={styles.info}>Email</Text>
                 <Text style={styles.info}>Password</Text>
                 <Text style={styles.info}>My Address</Text>
+                <Text style={styles.map}>Edit on map</Text>
             </View>
+            <AccessButton buttonTitle='Save' style={styles.saveButton}/>
         </View>
     )
 }
@@ -39,6 +42,12 @@ const styles=StyleSheet.create({
     info:{
         padding:20,
         color:'#808080'
+    },
+    map:{
+        fontSize:13,
+        color:'#008080',
+        textDecorationLine: 'underline',
+        textAlign:'center',
     }
 })
 
