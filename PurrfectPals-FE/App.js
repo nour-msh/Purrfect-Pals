@@ -9,9 +9,10 @@
 // import Vet from './src/Component/Vet';
 // import Pet from './src/Component/Pet';
 // import Feed from './src/Screens/Feed';
-import Profile from './src/Screens/Profile';
+// import Profile from './src/Screens/Profile';
 // import CategoryBox from './src/Component/CategoryBox';
 import React from 'react';
+import EditProfile from './src/Screens/EditProfile';
 
 export default function App() {
   return (
@@ -26,8 +27,9 @@ export default function App() {
     {/* <Vet/> */}
     {/* <Pet/> */}
     {/* <Feed/> */}
-    <Profile/>
+    {/* <Profile/> */}
     {/* <CategoryBox/> */}
+    <EditProfile/>
     </>
   );
 }
