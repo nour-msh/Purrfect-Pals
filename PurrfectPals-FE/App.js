@@ -8,7 +8,8 @@
 // import Post from './src/Component/Post';
 // import Vet from './src/Component/Vet';
 // import Pet from './src/Component/Pet';
-import Feed from './src/Screens/Feed';
+// import Feed from './src/Screens/Feed';
+import Profile from './src/Screens/Profile';
 import React from 'react';
 
 export default function App() {
@@ -23,7 +24,8 @@ export default function App() {
     {/* <Post/> */}
     {/* <Vet/> */}
     {/* <Pet/> */}
-    <Feed/>
+    {/* <Feed/> */}
+    <Profile/>
     </>
   );
 }
