@@ -1,5 +1,5 @@
 import { View,Text,StyleSheet,Image, TouchableOpacity } from "react-native";
-import PetProfBox from "../Component/PetProfBox";
+import ProfBox from "../Component/ProfBox";
 
 function PetProfile(){
     return(
@@ -7,7 +7,7 @@ function PetProfile(){
             <View>
                 <Image source={require("../../assets/dog3.jpg")}
                 style={styles.dogProfilePic}/>
-                <PetProfBox style={styles.profBox}/>
+                <ProfBox name='Pet name'/>
             </View>
             <View style={styles.profContainer}>
                 <Image source={require('../../assets/profile-pic.jpeg')}
