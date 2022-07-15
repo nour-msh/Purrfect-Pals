@@ -29,6 +29,18 @@ function PetProfile(){
         </View>
         )}
 
+const styles=StyleSheet.create({
+    Container:{
+        alignSelf:'center',
 
+    },
+    dogProfilePic:{
+        width:360,
+        height:411,
+        position:'relative'
+
+    },
+    
+})
 
 export default PetProfile
