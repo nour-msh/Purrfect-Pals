@@ -6,7 +6,7 @@ function Profile(){
             <View style={styles.profileContainer}>
                 <Image source={require('../../assets/profile-pic.jpeg')}
                 style={styles.profilePic}/>
-                <View style={{flex:0.05}}/>
+                <View style={{flex:0.3}}/>
                 <Text style={styles.location}>Location {"\n"} Lebanon, Beirut</Text>
             </View>
         </View>
@@ -27,8 +27,8 @@ const styles=StyleSheet.create({
         borderRadius:50
     },
     location:{
-        textAlign:'center',
-        marginTop:10,
+    textAlign:'center',
+    marginTop:10,
     }
 })
 
