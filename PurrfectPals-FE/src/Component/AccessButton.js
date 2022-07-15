@@ -13,7 +13,7 @@ const styles=StyleSheet.create({
         marginLeft:33,
         width:294,
         height:55,
-        borderRadius:5,
+        borderRadius:8,
         backgroundColor:'#FF914A',
         marginTop:8
     },

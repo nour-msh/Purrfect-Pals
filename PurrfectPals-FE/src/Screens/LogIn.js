@@ -31,16 +31,24 @@ function LogIn() {
       .catch((error) => console.log(error));
   };
   return (
-    <View>
+    <View style={styles.container}>
       <Logo />
-      <Image
+      <View>
+        <Image
         source={require("../../assets/login-kitty.png")}
         style={styles.kitty}
       />
+      </View>
+      <View>
+
       <TextInput placeholder="Email" style={styles.input}  value={myEmail}
           onChange={(e) => setMyEmail(e.target.value)}></TextInput>
+        </View>
+        <View>
+
       <TextInput placeholder="Password" style={styles.input} value={myPassword}
           onChange={(e) => setMyPassword(e.target.value)}></TextInput>
+        </View>
       <AccessButton buttonTitle='Log In' onPress={login}/>
       <Text style={styles.myText}>I’ve missed {"\n"} you.</Text>
     </View>
@@ -48,8 +56,12 @@ function LogIn() {
 }
 
 const styles = StyleSheet.create({
+  container:{
+    flex:1,
+  },
   kitty: {
     width: 270,
+    
     height: 269,
     marginLeft: 74,
     marginTop: 25,
@@ -57,9 +69,11 @@ const styles = StyleSheet.create({
   },
   input: {
     fontSize:18,
+    // backgroundColor:'red',
+    // flex:0.8,
     height: 55,
     width: 294,
-    borderRadius: 5,
+    borderRadius: 8,
     borderWidth: 1,
     borderColor:'#e5e5e5',
     marginTop: 0,

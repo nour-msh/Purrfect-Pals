@@ -1,6 +1,6 @@
 // import { StyleSheet, Text, View } from 'react-native';
 // import Logo from "./src/Component/Logo";
-// import Welcome from './src/Screens/Welcome';
+import Welcome from './src/Screens/Welcome';
 // import Greeting from './src/Screens/Greeting';
 // import SecondGreeting from './src/Screens/SecondGreeting';
 // import SignUp from './src/Screens/SignUp';
@@ -11,14 +11,15 @@
 // import Feed from './src/Screens/Feed';
 // import Profile from './src/Screens/Profile';
 // import CategoryBox from './src/Component/CategoryBox';
+// import EditProfile from './src/Screens/EditProfile';
+// import PetProfile from './src/Screens/PetProfile';
 import React from 'react';
-import EditProfile from './src/Screens/EditProfile';
 
 export default function App() {
   return (
     <>
     {/* <Logo/> */}
-    {/* <Welcome/> */}
+    <Welcome/>
     {/* <Greeting/> */}
     {/* <SecondGreeting/> */}
     {/* <SignUp/> */}
@@ -29,7 +30,8 @@ export default function App() {
     {/* <Feed/> */}
     {/* <Profile/> */}
     {/* <CategoryBox/> */}
-    <EditProfile/>
+    {/* <EditProfile/> */}
+    {/* <PetProfile/> */}
     </>
   );
 }
