@@ -50,7 +50,7 @@ function LogIn() {
           onChange={(e) => setMyPassword(e.target.value)}></TextInput>
         </View>
       <AccessButton buttonTitle='Log In' onPress={login}/>
-      <Text style={styles.myText}>I’ve missed {"\n"} you.</Text>
+      <Text style={styles.myText}>Not a member yet? Register now</Text>
     </View>
   );
 }
@@ -82,9 +82,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   myText: {
-    fontSize: 26,
-    marginLeft: 33,
-    marginTop: 10,
+    textAlign:'center',
+      color:'#CAC8C8',
+      padding:10
   },
 });
 

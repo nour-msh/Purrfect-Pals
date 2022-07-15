@@ -1,17 +1,13 @@
-import {Image,Text,View, StyleSheet, ScrollView} from "react-native";
+import {Image,Text,View, StyleSheet, ScrollView, TextInput} from "react-native";
 import Vet from "../Component/Vet";
 import Post from "../Component/Post"
 function Feed(){
     return(
         <View>
             <ScrollView style={styles.scrollView}>
-
-            <View style={styles.userContainer}>
-                <Image source={require('../../assets/profile-pic.jpeg')}
-                style={styles.profilePic}/>
-                <View style={{flex:0.05}}/>
-                <Text style={styles.userName}>User's Name</Text>
-            </View>
+                <View>
+                    <TextInput placeholder="Search" style={styles.search}></TextInput>
+                </View>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
     
                     <View style={styles.Vets}>
@@ -32,6 +28,18 @@ function Feed(){
 }
 
 const styles=StyleSheet.create({
+    search:{
+        fontSize:15,
+        height: 40,
+        width: 290,
+        borderRadius: 10,
+        borderWidth: 0.5,
+        borderColor:'#FF914A',
+        marginTop: 60,
+        marginLeft: 33,
+        padding: 10,
+        marginBottom: 10,
+    },
     userContainer:{
         display:'flex',
         flexDirection:"row",

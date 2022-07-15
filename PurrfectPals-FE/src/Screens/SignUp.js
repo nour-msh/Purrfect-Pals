@@ -100,7 +100,7 @@ const styles=StyleSheet.create({
     },
     member:{
         textAlign:'center',
-        color:'#e5e5e5',
+        color:'#CAC8C8',
         padding:10
     }
 
