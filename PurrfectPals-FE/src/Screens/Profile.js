@@ -1,4 +1,5 @@
-import {Text, Image,View, StyleSheet} from 'react-native';
+import {Text, Image,View, StyleSheet,ScrollView} from 'react-native';
+import CategoryBox from '../Component/CategoryBox';
 
 function Profile(){
     return(
@@ -9,6 +10,16 @@ function Profile(){
                 <View style={{flex:0.3}}/>
                 <Text style={styles.location}>Location {"\n"} Lebanon, Beirut</Text>
             </View>
+            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View style={styles.category} >
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+                <CategoryBox/>
+            </View>
+            </ScrollView>
         </View>
     )
 }
@@ -29,6 +40,11 @@ const styles=StyleSheet.create({
     location:{
     textAlign:'center',
     marginTop:10,
+    },
+    category:{
+        display:'flex',
+        flexDirection:'row',
+        padding:15
     }
 })
 

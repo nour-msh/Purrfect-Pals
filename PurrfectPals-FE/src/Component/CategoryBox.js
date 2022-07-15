@@ -14,7 +14,9 @@ container:{
     height:64,
     borderRadius:20,
     backgroundColor:'#FF914A',
-    marginTop:100
+    marginTop:50,
+    marginLeft:15
+
 
 
 },
