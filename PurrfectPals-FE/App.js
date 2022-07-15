@@ -11,8 +11,8 @@
 // import Feed from './src/Screens/Feed';
 // import Profile from './src/Screens/Profile';
 // import CategoryBox from './src/Component/CategoryBox';
-import EditProfile from './src/Screens/EditProfile';
-// import PetProfile from './src/Screens/PetProfile';
+// import EditProfile from './src/Screens/EditProfile';
+import PetProfile from './src/Screens/PetProfile';
 import React from 'react';
 
 export default function App() {
@@ -30,8 +30,8 @@ export default function App() {
     {/* <Feed/> */}
     {/* <Profile/> */}
     {/* <CategoryBox/> */}
-    <EditProfile/>
-    {/* <PetProfile/> */}
+    {/* <EditProfile/> */}
+    <PetProfile/>
     </>
   );
 }

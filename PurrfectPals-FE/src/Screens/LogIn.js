@@ -58,6 +58,8 @@ function LogIn() {
 const styles = StyleSheet.create({
   container:{
     flex:1,
+    alignSelf:'center',
+
   },
   kitty: {
     width: 270,
