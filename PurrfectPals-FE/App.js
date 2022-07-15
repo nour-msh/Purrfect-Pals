@@ -8,8 +8,8 @@
 // import Post from './src/Component/Post';
 // import Vet from './src/Component/Vet';
 // import Pet from './src/Component/Pet';
-import Feed from './src/Screens/Feed';
-// import Profile from './src/Screens/Profile';
+// import Feed from './src/Screens/Feed';
+import Profile from './src/Screens/Profile';
 // import CategoryBox from './src/Component/CategoryBox';
 // import EditProfile from './src/Screens/EditProfile';
 // import PetProfile from './src/Screens/PetProfile';
@@ -27,8 +27,8 @@ export default function App() {
     {/* <Post/> */}
     {/* <Vet/> */}
     {/* <Pet/> */}
-    <Feed/>
-    {/* <Profile/> */}
+    {/* <Feed/> */}
+    <Profile/>
     {/* <CategoryBox/> */}
     {/* <EditProfile/> */}
     {/* <PetProfile/> */}

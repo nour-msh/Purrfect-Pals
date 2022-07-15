@@ -12,16 +12,7 @@ function Profile(){
                 <View style={{flex:0.3}}/>
                 <Text style={styles.location}>Location {"\n"} Lebanon, Beirut</Text>
             </View>
-            <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-            <View style={styles.category} >
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-                <CategoryBox/>
-            </View>
-            </ScrollView>
+    
             <View>
                 <Pet/>
                 <Pet/>
