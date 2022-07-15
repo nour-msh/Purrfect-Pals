@@ -48,6 +48,7 @@ const styles=StyleSheet.create({
         color:'#008080',
         textDecorationLine: 'underline',
         textAlign:'center',
+        marginBottom:70
     }
 })
 
