@@ -1,9 +1,11 @@
 import {Text, Image,View, StyleSheet,ScrollView} from 'react-native';
 import CategoryBox from '../Component/CategoryBox';
+import Pet from '../Component/Pet';
 
 function Profile(){
     return(
         <View style={styles.container}>
+            <ScrollView>
             <View style={styles.profileContainer}>
                 <Image source={require('../../assets/profile-pic.jpeg')}
                 style={styles.profilePic}/>
@@ -18,6 +20,12 @@ function Profile(){
                 <CategoryBox/>
                 <CategoryBox/>
                 <CategoryBox/>
+            </View>
+            </ScrollView>
+            <View>
+                <Pet/>
+                <Pet/>
+                <Pet/>
             </View>
             </ScrollView>
         </View>
