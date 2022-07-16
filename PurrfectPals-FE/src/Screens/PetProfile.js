@@ -7,7 +7,7 @@ function PetProfile(){
             <View>
                 <Image source={require("../../assets/dog3.jpg")}
                 style={styles.dogProfilePic}/>
-                <ProfBox name='Pet name'/>
+                <ProfBox name='Pet name' petType='Pet Type'/>
             </View>
             <View style={styles.profContainer}>
                 <Image source={require('../../assets/profile-pic.jpeg')}
@@ -82,8 +82,9 @@ const styles=StyleSheet.create({
     },
     reviewButtonText:{
         fontSize:18,
-        fontWeight:'400',
-        color:'white'
+        fontWeight:'600',
+        color:'white',
+        textAlign:'center'
     }
 })
 
