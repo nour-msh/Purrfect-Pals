@@ -39,18 +39,25 @@ function VetProfile(){
 }
 
 const styles=StyleSheet.create({
+    container:{
+        backgroundColor:'#F3F5F8',
+        // alignSelf:'center',
+    },
     imageContainer:{
         width:360,
-        height:382,
+        height:360,
         backgroundColor:"#008080",
     },
     vetImage:{
         width:360,
-        height:382,
+        height:360,
     },
     schedule:{
         marginTop:80,
-        marginLeft:20
+        marginLeft:20,
+        fontSize:20,
+        fontWeight:'500'
+
     },
     dateCont:{
         display:'flex',
@@ -65,17 +72,22 @@ const styles=StyleSheet.create({
         width:255,
         height:55,
         borderRadius:30,
-        padding:20,
-        textAlign:'center',
-        marginTop:40
+        padding:14,
+        alignSelf:'center',
+        marginTop:30,
+        marginBottom:20
     },
     appText:{
         color:'white',
-        fontWeight:'600'
+        fontWeight:'600',
+        textAlign:'center',
+        fontSize:18,
     },
     hours:{
-        padding:25,
-        textAlign:'center'
+        padding:15,
+        textAlign:'center',
+        fontSize:13,
+        color:'grey'
     }
 })
 
