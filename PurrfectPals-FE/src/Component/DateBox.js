@@ -3,7 +3,8 @@ import { StyleSheet,Text,View} from "react-native";
 function DateBox(){
     return(
         <View style={styles.container}>
-            <Text style={styles.date}> 4 {"\n"} Sat</Text>
+            <Text style={styles.dayNum}>4</Text>
+            <Text style={styles.day}>Sat</Text>
         </View>
     )
 }
@@ -13,13 +14,21 @@ const styles=StyleSheet.create({
         width:51,
         height:80,
         borderRadius:20,
-        backgroundColor:'#008080',
-        marginTop:30,
+        backgroundColor:'white',
+        marginTop:10,
         marginLeft:20
     },
-    date:{
+    dayNum:{
         textAlign:'center',
-        marginTop:20
+        marginTop:10,
+        fontWeight:'bold',
+        fontSize:20
+    },
+    day:{
+        textAlign:'center',
+        marginTop:10,
+        fontWeight:'100'
+
     }
 
 

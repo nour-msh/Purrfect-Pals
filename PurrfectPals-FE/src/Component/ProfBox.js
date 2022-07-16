@@ -4,6 +4,7 @@ function ProfBox(props){
     return(
         <View style={styles.profBox}>
             <Text style={styles.name}>{props.name}</Text>
+            <Text style={styles.petType}>{props.petType}</Text>
         </View>
     )
 }
@@ -11,11 +12,11 @@ function ProfBox(props){
 const styles=StyleSheet.create({
     profBox:{
         width:274,
-        height:149,
+        height:120,
         backgroundColor:'white',
         borderRadius:30,
         position:'absolute',
-        marginTop:330,
+        marginTop:300,
         alignSelf:'center'
     },
     name:{
@@ -25,11 +26,11 @@ const styles=StyleSheet.create({
         fontSize:24,
         fontWeight:'600'
     },
-    // petType:{
-    //     fontSize:14,
-    //     color:'grey',
-    //     textAlign:'center'
-    // }
+    petType:{
+        fontSize:14,
+        color:'grey',
+        textAlign:'center'
+    }
 })
 
 export default ProfBox

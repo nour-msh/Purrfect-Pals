@@ -13,13 +13,14 @@ const styles=StyleSheet.create({
         width:79,
         height:33,
         borderRadius:20,
-        backgroundColor:'#008080',
+        backgroundColor:'white',
         // marginTop:30,
         marginLeft:20
     },
     time:{
         textAlign:'center',
-        padding:8
+        padding:8,
+        fontWeight:'100'
     }
 
 
