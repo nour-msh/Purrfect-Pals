@@ -25,10 +25,10 @@ function SignUp(){
         axios({
           method: "POST",
           data,
-          url: "http://127.0.0.1:5000/user/register",
+          url: "http://192.168.1.3:5000/user/register",
         })
           .then((res) => {ToastAndroid.show(res, ToastAndroid.LONG)})
-          .catch((error) => {ToastAndroid.show(error, ToastAndroid.LONG)});
+          .catch((error) => console.log(error));
       };
 
       const handleFullNameChange = (value) => {
