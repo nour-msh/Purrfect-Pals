@@ -25,11 +25,12 @@ const styles=StyleSheet.create({
     dog1:{
         width:143,
         height:178,
-        borderRadius:20,
+        borderBottomLeftRadius:20,
+        borderTopLeftRadius:20,
     },
     textContainer:{
         width:161,
-        height:132,
+        height:178,
         backgroundColor:'white',
         borderLeftColor:'white',
         borderRightColor:'#e5e5e5',
@@ -38,7 +39,6 @@ const styles=StyleSheet.create({
         borderWidth:1,
         borderBottomRightRadius:20,
         borderTopRightRadius:20,
-        marginTop:25,
         padding:15,
     },
     name:{
