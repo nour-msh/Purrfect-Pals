@@ -13,8 +13,9 @@
 // import CategoryBox from './src/Component/CategoryBox';
 // import EditProfile from './src/Screens/EditProfile';
 // import PetProfile from './src/Screens/PetProfile';
-import VetProfile from './src/Screens/VetProfile';
+// import VetProfile from './src/Screens/VetProfile';
 // import DateBox from './src/Component/DateBox';
+import ThirdGreeting from './src/Screens/ThirdGreeting';
 import React from 'react';
 
 export default function App() {
@@ -34,8 +35,9 @@ export default function App() {
     {/* <CategoryBox/> */}
     {/* <EditProfile/> */}
     {/* <PetProfile/> */}
-    <VetProfile/>
+    {/* <VetProfile/> */}
     {/* <DateBox/> */}
+    <ThirdGreeting/>
     </>
   );
 }

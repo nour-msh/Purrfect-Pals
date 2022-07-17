@@ -19,6 +19,8 @@ function VetProfile(){
                 <DateBox/>
                 <DateBox/>
                 <DateBox/>
+                <DateBox/>
+                <DateBox/>
             </View>
             <Text style={styles.hours}>Visiting Hours</Text>
             <View style={styles.timeCont}>
