@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+// import {jwt} from 'jsonwebtoken';
 
 import {
   View,
@@ -16,20 +17,28 @@ function LogIn() {
   const [myEmail, setMyEmail] = useState("");
   const [myPassword, setMyPassword] = useState("");
 
-  const login = (e) => {
+  const handleSubmitLogin = () => {
     const data = {
       email: myEmail,
       password: myPassword,
     };
-    e.preventDefault();
+    // e.preventDefault();
     axios({
       method: "post",
       data,
-      url: "http://127.0.0.1:5000/user/login",
+      url: "http://192.168.1.7:5000/user/login",
     })
-      .then((res) => {console.log(res)})
-      .catch((error) => console.log(error));
-  };
+    .then((res) => {console.log(res)})
+    .catch((error) => console.log(error));
+};
+
+const handleMyEmailChange = (value) => {
+  setMyEmail(value)
+}
+
+const handleMyPasswordChange = (value) => {
+  setMyPassword(value)
+}
   return (
     <View style={styles.container}>
       <Logo />
@@ -41,15 +50,13 @@ function LogIn() {
       </View>
       <View>
 
-      <TextInput placeholder="Email" style={styles.input}  value={myEmail}
-          onChange={(e) => setMyEmail(e.target.value)}></TextInput>
+      <TextInput placeholder="Email" style={styles.input}  value={myEmail} onChangeText={handleMyEmailChange}></TextInput>
         </View>
         <View>
 
-      <TextInput placeholder="Password" style={styles.input} value={myPassword}
-          onChange={(e) => setMyPassword(e.target.value)}></TextInput>
+      <TextInput placeholder="Password" style={styles.input}  value={myPassword} onChangeText={handleMyPasswordChange}></TextInput>
         </View>
-      <AccessButton buttonTitle='Log In' onPress={login}/>
+      <AccessButton buttonTitle='Log In' handlePress={handleSubmitLogin}/>
       <Text style={styles.myText}>Not a member yet? Register now</Text>
     </View>
   );
