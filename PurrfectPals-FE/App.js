@@ -1,10 +1,11 @@
+import 'react-native-gesture-handler';
 // import { StyleSheet, Text, View } from 'react-native';
 // import Logo from "./src/Component/Logo";
 // import Welcome from './src/Screens/Welcome';
 // import Greeting from './src/Screens/Greeting';
 // import SecondGreeting from './src/Screens/SecondGreeting';
 // import SignUp from './src/Screens/SignUp';
-// import LogIn from './src/Screens/LogIn';
+import LogIn from './src/Screens/LogIn';
 // import Post from './src/Component/Post';
 // import Vet from './src/Component/Vet';
 // import Pet from './src/Component/Pet';
@@ -15,7 +16,12 @@
 // import PetProfile from './src/Screens/PetProfile';
 // import VetProfile from './src/Screens/VetProfile';
 // import DateBox from './src/Component/DateBox';
-import ThirdGreeting from './src/Screens/ThirdGreeting';
+// import ThirdGreeting from './src/Screens/ThirdGreeting';
+// import {NavigationContainer} from '@react-navigation/native';
+// import Tabs from './src/Navigation/tabs';
+// import Stacks from './src/Navigation/tabs';
+
+
 import React from 'react';
 
 export default function App() {
@@ -26,7 +32,7 @@ export default function App() {
     {/* <Greeting/> */}
     {/* <SecondGreeting/> */}
     {/* <SignUp/> */}
-    {/* <LogIn/> */}
+    <LogIn/>
     {/* <Post/> */}
     {/* <Vet/> */}
     {/* <Pet/> */}
@@ -37,7 +43,12 @@ export default function App() {
     {/* <PetProfile/> */}
     {/* <VetProfile/> */}
     {/* <DateBox/> */}
-    <ThirdGreeting/>
+    {/* <ThirdGreeting/> */}
+    {/* <NavigationContainer> */}
+        {/* <Tabs/> */}
+        {/* <Stacks/>
+    </NavigationContainer> */}
+
     </>
   );
 }

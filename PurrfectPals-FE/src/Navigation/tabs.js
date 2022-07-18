@@ -1,6 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feed from '../Screens/Feed';
 import Profile from '../Screens/Profile';
+import VetProfile from "../Screens/VetProfile";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 // import Messages from '../Screens/Messages';
 // import Notifications from '../Screens/Notifications'

@@ -1,5 +1,5 @@
 import {Text,View,Image,StyleSheet,TextInput, ToastAndroid} from 'react-native';
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import axios from 'axios';
 
 import AccessButton from '../Component/AccessButton';
@@ -13,8 +13,6 @@ function SignUp(){
     const[phoneNumber,setPhoneNumber]=useState("");
 
     const handleSubmitSignup = () => {
-        
-
         const data = {
           full_name: fullName,
           email: email,
@@ -25,7 +23,7 @@ function SignUp(){
         axios({
           method: "POST",
           data,
-          url: "http://192.168.1.3:5000/user/register",
+          url: "http://192.168.1.7:5000/user/register",
         })
           .then((res) => {ToastAndroid.show(res, ToastAndroid.LONG)})
           .catch((error) => console.log(error));
@@ -71,7 +69,7 @@ function SignUp(){
             ></TextInput>
 
             <AccessButton buttonTitle='Sign Up' 
-             handlePress={handleSubmitSignup} 
+             handlePress={handleSubmitSignup}
 />
 
             <Text style={styles.member}>Already have an account?</Text>

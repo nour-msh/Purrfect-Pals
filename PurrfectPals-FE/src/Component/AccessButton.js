@@ -10,7 +10,6 @@ function AccessButton(props){
 
 const styles=StyleSheet.create({
     accessButton:{
-        marginLeft:33,
         width:294,
         height:55,
         borderRadius:8,

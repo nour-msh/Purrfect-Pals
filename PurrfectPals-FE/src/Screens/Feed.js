@@ -5,7 +5,7 @@ function Feed(){
     return(
         <View>
             <ScrollView style={styles.scrollView}>
-                <View>
+                <View>                   
                     <TextInput placeholder="Search" style={styles.search}></TextInput>
                 </View>
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
