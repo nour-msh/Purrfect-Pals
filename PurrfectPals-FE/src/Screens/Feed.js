@@ -1,7 +1,7 @@
 import {Image,Text,View, StyleSheet, ScrollView, TextInput} from "react-native";
 import Vet from "../Component/Vet";
 import Post from "../Component/Post"
-function Feed(){
+function Feed({navigation}){
     return(
         <View>
             <ScrollView style={styles.scrollView}>
@@ -11,16 +11,16 @@ function Feed(){
                 <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
     
                     <View style={styles.Vets}>
-                        <Vet/>
-                        <Vet/>
-                        <Vet/>
+                        <Vet nav={navigation}/>
+                        <Vet nav={navigation}/>
+                        <Vet nav={navigation}/>
                     </View>
                 </ScrollView>
             <View style={styles.Posts}>
-                <Post/>
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post nav={navigation}/>
+                <Post nav={navigation}/>
+                <Post nav={navigation}/>
+                <Post nav={navigation}/>
             </View>
             </ScrollView>
         </View>
