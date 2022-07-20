@@ -1,5 +1,6 @@
 import {Text, Image,View, StyleSheet,ScrollView,TextInput} from 'react-native';
 import Pet from '../Component/Pet';
+import { AntDesign } from '@expo/vector-icons';
 
 function Profile(){
     return(
@@ -13,6 +14,9 @@ function Profile(){
                     <Text style={styles.name}>Nour Mshawrab</Text>
                     <Text style={styles.location}>Lebanon, Beirut</Text>
                 </View>
+                    <View style={styles.editIcon}>
+                        <AntDesign name="edit" size={24} color="black" />
+                    </View>
             </View>
             <View>
                     <TextInput placeholder="Search" style={styles.search}></TextInput>
@@ -32,7 +36,7 @@ const styles=StyleSheet.create({
     profileContainer:{
         display:'flex',
         flexDirection:'row',
-        marginTop:50,
+        marginTop:25,
         marginLeft:25
 
     },
@@ -40,6 +44,9 @@ const styles=StyleSheet.create({
         width:75,
         height:75,
         borderRadius:50,
+    },
+    editIcon:{
+        marginLeft:60
     },
     search:{
         fontSize:15,
