@@ -2,22 +2,39 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Feed from '../Screens/Feed';
 import Profile from '../Screens/Profile';
 import VetProfile from "../Screens/VetProfile";
+import PetProfile from "../Screens/PetProfile";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { StackActions } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 // import Messages from '../Screens/Messages';
 // import Notifications from '../Screens/Notifications'
 
 const Tab= createBottomTabNavigator();
+const Stack = createStackNavigator();
 
+function Stacks() {
+    return (
+      <Stack.Navigator screenOptions={{headerShown:false}} >
+        <Stack.Screen name="Feed" component={Feed} />
+        <Stack.Screen name="VetProfile" component={VetProfile} />
+        <Stack.Screen name="PetProfile" component={PetProfile} />
+
+      </Stack.Navigator>
+    );
+  }
 function Tabs() {
     return (
       <Tab.Navigator 
+      
       initialRouteName="Feed"
       screenOptions={{
+        headerShown:false,
         tabBarActiveTintColor: '#FF914A',
       }}
     >
-        <Tab.Screen name="Feed"
-        component={Feed}
+        <Tab.Screen name="Stacks"
+        component={Stacks}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
