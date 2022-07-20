@@ -1,6 +1,6 @@
 import {Text, View, StyleSheet, Image} from 'react-native';
 
-function Vet(){
+function Vet({nav}){
     return(
         <View style={styles.container}>
             <View style={styles.upperContainer}></View>
@@ -10,7 +10,7 @@ function Vet(){
             </View>
 
             <View style={styles.bottomContainer}>
-                <Text style={styles.vetName}>Vet's Name</Text>
+                <Text style={styles.vetName} onPress={()=>nav.navigate('VetProfile')}>Vet's Name</Text>
             </View>
         </View>
     )
