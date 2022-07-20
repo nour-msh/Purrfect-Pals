@@ -1,6 +1,6 @@
 import {View,Text,StyleSheet,Image} from 'react-native';
 
-function Post(){
+function Post({nav}){
     return(
         <View style={styles.Container}>
             <View style={styles.imageContainer}>
@@ -8,7 +8,7 @@ function Post(){
                 style={styles.dog1}/>
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.name}>Pet Name</Text>
+                <Text style={styles.name} onPress={()=>nav.navigate('PetProfile')}>Pet Name</Text>
                 <Text style={styles.duration}>Duration</Text>
                 <Text style={styles.description}>Description:Lorem ipsum dolor sit amet, varius gravida lectus.</Text>
             </View>
