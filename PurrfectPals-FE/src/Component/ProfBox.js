@@ -11,11 +11,11 @@ function ProfBox(props){
 
 const styles=StyleSheet.create({
     profBox:{
-        width:274,
+        width:'80%',
         height:120,
         backgroundColor:'white',
         borderRadius:30,
-        position:'absolute',
+        position:'relative',
         marginTop:300,
         alignSelf:'center'
     },
