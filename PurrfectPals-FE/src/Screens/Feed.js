@@ -1,10 +1,10 @@
-import {Image,Text,View, StyleSheet, ScrollView, TextInput} from "react-native";
+import {View, StyleSheet, ScrollView, TextInput} from "react-native";
 import Vet from "../Component/Vet";
 import Post from "../Component/Post"
 function Feed({navigation}){
     return(
-        <View>
-            <ScrollView style={styles.scrollView}>
+        <View style={styles.container}>
+            <ScrollView style={styles.scrollView} showsVerticalScrollIndicator={false}>
                 <View>                   
                     <TextInput placeholder="Search" style={styles.search}></TextInput>
                 </View>
@@ -15,7 +15,7 @@ function Feed({navigation}){
                         <Vet nav={navigation}/>
                         <Vet nav={navigation}/>
                     </View>
-                </ScrollView>
+            </ScrollView>
             <View style={styles.Posts}>
                 <Post nav={navigation}/>
                 <Post nav={navigation}/>
@@ -28,22 +28,25 @@ function Feed({navigation}){
 }
 
 const styles=StyleSheet.create({
+    container:{
+padding:25,
+    },
     search:{
         fontSize:15,
         height: 40,
-        width: 290,
+        // width: 290,
         borderRadius: 10,
         borderWidth: 0.5,
         borderColor:'#FF914A',
-        marginTop: 60,
-        marginLeft: 33,
+        marginTop: 30,
+        // marginLeft: 33,
         padding: 10,
         marginBottom: 10,
     },
     userContainer:{
         display:'flex',
         flexDirection:"row",
-        marginLeft:31,
+        // marginLeft:31,
         marginTop:50,
         
 
@@ -62,12 +65,8 @@ const styles=StyleSheet.create({
     Vets:{
         display:'flex',
         flexDirection:'row',
-        marginLeft:20
+        // marginLeft:20
     },
-    Posts:{
-        marginLeft:20
-
-    }
 
 })
 
