@@ -1,6 +1,7 @@
 import {Text, Modal,Pressable, Image,View, StyleSheet,ScrollView,TouchableOpacity} from 'react-native';
 import { useState } from 'react';
 import Pet from '../Component/Pet';
+import axios from "axios";
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 import { TextInput } from 'react-native-gesture-handler';
@@ -9,6 +10,49 @@ import { TextInput } from 'react-native-gesture-handler';
 function Profile({ navigation}){
     const [isModalVisible, setModalVisible] = useState(false);
     const handleModal = () => setModalVisible(() => !isModalVisible);
+
+
+    const [petName, setPetname] = useState("");
+    const [petImage, setPetImage] = useState("");
+    const [petBreed, setPetBreed] = useState("");
+    const [petAge, setPetAge] = useState("");
+  
+    const handleSubmitPet = () => {
+      const data = {
+        pet_name: petName,
+        image: petImage,
+        breed: petBreed,
+        age: petAge,
+  
+      };
+      axios({
+        method: "POST",
+        data,
+        url: "http://192.168.1.4:5000/user/addPet",
+      })
+        .then((res) => {
+            console.log(res);
+            setModalVisible(false);
+        }
+        )
+        .catch((error) => console.log(error));
+    };
+
+    const handleNameChange = (value) => {
+        setPetname(value)
+      }
+
+      const handleImageChange = (value) => {
+        setPetImage(value)
+      }
+
+      const handleBreedChange = (value) => {
+        setPetBreed(value)
+      }
+
+      const handleAgeChange = (value) => {
+        setPetAge(value)
+      }
 
 
     return(
@@ -56,16 +100,19 @@ function Profile({ navigation}){
                     </Pressable>
                     </View>
                     <View>
-                        <TextInput style={styles.modalText} placeholder='Pet Name'></TextInput>
-                        <TextInput style={styles.modalText} placeholder='Pet Breed'></TextInput>
-                        <TextInput style={styles.modalText} placeholder='Pet Age'></TextInput>
+                        <TextInput style={styles.modalText} placeholder='Pet Name'
+                        value={petName} onChangeText={handleNameChange}></TextInput>
+                        <TextInput style={styles.modalText} placeholder='Pet Breed'
+                        value={petBreed} onChangeText={handleBreedChange}></TextInput>
+                        <TextInput style={styles.modalText} placeholder='Pet Age'
+                        value={petAge} onChangeText={handleAgeChange}></TextInput>
                     {/* <Text style={styles.modalText}>Hello World!</Text> */}
                     </View>
                     <Pressable
                     style={styles.savebutton}
-                    onPress={() => setModalVisible(!isModalVisible)}
+                    onPress={handleSubmitPet}
                     >
-                    <Text style={styles.saveText}>Save</Text>
+                    <Text style={styles.saveText} >Save</Text>
                     </Pressable>
                 </View>
             </View>
