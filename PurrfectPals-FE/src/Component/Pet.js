@@ -1,6 +1,6 @@
 import {Text,StyleSheet,View, Image} from "react-native";
 
-function Pet(){
+function Pet({nav}){
     return(
         <View style={styles.Container}>
             <View style={styles.imageContainer}>
@@ -8,7 +8,7 @@ function Pet(){
                 style={styles.dog1}/>
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.name}>Pet Name</Text>
+                <Text style={styles.name} onPress={()=>nav.navigate('PetProfile')}>Pet Name</Text>
                 <Text style={styles.desc}>Breed</Text>
                 <Text style={styles.desc}>Age</Text>
             </View>
@@ -18,18 +18,22 @@ function Pet(){
 
 const styles=StyleSheet.create({
     Container:{
+        flex:1,
     flexDirection:'row',
     justifyContent:'center',
-    marginTop:50
+    marginTop:20,
     },
     dog1:{
-        width:143,
+        flex:1,
+        width:161,
+        
         height:178,
         borderBottomLeftRadius:20,
         borderTopLeftRadius:20,
     },
     textContainer:{
-        width:161,
+        // width:161,
+        flex:1,
         height:178,
         backgroundColor:'white',
         borderLeftColor:'white',
