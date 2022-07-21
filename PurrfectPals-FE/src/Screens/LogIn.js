@@ -64,8 +64,7 @@ const handleMyPasswordChange = (value) => {
 
 const styles = StyleSheet.create({
   container:{
-    flex:1,
-    alignSelf:'center',
+    padding:25
   },
   kitty: {
     width: 270,
