@@ -10,7 +10,7 @@ function AccessButton(props){
 
 const styles=StyleSheet.create({
     accessButton:{
-        width:294,
+        // width:294,
         height:55,
         borderRadius:8,
         backgroundColor:'#FF914A',
