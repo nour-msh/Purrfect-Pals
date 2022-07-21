@@ -78,21 +78,24 @@ function SignUp(){
 }
 
 const styles=StyleSheet.create({
+  container:{
+    padding:25
+  },
     dog:{
         width:290,
         height:176,
-        marginLeft:33,
+        // marginLeft:33,
         marginTop:25,
     },
     input:{
         fontSize:18,
         height:55,
-        width:294,
+        // width:294,
         borderRadius:8,
         borderWidth: 1,
         borderColor:'#e5e5e5',
         marginTop:0,
-        marginLeft:33,
+        // marginLeft:33,
         padding:15,
         marginBottom:10,
     },
