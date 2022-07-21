@@ -1,19 +1,26 @@
-import { Text,StyleSheet,View,Image, TouchableOpacity } from "react-native";
+import { Text,StyleSheet,View,Image, TouchableOpacity,ScrollView } from "react-native";
 import DateBox from "../Component/DateBox";
 import ProfBox from "../Component/ProfBox";
 import TimeBox from "../Component/TimeBox";
+import { Ionicons } from '@expo/vector-icons';
 
-function VetProfile(){
+
+function VetProfile({ navigation}){
     return(
         <View style={styles.container}>
+                <View>
+                    <Ionicons style={styles.back} name="chevron-back-outline" size={24} color="#FF914A" onPress={() => navigation.goBack()}/>
+                </View>
             <View style={styles.imageContainer}>
-                <Image source={require("../../assets/Doctor1.png")}
-                style={styles.vetImage}/>
-            <ProfBox name='Vet name'/>
+                    <Image source={require("../../assets/Doctor1.png")}
+                    style={styles.vetImage}/>
+                <ProfBox name='Vet name'/>
             </View>
             <View>
                 <Text style={styles.schedule}>Schedule</Text>
             </View>
+            <ScrollView horizontal={true} style={styles.scrollView} showsHorizontalScrollIndicator={false}>
+
             <View style={styles.dateCont}>
                 <DateBox/>
                 <DateBox/>
@@ -22,13 +29,17 @@ function VetProfile(){
                 <DateBox/>
                 <DateBox/>
             </View>
+            </ScrollView>
             <Text style={styles.hours}>Visiting Hours</Text>
+            <ScrollView horizontal={true} style={styles.scrollView} showsHorizontalScrollIndicator={false}>
+
             <View style={styles.timeCont}>
                 <TimeBox/>
                 <TimeBox/>
                 <TimeBox/>
                 <TimeBox/>
             </View>
+            </ScrollView>
             <View>
                 <TouchableOpacity style={styles.appButton}>
                     <Text style={styles.appText}>Book Appointment</Text>
@@ -43,16 +54,22 @@ function VetProfile(){
 const styles=StyleSheet.create({
     container:{
         backgroundColor:'#F3F5F8',
+        flex:1,
         // alignSelf:'center',
     },
+
     imageContainer:{
-        width:360,
         height:360,
+        width:'100%',
         backgroundColor:"#008080",
+        position:'relative',
+
     },
     vetImage:{
-        width:360,
-        height:360,
+        width:'100%',
+        flex:1,
+        height:'100%',
+        position:'absolute',
     },
     schedule:{
         marginTop:80,
