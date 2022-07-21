@@ -20,9 +20,8 @@ function Logo() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    padding: 40,
     justifyContent: "center",
-    marginTop: 69,
   },
   title: {
     color: "black",
