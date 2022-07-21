@@ -15,11 +15,12 @@ const Stack = createStackNavigator();
 
 function Stacks() {
     return (
-      <Stack.Navigator screenOptions={{headerShown:false}} >
+      <Stack.Navigator  initialRouteName="Tabs" screenOptions={{headerShown:false}} >
         <Stack.Screen name="Feed" component={Feed} />
         <Stack.Screen name="VetProfile" component={VetProfile}/>
         <Stack.Screen name="PetProfile" component={PetProfile} />
         <Stack.Screen name="EditProfile" component={EditProfile} />
+        <Stack.Screen name="Tabs" component={Tabs} />
 
 
       </Stack.Navigator>
@@ -35,8 +36,8 @@ function Tabs() {
         tabBarActiveTintColor: '#FF914A',
       }}
     >
-        <Tab.Screen name="Stacks"
-        component={Stacks}
+        <Tab.Screen name="Feed"
+        component={Feed}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color, size }) => (
@@ -65,4 +66,4 @@ function Tabs() {
     );
   }
 
-export default Tabs
+export default Stacks
