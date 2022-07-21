@@ -15,7 +15,7 @@ const styles=StyleSheet.create({
         height:120,
         backgroundColor:'white',
         borderRadius:30,
-        position:'relative',
+        position:'absolute',
         marginTop:300,
         alignSelf:'center'
     },
