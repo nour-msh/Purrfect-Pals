@@ -1,6 +1,7 @@
 import { StyleSheet,Text,View, Image} from "react-native";
 import AccessButton from "../Component/AccessButton";
 import { Ionicons } from '@expo/vector-icons';
+import { TextInput } from "react-native-gesture-handler";
 
 function EditProfile({navigation}){
     return(
@@ -9,14 +10,19 @@ function EditProfile({navigation}){
             <View style={styles.profContainer}>
                 <Image source={require('../../assets/profile-pic.jpeg')}
                 style={styles.profPic}/>
-                <Text style={styles.name}>Full Name</Text>
+                <Text style={styles.name}>Change Profile Photo</Text>
             </View>
             <View>
                 <Text style={styles.info}>My Name</Text>
+                <TextInput style={styles.input}></TextInput>
                 <Text style={styles.info}>Phone Number</Text>
+                <TextInput style={styles.input}></TextInput>
                 <Text style={styles.info}>Email</Text>
+                <TextInput style={styles.input}></TextInput>
                 <Text style={styles.info}>Password</Text>
+                <TextInput style={styles.input}></TextInput>
                 <Text style={styles.info}>My Address</Text>
+                <TextInput style={styles.input}></TextInput>
                 <Text style={styles.map}>Edit on map</Text>
             </View>
             <AccessButton buttonTitle='Save' style={styles.saveButton}/>
@@ -51,7 +57,8 @@ padding:40
     },
     name:{
         textAlign:'center',
-        padding:10
+        padding:10,
+        color:'#008080'
     },
     info:{
         // padding:20,
@@ -63,7 +70,11 @@ padding:40
         color:'#008080',
         textDecorationLine: 'underline',
         textAlign:'center',
-        marginBottom:70
+        padding:70
+    },
+    input:{
+        borderBottomColor: 'black',
+        borderBottomWidth: 1,
     }
 })
 
