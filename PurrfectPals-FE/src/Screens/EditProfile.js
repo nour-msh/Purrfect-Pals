@@ -6,6 +6,38 @@ import { Ionicons } from '@expo/vector-icons';
 import { TextInput } from "react-native-gesture-handler";
 
 function EditProfile({navigation}){
+
+    const [fullName, setFullName] = useState('');
+    const [email, setEmail] = useState("");
+    const [phoneNumber, setPhoneNumber] = useState("");
+
+    const handleUpdate = () => {
+            const data = {
+            full_name:fullName ,
+            email: email,
+            phone_number: phoneNumber
+        };
+        axios({
+            method: "put",
+            data,
+            url: `http://192.168.1.4:5000/user/updateUserProfile/${id}`,
+          })
+        .then(response => {
+            setStatus(response.status);
+        })
+    };
+
+    const handleFullNameChange = (value) => {
+        setFullName(value)
+      }
+      const handleNumberChange = (value) => {
+        setPhoneNumber(value)
+      }
+      const handleEmailChange = (value) => {
+        setEmail(value)
+      }
+
+
     return(
         <View style={styles.container}>
             <Ionicons style={styles.editIcon} name="chevron-back-outline" size={24} color="#FF914A" onPress={() => navigation.goBack()}/>
