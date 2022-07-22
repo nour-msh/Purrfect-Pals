@@ -6,7 +6,7 @@ import AccessButton from '../Component/AccessButton';
 import Logo from '../Component/Logo';
 
 
-function SignUp(){
+function SignUp({navigation}){
     const[fullName,setFullname]=useState("");
     const[email,setEmail]=useState("");
     const[password,setPassword]=useState("");
@@ -23,7 +23,7 @@ function SignUp(){
         axios({
           method: "POST",
           data,
-          url: "http://192.168.1.7:5000/user/register",
+          url: "http://192.168.1.4:5000/user/register",
         })
           .then((res) => {ToastAndroid.show(res, ToastAndroid.LONG)})
           .catch((error) => console.log(error));
@@ -72,7 +72,7 @@ function SignUp(){
              handlePress={handleSubmitSignup}
 />
 
-            <Text style={styles.member}>Already have an account?</Text>
+            <Text style={styles.member} onPress={()=>navigation.navigate('LogIn')}>Already have an account?</Text>
         </View>
     )
 }
@@ -86,6 +86,7 @@ const styles=StyleSheet.create({
         height:176,
         // marginLeft:33,
         marginTop:25,
+        alignSelf:'center'
     },
     input:{
         fontSize:18,
