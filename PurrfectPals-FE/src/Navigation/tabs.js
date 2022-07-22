@@ -4,6 +4,8 @@ import Profile from '../Screens/Profile';
 import VetProfile from "../Screens/VetProfile";
 import PetProfile from "../Screens/PetProfile";
 import EditProfile from '../Screens/EditProfile';
+import LogIn from '../Screens/LogIn';
+import SignUp from '../Screens/SignUp';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { StackActions } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -15,7 +17,9 @@ const Stack = createStackNavigator();
 
 function Stacks() {
     return (
-      <Stack.Navigator  initialRouteName="Tabs" screenOptions={{headerShown:false}} >
+      <Stack.Navigator  initialRouteName="LogIn" screenOptions={{headerShown:false}} >
+        <Stack.Screen name="LogIn" component={LogIn}/>
+        <Stack.Screen name="SignUp" component={SignUp}/>
         <Stack.Screen name="Feed" component={Feed} />
         <Stack.Screen name="VetProfile" component={VetProfile}/>
         <Stack.Screen name="PetProfile" component={PetProfile} />
