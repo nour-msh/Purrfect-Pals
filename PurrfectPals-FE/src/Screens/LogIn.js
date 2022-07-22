@@ -1,3 +1,4 @@
+import { NavigationHelpersContext } from "@react-navigation/native";
 import axios from "axios";
 import { useState } from "react";
 // import {jwt} from 'jsonwebtoken';
@@ -12,7 +13,7 @@ import {
 import AccessButton from "../Component/AccessButton";
 import Logo from "../Component/Logo";
 
-function LogIn() {
+function LogIn({navigation}) {
 
   const [myEmail, setMyEmail] = useState("");
   const [myPassword, setMyPassword] = useState("");
@@ -22,11 +23,10 @@ function LogIn() {
       email: myEmail,
       password: myPassword,
     };
-    // e.preventDefault();
     axios({
       method: "post",
       data,
-      url: "http://192.168.1.7:5000/user/login",
+      url: "http://192.168.1.4:5000/user/login",
     })
     .then((res) => {console.log(res)})
     .catch((error) => console.log(error));
@@ -56,8 +56,8 @@ const handleMyPasswordChange = (value) => {
 
       <TextInput placeholder="Password" style={styles.input}  value={myPassword} onChangeText={handleMyPasswordChange}></TextInput>
         </View>
-      <AccessButton buttonTitle='Log In' handlePress={handleSubmitLogin}/>
-      <Text style={styles.myText}>Not a member yet? Register now</Text>
+      <AccessButton buttonTitle='Log In' handlePress={handleSubmitLogin} />
+      <Text style={styles.myText} onPress={()=>navigation.navigate('SignUp')}>Not a member yet? Register now</Text>
     </View>
   );
 }
@@ -72,6 +72,8 @@ const styles = StyleSheet.create({
     display:'flex',
     marginTop: 25,
     marginBottom: 25,
+    alignSelf:'center'
+
   },
   input: {
     fontSize:18,
