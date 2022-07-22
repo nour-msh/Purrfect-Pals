@@ -1,5 +1,7 @@
 import { StyleSheet,Text,View, Image} from "react-native";
 import AccessButton from "../Component/AccessButton";
+import axios from "axios";
+import { useState } from "react";
 import { Ionicons } from '@expo/vector-icons';
 import { TextInput } from "react-native-gesture-handler";
 
@@ -14,18 +16,17 @@ function EditProfile({navigation}){
             </View>
             <View>
                 <Text style={styles.info}>My Name</Text>
-                <TextInput style={styles.input}></TextInput>
+                <TextInput style={styles.input}  value={fullName} onChangeText={handleFullNameChange}></TextInput>
+
                 <Text style={styles.info}>Phone Number</Text>
-                <TextInput style={styles.input}></TextInput>
+                <TextInput style={styles.input} value={phoneNumber} onChangeText={handleNumberChange}></TextInput>
+
                 <Text style={styles.info}>Email</Text>
-                <TextInput style={styles.input}></TextInput>
-                <Text style={styles.info}>Password</Text>
-                <TextInput style={styles.input}></TextInput>
-                <Text style={styles.info}>My Address</Text>
-                <TextInput style={styles.input}></TextInput>
+                <TextInput style={styles.input} value={email} onChangeText={handleEmailChange}></TextInput>
+
                 <Text style={styles.map}>Edit on map</Text>
             </View>
-            <AccessButton buttonTitle='Save' style={styles.saveButton}/>
+            <AccessButton buttonTitle='Save' onPress={handleUpdate} style={styles.saveButton}/>
         </View>
     )
 }
