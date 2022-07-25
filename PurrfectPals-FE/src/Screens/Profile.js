@@ -1,22 +1,30 @@
 import {Text, Modal,Pressable, Image,View, StyleSheet,ScrollView,TouchableOpacity} from 'react-native';
-import { useState } from 'react';
-import Pet from '../Component/Pet';
+import { TextInput } from 'react-native-gesture-handler';
+import { MaterialIcons } from '@expo/vector-icons';
+import { useEffect, useState } from 'react';
+import { useContext } from "react";
 import axios from "axios";
+import { UserContext } from "../../App";
+
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
-import { TextInput } from 'react-native-gesture-handler';
 
+import Pet from '../Component/Pet';
 
 function Profile({ navigation}){
-    const [isModalVisible, setModalVisible] = useState(false);
-    const handleModal = () => setModalVisible(() => !isModalVisible);
-
-
-    const [petName, setPetname] = useState("");
-    const [petImage, setPetImage] = useState("");
-    const [petBreed, setPetBreed] = useState("");
-    const [petAge, setPetAge] = useState("");
+  const [isModalVisible, setModalVisible] = useState(false);
+  const handleModal = () => setModalVisible(() => !isModalVisible);
   
+  
+  const [user, setUser] = useState("");
+  const [pets, setPets] = useState([]);
+  const [petName, setPetname] = useState("");
+  const [petImage, setPetImage] = useState("");
+  const [petBreed, setPetBreed] = useState("");
+  const [petAge, setPetAge] = useState("");
+  const { userId,userToken, userFullName } = useContext(UserContext);
+  
+
     const handleSubmitPet = () => {
       const data = {
         pet_name: petName,
@@ -28,10 +36,11 @@ function Profile({ navigation}){
       axios({
         method: "POST",
         data,
-        url: "http://192.168.1.4:5000/user/addPet",
+        url: `http://192.168.1.8:5000/user/addPet/${userId}`,
       })
         .then((res) => {
             console.log(res);
+            setPets([...pets, res.data]);
             setModalVisible(false);
         }
         )
@@ -54,6 +63,17 @@ function Profile({ navigation}){
         setPetAge(value)
       }
 
+       useEffect(()=>{
+        //console.log(userToken, userId)
+        
+        axios({
+          method: "GET",
+          url: `http://192.168.1.8:5000/user/getPets/${userId}`
+        }).then((res)=>{
+          setPets(res.data)
+        })
+       }, [])
+
 
     return(
         <View style={styles.container}>
@@ -67,14 +87,15 @@ function Profile({ navigation}){
                 style={styles.profilePic}/>
                 <View style={{flex:0.3}}/>
                 <View style={styles.textContainer}>
-                    <Text style={styles.name}>Nour Mshawrab</Text>
+                    <Text style={styles.name}>{userFullName}</Text>
                     <Text style={styles.location}>Lebanon, Beirut</Text>
                 </View>
             </View>
             <View>
-                <Pet nav={navigation}/>
-                <Pet nav={navigation}/>
-                <Pet nav={navigation}/>
+                
+                {pets.map((pet)=>{
+                  return <Pet key={pet._id} nav={navigation} petName={pet.pet_name} petAge={pet.age} petBreed={pet.breed}/>
+                })}
             </View>
             </ScrollView>
             <TouchableOpacity style={styles.addPet} onPress={handleModal}>
@@ -92,6 +113,7 @@ function Profile({ navigation}){
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
                     <View>
+                    <MaterialIcons onPress={() => setModalVisible(!isModalVisible)} style={styles.close} name="close" size={24} color="black" />
                     <Pressable
                     style={styles.button}
                     onPress={() => setModalVisible(!isModalVisible)}
@@ -106,7 +128,7 @@ function Profile({ navigation}){
                         value={petBreed} onChangeText={handleBreedChange}></TextInput>
                         <TextInput style={styles.modalText} placeholder='Pet Age'
                         value={petAge} onChangeText={handleAgeChange}></TextInput>
-                    {/* <Text style={styles.modalText}>Hello World!</Text> */}
+                    
                     </View>
                     <Pressable
                     style={styles.savebutton}
@@ -142,7 +164,7 @@ const styles=StyleSheet.create({
     editIcon:{
         display:'flex',
         flexDirection:'row',
-        justifyContent:'space-between'
+        justifyContent:'space-between',
     },
 
     textContainer:{
@@ -161,14 +183,19 @@ const styles=StyleSheet.create({
     },
     addPet:{
         width:'20%',
-        height:'10%',
+        height:60,
         backgroundColor:'#FF914A',
         borderRadius:20,
         position:'absolute',
         justifyContent:'center',
         alignItems:'center',
         alignSelf:'center',
-        bottom:0
+        bottom:10
+    },
+    close: {
+      alignSelf: "flex-end",
+      right:-80,
+      top:-20
     },
     add:{
         fontSize:40,
@@ -184,6 +211,7 @@ const styles=StyleSheet.create({
       },
       modalView: {
         margin: 20,
+        width:'80%',
         backgroundColor: "white",
         borderRadius: 20,
         padding: 35,
