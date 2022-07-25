@@ -15,7 +15,9 @@ const styles=StyleSheet.create({
         borderRadius:20,
         backgroundColor:'white',
         // marginTop:30,
-        marginLeft:20
+        marginLeft:20,
+        elevation:5
+
     },
     time:{
         textAlign:'center',
