@@ -8,13 +8,13 @@ import { Ionicons } from '@expo/vector-icons';
 function VetProfile({ navigation}){
     return(
         <View style={styles.container}>
-                <View>
-                    <Ionicons style={styles.back} name="chevron-back-outline" size={24} color="#FF914A" onPress={() => navigation.goBack()}/>
-                </View>
+               
+              
             <View style={styles.imageContainer}>
+                    <Ionicons style={styles.back} name="chevron-back-outline" size={24} color="#FF914A" onPress={() => navigation.goBack()}/>
                     <Image source={require("../../assets/Doctor1.png")}
                     style={styles.vetImage}/>
-                <ProfBox name='Vet name'/>
+                {/* <ProfBox name='Vet name'/> */}
             </View>
             <View>
                 <Text style={styles.schedule}>Schedule</Text>
@@ -57,6 +57,12 @@ const styles=StyleSheet.create({
         flex:1,
         // alignSelf:'center',
     },
+    back:{
+        position:'absolute',
+        zIndex:1,
+        left:20,
+        top:20
+    },
 
     imageContainer:{
         height:360,
@@ -68,11 +74,11 @@ const styles=StyleSheet.create({
     vetImage:{
         width:'100%',
         flex:1,
-        height:'100%',
+        height:360,
         position:'absolute',
     },
     schedule:{
-        marginTop:80,
+        marginTop:30,
         marginLeft:20,
         fontSize:20,
         fontWeight:'500'
