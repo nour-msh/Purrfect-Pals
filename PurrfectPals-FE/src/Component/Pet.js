@@ -1,16 +1,20 @@
+import { useState } from "react";
 import {Text,StyleSheet,View, Image} from "react-native";
 
-function Pet({nav}){
+function Pet({nav, petName, petAge, petBreed}){
+
+
     return(
         <View style={styles.Container}>
+                
             <View style={styles.imageContainer}>
                 <Image source={require("../../assets/dog2.jpeg")}
                 style={styles.dog1}/>
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.name} onPress={()=>nav.navigate('PetProfile')}>Pet Name</Text>
-                <Text style={styles.desc}>Breed</Text>
-                <Text style={styles.desc}>Age</Text>
+                <Text style={styles.name} onPress={()=>nav.navigate('PetProfile')}>{petName}</Text>
+                <Text style={styles.desc}>{petBreed}</Text>
+                <Text style={styles.desc}>{petAge}</Text>
             </View>
         </View>
     )
@@ -24,17 +28,18 @@ const styles=StyleSheet.create({
     marginTop:20,
     },
     dog1:{
-        flex:1,
-        width:161,
+        width:143,
         
         height:178,
-        borderBottomLeftRadius:20,
-        borderTopLeftRadius:20,
+        // borderBottomLeftRadius:20,
+        // borderTopLeftRadius:20,
+        borderRadius:20
     },
     textContainer:{
         // width:161,
-        flex:1,
-        height:178,
+        flex:0.9,
+        height:150,
+        top:15,
         backgroundColor:'white',
         borderLeftColor:'white',
         borderRightColor:'#e5e5e5',
