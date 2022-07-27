@@ -4,10 +4,12 @@ import { Post} from "../Model/Post.js";
 export async function addPost(req,res){
     try{
         const{
+            pet_name,
             duration,
             description,
         }=req.body;
         const post=new Post({
+            pet_name,
             duration,
             description,
         })
