@@ -1,4 +1,4 @@
-import { Text, View, Image, StyleSheet, TextInput } from "react-native";
+import { Text, View, Image, StyleSheet, TextInput,ScrollView, KeyboardAvoidingView } from "react-native";
 import React, { useState } from "react";
 import axios from "axios";
 import Checkbox from "react-native-checkbox-animated";
@@ -20,11 +20,10 @@ function SignUp({ navigation }) {
       phone_number: phoneNumber,
       user_type: checked ? "1" : "0",
     };
-    //e.preventDefault();
     axios({
       method: "POST",
       data,
-      url: "http://192.168.1.2:5000/user/register",
+      url: "http://192.168.1.4:5000/user/register",
     })
       .then((res) => {
         console.log(res);
@@ -51,7 +50,9 @@ function SignUp({ navigation }) {
   const [checked, setChecked] = useState(false);
 
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView style={styles.container}>
+    <ScrollView showsVerticalScrollIndicator={false}>
+
       <Logo />
       <Image
         source={require("../../assets/signup-doggy.png")}
@@ -96,37 +97,35 @@ function SignUp({ navigation }) {
       <Text style={styles.member} onPress={() => navigation.navigate("LogIn")}>
         Already have an account?
       </Text>
-    </View>
+      </ScrollView>
+      </KeyboardAvoidingView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 25,
+    padding: 20,
   },
   dog: {
     width: 290,
     height: 176,
-    // marginLeft:33,
     marginTop: 5,
     alignSelf: "center",
   },
   input: {
     fontSize: 18,
     height: 55,
-    // width:294,
     borderRadius: 8,
     borderWidth: 1,
     borderColor: "#e5e5e5",
     marginTop: 0,
-    // marginLeft:33,
     padding: 15,
     marginBottom: 5,
   },
   member: {
     textAlign: "center",
     color: "#CAC8C8",
-    padding: 10,
+    padding: 5,
   },
 });
 
