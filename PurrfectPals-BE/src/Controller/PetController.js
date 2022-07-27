@@ -4,13 +4,13 @@ import {User} from '../Model/User.js';
 
 export async function addPet(req, res){
     try{
+        const user_id = req.params.user_id
         const {
             pet_name,
             image,
             breed,
             age,
             pet_type,
-            pet_owner_id,
         } = req.body;
     
         const pet= new Pet({
@@ -19,11 +19,11 @@ export async function addPet(req, res){
             breed,
             age,
             pet_type,
-            pet_owner_id,
+            user_id,
         })
         await pet.save();
 
-        const {user_id} = req.body
+       
         await User.findByIdAndUpdate(
             user_id,
             { $push: { pets: pet._id } },
@@ -34,3 +34,14 @@ export async function addPet(req, res){
         res.status(400).json({message:error.message});
     }
 };
+
+export async function getPets(req,res){
+    try{
+        const results = await Pet.find({user_id: req.params.user_id})
+        res.status(200).json(results)
+    } catch (error) {
+        res.status(500).json({
+            message: error.message
+        })
+    }
+}
