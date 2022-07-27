@@ -1,34 +1,63 @@
 import { useContext } from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
-import AccessButton from "../Component/AccessButton";
+import { StyleSheet, Text, TouchableOpacity, View, Image, ImagePickerIOS } from "react-native";
+import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 import { TextInput } from "react-native-gesture-handler";
 import { UserContext } from "../../App";
-function EditProfile({ navigation }) {
-  const [fullName, setFullName] = useState("");
+
+
+
+function EditProfile({ navigation }) { 
+  const { userId, userFullName, setUserFullName, userPhoneNumber, setUserPhoneNumber } = useContext(UserContext);
+  const [fullName, setFullName] = useState(userFullName);
   const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const { id_token } = useContext(UserContext);
+  const [phoneNumber, setPhoneNumber] = useState(userPhoneNumber);
+  
 
   const handleUpdate = async () => {
     const data = {
       full_name: fullName,
-      email: email,
+      //email: email,
       phone_number: phoneNumber,
     };
     await axios({
         method: "PUT",
         data,
-        url: `http://192.168.1.8:5000/user/updateUserProfile/${id_token}`,
+        url: `http://192.168.1.4:5000/user/updateUserProfile/${userId}`,
     }).then((response) => {
         console.log('1')
+        setUserFullName(fullName)
+        setUserPhoneNumber(userPhoneNumber)
       console.log(response);
     });
   };
 
+
+   
+    const [image, setImage] = useState(null);
+  
+     const pickImage = async () =>{
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
+  
+      console.log(result);
+  
+      if (!result.cancelled) {
+        setImage(result.uri);
+    console.warn("you clicked me")  
+    }
+  }
+
   const handleFullNameChange = (value) => {
+    setFullName(value);
+  };
+  const handleImageChange = (value) => {
     setFullName(value);
   };
   const handleNumberChange = (value) => {
@@ -46,13 +75,14 @@ function EditProfile({ navigation }) {
         size={24}
         color="#FF914A"
         onPress={() => navigation.goBack()}
-      />
-      <View style={styles.profContainer}>
-        <Image
-          source={require("../../assets/profile-pic.jpeg")}
-          style={styles.profPic}
         />
-        <Text style={styles.name}>Change Profile Photo</Text>
+      <View style={styles.profContainer}>
+       <View>
+        {image && <Image source={{uri:image}} style={{flex:1/2}}/>}
+       </View>
+        <Text style={styles.name} 
+        onPress={pickImage}
+        >Change Profile Photo</Text>
       </View>
       <View>
         <Text style={styles.info}>My Name</Text>
@@ -67,16 +97,18 @@ function EditProfile({ navigation }) {
           style={styles.input}
           value={phoneNumber}
           onChangeText={handleNumberChange}
-        ></TextInput>
+          ></TextInput>
 
         <Text style={styles.info}>Email</Text>
         <TextInput
           style={styles.input}
           value={email}
           onChangeText={handleEmailChange}
+          editable={false}
+          selectTextOnFocus={false}
         ></TextInput>
 
-        <Text style={styles.map}>Edit on map</Text>
+        <Text style={styles.map} onPress={() => navigation.navigate("Maps")}>Edit on map</Text>
       </View>
       <TouchableOpacity
       style={styles.saveButton}
@@ -89,7 +121,6 @@ function EditProfile({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    // alignItems:'center'
     padding: 40,
   },
   profContainer: {
@@ -97,9 +128,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
     marginTop: 60,
     marginBottom: 20,
-    // backgroundColor:'#FF914A',
-    // height:261,
-    // width:360
   },
   editIcon: {
     display: "flex",
@@ -146,4 +174,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default EditProfile;
+export default EditProfile
