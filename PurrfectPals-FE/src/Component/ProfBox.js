@@ -52,11 +52,6 @@ function ProfBox(props) {
 
   return (
     <View style={styles.profBox}>
-      {/* <TouchableOpacity style={styles.addPet}>
-        <Text style={styles.add} onPress={handleModalVisibility}>
-          +
-        </Text>
-      </TouchableOpacity> */}
       <Text style={styles.name} onPress={handleModalVisibility}>{props.name}</Text>
       <Text style={styles.petType}>{props.petType}</Text>
 
@@ -115,6 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 30,
     position: "absolute",
+    zIndex:1,
     bottom: -30,
     alignSelf: "center",
     elevation:10
