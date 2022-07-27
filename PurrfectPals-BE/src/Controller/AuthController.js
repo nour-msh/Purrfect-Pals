@@ -1,10 +1,12 @@
 import {User} from "../Model/User.js";
-// import { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
+const JWT_SECRET='PurrfectPals'
 
 async function addUser(body,password) {
     const {
       full_name,
+      image,
       email,
       phone_number,
       user_type,
@@ -12,6 +14,7 @@ async function addUser(body,password) {
   
     const user = new User({
       full_name,
+      image,
       email,
       password,
       phone_number,
@@ -57,10 +60,18 @@ export async function login(req,res){
 
     const token = jwt.sign(
       {_id: user._id, name: user.name, email: user.email},
-      TOKEN_KEY
+      JWT_SECRET
     );
 
-    return res.header('auth-token', token).send(token);
+    //return res.header('auth-token', token).send(token);
+    
+    return res.status(200).send({
+      message: "login successful",
+      user_id: user._id,
+      user_name: user.full_name,
+      user_phone: user.phone_number,
+      token: token
+    })
   } catch (error) {
     console.log(error);
     res.status(500).send(error);
