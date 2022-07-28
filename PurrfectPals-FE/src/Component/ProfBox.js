@@ -109,9 +109,7 @@ const styles = StyleSheet.create({
     padding:20,
     backgroundColor: "white",
     borderRadius: 30,
-    position: "absolute",
-    zIndex:1,
-    bottom: -30,
+    top: -80,
     alignSelf: "center",
     elevation:10
   },
@@ -120,12 +118,9 @@ const styles = StyleSheet.create({
     height: "40%",
     backgroundColor: "#FF914A",
     borderRadius: 30,
-    position: "absolute",
     justifyContent: "center",
     alignItems: "center",
     alignSelf: "center",
-    // Top: 0,
-    // right: -25,
   },
   add: {
     fontSize: 30,
