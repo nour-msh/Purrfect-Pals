@@ -20,3 +20,15 @@ export async function addReview(req,res){
         res.status(400).json({message:error.message});
     }
 }
+
+export async function getAllReviewsByPetId(req,res){
+    try{
+        const results = await Review.find({pet_id: req.params.pet_id})
+        res.status(200).json(results)
+    } catch (error) {
+        console.log(`getReviews error: ${error}`)
+        res.status(500).json({
+            message: error.message
+        })
+    }
+}
