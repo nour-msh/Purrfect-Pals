@@ -14,7 +14,6 @@ function VetProfile({ navigation}){
                     <Ionicons style={styles.back} name="chevron-back-outline" size={24} color="#FF914A" onPress={() => navigation.goBack()}/>
                     <Image source={require("../../assets/Doctor1.png")}
                     style={styles.vetImage}/>
-                {/* <ProfBox name='Vet name'/> */}
             </View>
             <View>
                 <Text style={styles.schedule}>Schedule</Text>
