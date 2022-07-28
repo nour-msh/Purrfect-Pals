@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {Text,StyleSheet,View, Image} from "react-native";
 
-function Pet({nav, petName, petAge, petBreed}){
+function Pet({nav, petId,petName, petAge, petBreed}){
 
 
     return(
@@ -12,7 +12,7 @@ function Pet({nav, petName, petAge, petBreed}){
                 style={styles.dog1}/>
             </View>
             <View style={styles.textContainer}>
-                <Text style={styles.name} onPress={()=>nav.navigate('PetProfile')}>{petName}</Text>
+                <Text style={styles.name} onPress={()=>nav.navigate("PetProfile", {data: {petId: petId}})}>{petName}</Text>
                 <Text style={styles.desc}>{petBreed}</Text>
                 <Text style={styles.desc}>{petAge}</Text>
             </View>
@@ -31,12 +31,9 @@ const styles=StyleSheet.create({
         width:143,
         
         height:178,
-        // borderBottomLeftRadius:20,
-        // borderTopLeftRadius:20,
         borderRadius:20
     },
     textContainer:{
-        // width:161,
         flex:0.9,
         height:150,
         top:15,
