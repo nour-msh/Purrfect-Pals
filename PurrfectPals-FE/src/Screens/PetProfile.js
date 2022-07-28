@@ -4,7 +4,6 @@ import { MaterialIcons } from '@expo/vector-icons';
 import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { Ionicons } from '@expo/vector-icons';
-import BackIcon from "../Component/BackIcon";
 import { ScrollView } from "react-native-gesture-handler";
 import { UserContext } from "../../App";
 import { useRoute } from "@react-navigation/native";

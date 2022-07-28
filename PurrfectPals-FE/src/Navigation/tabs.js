@@ -9,6 +9,7 @@ import EditProfile from "../Screens/EditProfile";
 import LogIn from "../Screens/LogIn";
 import SignUp from "../Screens/SignUp";
 import chatComponent from "../Screens/chatComponent";
+import Maps from '../Screens/Maps';
 import OnboardingItems from "../../onBoarding/OnBoardingItems";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -28,6 +29,7 @@ function Stacks() {
       <Stack.Screen name="VetProfile" component={VetProfile} />
       <Stack.Screen name="PetProfile" component={PetProfile} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
+      <Stack.Screen name="Maps" component={Maps}/>
     </Stack.Navigator>
   );
 }

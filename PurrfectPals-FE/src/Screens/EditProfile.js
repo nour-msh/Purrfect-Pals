@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { StyleSheet, Text, TouchableOpacity, View, Image, ImagePickerIOS } from "react-native";
+import { StyleSheet, Text, TouchableOpacity, View, Image} from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import { useState } from "react";
@@ -25,7 +25,7 @@ function EditProfile({ navigation }) {
     await axios({
         method: "PUT",
         data,
-        url: `http://192.168.1.4:5000/user/updateUserProfile/${userId}`,
+        url: `http://192.168.1.3:5000/user/updateUserProfile/${userId}`,
     }).then((response) => {
         console.log('1')
         setUserFullName(fullName)
@@ -78,7 +78,7 @@ function EditProfile({ navigation }) {
         />
       <View style={styles.profContainer}>
        <View>
-        {image && <Image source={{uri:image}} style={{flex:1/2}}/>}
+        <Image source={{uri:image}} style={styles.profPic}/>
        </View>
         <Text style={styles.name} 
         onPress={pickImage}

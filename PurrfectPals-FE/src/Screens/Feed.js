@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { View, StyleSheet, ScrollView, TextInput,Text } from "react-native";
+import { View, StyleSheet, ScrollView, TextInput, Text } from "react-native";
 import Vet from "../Component/Vet";
 import axios from "axios";
 import { useContext } from "react";
@@ -7,26 +7,22 @@ import Post from "../Component/Post";
 import { UserContext } from "../../App";
 import MyComponent from "../Component/Search";
 
-
-
-
-
 function Feed({ navigation }) {
-  const { userId,userToken, userFullName } = useContext(UserContext);
-  
+  const { userId, userToken, userFullName } = useContext(UserContext);
+
   const [posts, setPosts] = useState([]);
   const [vets, setVets] = useState([]);
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://192.168.1.8:5000/user/getPosts`,
+      url: `http://192.168.1.3:5000/user/getPosts`,
     }).then((res) => {
       console.log(res.data);
       setPosts(res.data);
     });
     axios({
       method: "GET",
-      url: `http://192.168.1.8:5000/user/getVets`,
+      url: `http://192.168.1.3:5000/user/getVets`,
     }).then((res) => {
       console.log(res.data);
       setVets(res.data);
@@ -40,7 +36,7 @@ function Feed({ navigation }) {
       >
         <View>
           <Text style={styles.name}>Hello, {userFullName}</Text>
-            <MyComponent/>
+          <MyComponent/>
         </View>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.Vets}>
@@ -63,6 +59,7 @@ function Feed({ navigation }) {
           })}
         </View>
       </ScrollView>
+ 
     </View>
   );
 }

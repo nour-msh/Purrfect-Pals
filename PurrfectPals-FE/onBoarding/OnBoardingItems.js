@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Logo from "../src/Component/Logo";
+import Onboarding from "react-native-onboarding-swiper";
 import {
   Image,
   TouchableOpacity,
@@ -8,8 +8,6 @@ import {
   StyleSheet,
   AsyncStorage
 } from "react-native";
-import Onboarding from "react-native-onboarding-swiper";
-import { UserContext } from "../App";
 const dot = ({ isLight, selected }) => {
   let backgroundColor;
   if (isLight) {
@@ -29,11 +27,17 @@ const dot = ({ isLight, selected }) => {
     />
   );
 };
+
+
+
 const Done = ({ ...props }) => (
   <TouchableOpacity style={{ marginHorizontal: 10 }} {...props}>
     <Text style={{ fontSize: 16,color:'#FF914A' }}>Let's Go</Text>
   </TouchableOpacity>
 );
+
+
+
 const OnBoardingItems = ({ navigation }) => {
   const value_token = AsyncStorage.getItem("@id_token");
 
@@ -41,7 +45,6 @@ const OnBoardingItems = ({ navigation }) => {
     <>
       {value_token !== null ? (
         <Onboarding
-          // ref={onboardingRef}
           DotComponent={dot}
           DoneButtonComponent={Done}
           showSkip={false}
@@ -100,6 +103,8 @@ const OnBoardingItems = ({ navigation }) => {
   );
 };
 
+
+// Stylesheet
 const styles = StyleSheet.create({
   topLogo: {
     width: 35,

@@ -17,6 +17,9 @@ const userSchema = new mongoose.Schema(
         phone_number:{
             type: Number,
         },
+        image:{
+            type: String,
+        },
 
         user_type:{
             type: String,
@@ -24,6 +27,10 @@ const userSchema = new mongoose.Schema(
         pets:[{
             type: mongoose.Types.ObjectId,
             ref: 'Pet'
+        }],
+        reviews:[{
+            type: mongoose.Types.ObjectId,
+            ref: 'Review'
         }],
         posts:[{
             type: mongoose.Types.ObjectId,

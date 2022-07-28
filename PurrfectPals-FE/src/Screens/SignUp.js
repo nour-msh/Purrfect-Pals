@@ -23,7 +23,7 @@ function SignUp({ navigation }) {
     axios({
       method: "POST",
       data,
-      url: "http://192.168.1.4:5000/user/register",
+      url: "http://192.168.1.3:5000/user/register",
     })
       .then((res) => {
         console.log(res);

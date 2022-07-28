@@ -13,16 +13,14 @@ const petSchema= new mongoose.Schema({
         type: Number,
     },
     reviews: [{
-        text:{
+        review:{
             type: String,
         },
-        rating:{
-            type: Number,
-        },
     }],
-    users:{
+    user_id:{
         type: mongoose.Types.ObjectId,
-        ref: 'User'
+        ref: 'User',
+        required: true,
     },
     petCategory:{
         type: mongoose.Types.ObjectId,

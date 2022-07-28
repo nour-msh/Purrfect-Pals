@@ -1,17 +1,19 @@
 import {Text, Modal,Pressable, Image,View, StyleSheet,ScrollView,TouchableOpacity} from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import { MaterialIcons } from '@expo/vector-icons';
 import { useEffect, useState } from 'react';
 import { useContext } from "react";
-import axios from "axios";
 import { UserContext } from "../../App";
 
+import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+
+import axios from "axios";
 
 import Pet from '../Component/Pet';
 
 function Profile({ navigation}){
+
   const [isModalVisible, setModalVisible] = useState(false);
   const handleModal = () => setModalVisible(() => !isModalVisible);
   
@@ -36,7 +38,7 @@ function Profile({ navigation}){
       axios({
         method: "POST",
         data,
-        url: `http://192.168.1.8:5000/user/addPet/${userId}`,
+        url: `http://192.168.1.3:5000/user/addPet/${userId}`,
       })
         .then((res) => {
             console.log(res);
@@ -64,16 +66,16 @@ function Profile({ navigation}){
       }
 
        useEffect(()=>{
-        //console.log(userToken, userId)
         
         axios({
           method: "GET",
-          url: `http://192.168.1.8:5000/user/getPets/${userId}`
+          url: `http://192.168.1.3:5000/user/getPets/${userId}`
         }).then((res)=>{
           setPets(res.data)
         })
        }, [])
 
+       
 
     return(
         <View style={styles.container}>
@@ -94,7 +96,7 @@ function Profile({ navigation}){
             <View>
                 
                 {pets.map((pet)=>{
-                  return <Pet key={pet._id} nav={navigation} petName={pet.pet_name} petAge={pet.age} petBreed={pet.breed}/>
+                  return <Pet key={pet._id} nav={navigation} petId={pet._id} petName={pet.pet_name} petAge={pet.age} petBreed={pet.breed}/>
                 })}
             </View>
             </ScrollView>
@@ -190,7 +192,7 @@ const styles=StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         alignSelf:'center',
-        bottom:10
+        bottom:15,
     },
     close: {
       alignSelf: "flex-end",

@@ -1,55 +1,39 @@
-import 'react-native-gesture-handler';
-// import { StyleSheet, Text, View } from 'react-native';
-// import Logo from "./src/Component/Logo";
-// import Welcome from './src/Screens/Welcome';
-// import Greeting from './src/Screens/Greeting';
-// import SecondGreeting from './src/Screens/SecondGreeting';
-// import SignUp from './src/Screens/SignUp';
-import LogIn from './src/Screens/LogIn';
-// import Post from './src/Component/Post';
-// import Vet from './src/Component/Vet';
-// import Pet from './src/Component/Pet';
-// import Feed from './src/Screens/Feed';
-// import Profile from './src/Screens/Profile';
-// import CategoryBox from './src/Component/CategoryBox';
-// import EditProfile from './src/Screens/EditProfile';
-// import PetProfile from './src/Screens/PetProfile';
-// import VetProfile from './src/Screens/VetProfile';
-// import DateBox from './src/Component/DateBox';
-// import ThirdGreeting from './src/Screens/ThirdGreeting';
-// import {NavigationContainer} from '@react-navigation/native';
-// import Tabs from './src/Navigation/tabs';
-// import Stacks from './src/Navigation/tabs';
+import "react-native-gesture-handler";
+import { createContext, useState } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import Stacks from "./src/Navigation/tabs";
+import React from "react";
+import DateBox from "./src/Component/DateBox";
+import { Time } from "react-native-gifted-chat";
+import TimeBox from "./src/Component/TimeBox";
+const ContextProvider = createContext();
 
-
-import React from 'react';
-
+export const UserContext = createContext();
 export default function App() {
+
+  const [userId, setUserId] = useState("")
+  const [userFullName, setUserFullName] = useState("")
+  const [userPhoneNumber, setUserPhoneNumber] = useState("")
+  const [userToken, setUserToken] = useState("")
+  
   return (
     <>
-    {/* <Logo/> */}
-    {/* <Welcome/> */}
-    {/* <Greeting/> */}
-    {/* <SecondGreeting/> */}
-    {/* <SignUp/> */}
-    <LogIn/>
-    {/* <Post/> */}
-    {/* <Vet/> */}
-    {/* <Pet/> */}
-    {/* <Feed/> */}
-    {/* <Profile/> */}
-    {/* <CategoryBox/> */}
-    {/* <EditProfile/> */}
-    {/* <PetProfile/> */}
-    {/* <VetProfile/> */}
-    {/* <DateBox/> */}
-    {/* <ThirdGreeting/> */}
-    {/* <NavigationContainer> */}
-        {/* <Tabs/> */}
-        {/* <Stacks/>
-    </NavigationContainer> */}
-
+      <UserContext.Provider value={{ 
+                                    userId,
+                                    setUserId,
+                                    userToken, 
+                                    setUserToken,
+                                    userFullName, 
+                                    setUserFullName, 
+                                    userPhoneNumber, 
+                                    setUserPhoneNumber 
+                                    }}>
+        <NavigationContainer>
+          <Stacks />
+        </NavigationContainer>
+      </UserContext.Provider> 
+      {/* <TimeBox/> */}
+      {/* <DateBox/> */}
     </>
   );
 }
-
