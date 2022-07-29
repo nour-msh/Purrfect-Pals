@@ -3,6 +3,8 @@ import { TextInput } from 'react-native-gesture-handler';
 import { useEffect, useState } from 'react';
 import { useContext } from "react";
 import { UserContext } from "../../App";
+import * as ImagePicker from 'expo-image-picker';
+
 
 import { MaterialIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -49,6 +51,25 @@ function Profile({ navigation}){
         .catch((error) => console.log(error));
     };
 
+    const [image, setImage] = useState(null);
+  
+     const pickImage = async () =>{
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
+  
+      console.log(result);
+  
+      if (!result.cancelled) {
+        setImage(result.uri);
+    console.warn("you clicked me")  
+    }
+  };
+
+
     const handleNameChange = (value) => {
         setPetname(value)
       }
@@ -69,13 +90,16 @@ function Profile({ navigation}){
         
         axios({
           method: "GET",
-          url: `http://192.168.1.3:5000/user/getPets/${userId}`
+          url: `http://192.168.1.4:5000/user/getPets/${userId}`
         }).then((res)=>{
           setPets(res.data)
         })
        }, [])
 
-       
+       const onPress = () => {
+        setModalVisible(!isModalVisible);
+        pickImage();
+      };
 
     return(
         <View style={styles.container}>
@@ -118,7 +142,8 @@ function Profile({ navigation}){
                     <MaterialIcons onPress={() => setModalVisible(!isModalVisible)} style={styles.close} name="close" size={24} color="black" />
                     <Pressable
                     style={styles.button}
-                    onPress={() => setModalVisible(!isModalVisible)}
+                    onPress={onPress
+                      }
                     >
                     <Text style={styles.textStyle}>Add Image</Text>
                     </Pressable>
