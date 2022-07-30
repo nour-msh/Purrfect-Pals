@@ -1,13 +1,13 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 
-function Post({ nav, duration,description,pet_name }) {
+function Post({ nav, petId,duration,description,pet_name }) {
   return (
     <View style={styles.Container}>
       <View style={styles.imageContainer}>
         <Image source={require("../../assets/dog1.jpeg")} style={styles.dog1} />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.name} onPress={() => nav.navigate("PetProfile")}>
+        <Text style={styles.name} onPress={()=>nav.navigate("PetProfile", {data: {petId: petId}})}>
           {pet_name}
         </Text>
         <Text style={styles.duration}>{duration}</Text>
