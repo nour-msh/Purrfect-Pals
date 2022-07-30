@@ -1,42 +1,13 @@
 import { StyleSheet,Text,View} from "react-native";
+import { TextInput } from "react-native-gesture-handler";
 
 function DateBox(){
     return(
         <View style={styles.container}>
-            <Text style={styles.dayNum}>4</Text>
-            <Text style={styles.day}>Sat</Text>
+            <TextInput style={styles.dayNum}>4</TextInput>
+            <TextInput style={styles.day}>Sat</TextInput>
         </View>
     )}
-
-// import React, { useState } from 'react'
-// import { Button } from 'react-native'
-// import DatePicker from 'react-native-date-picker'
-
-// function DateBox(){
-
-//   const [date, setDate] = useState(new Date())
-//   const [open, setOpen] = useState(false)
-
-//   return (
-//     <>
-//       <Button title="Open" onPress={() => setOpen(true)} />
-//       <DatePicker
-//         modal
-//         open={open}
-//         date={date}
-//         onConfirm={(date) => {
-//           setOpen(false)
-//           setDate(date)
-//         }}
-//         onCancel={() => {
-//           setOpen(false)
-//         }}
-//       />
-//     </>
-//   )
-// }
-
-
 
 const styles=StyleSheet.create({
     container:{
