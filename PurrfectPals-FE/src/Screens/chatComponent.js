@@ -1,5 +1,6 @@
 import firebase, { database } from "../../firebase";
 import { StatusBar } from "expo-status-bar";
+import { Header } from 'react-native-elements';
 import {
   collection,
   orderBy,
@@ -46,6 +47,15 @@ const ChatComponent = () => {
   }, []);
 
   return (
+    <>
+    <View>
+      <Header
+       backgroundColor='#FF914A'
+      centerComponent={{
+        text: "Purrfect Pals' community ",
+        style: { color: '#fff', fontSize: 16 },
+      }}/>
+    </View>
     <GiftedChat
       showUserAvatar={true}
       messages={messages}
@@ -56,11 +66,21 @@ const ChatComponent = () => {
         avatar: "https://i.pravatar.cc/300",
       }}
       messagesContainerStyle={{
-        backgroundColor: "white",
-        
+        backgroundColor: "white",        
       }}
-    />
+      />
+      </>
   );
 };
+
+const styles=StyleSheet.create({
+  header:{
+    height:60,
+    width:'100%',
+    backgroundColor:'#FF914A',
+    opacity:0.8,
+    
+  },
+})
 
 export default ChatComponent;
