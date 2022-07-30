@@ -12,8 +12,8 @@ function Vet({ nav, name }) {
       </View>
 
       <View style={styles.bottomContainer}>
-        <Text style={styles.vetName} onPress={() => nav.navigate("VetProfile")}>
-          {name}
+        <Text style={styles.vetName} onPress={() => nav.navigate("VetAppointment")}>
+          Dr. {name}
         </Text>
       </View>
     </View>
