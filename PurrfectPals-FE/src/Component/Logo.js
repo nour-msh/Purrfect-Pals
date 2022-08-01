@@ -13,7 +13,7 @@ function Logo() {
         source={require("../../assets/Purr-Logo.png")}
         style={styles.logo}
       />
-      <Text style={styles.title}>Purrfect Pals.</Text>
+      <Text style={styles.title}>Purrfect Pals</Text>
     </View>
   );
 }
