@@ -5,7 +5,8 @@ import axios from "axios";
 import { useContext } from "react";
 import Post from "../Component/Post";
 import { UserContext } from "../../App";
-import MyComponent from "../Component/Search";
+import SearchComponent from "../Component/Search";
+
 
 function Feed({ navigation }) {
   const { userId, userToken, userFullName } = useContext(UserContext);
@@ -15,14 +16,16 @@ function Feed({ navigation }) {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://192.168.1.3:5000/user/getPosts`,
+      url: `http://192.168.1.4:5000/user/getPosts`,
     }).then((res) => {
       console.log(res.data);
       setPosts(res.data);
     });
+  }, []);
+    useEffect(() => {
     axios({
       method: "GET",
-      url: `http://192.168.1.3:5000/user/getVets`,
+      url: `http://192.168.1.4:5000/user/getVets`,
     }).then((res) => {
       console.log(res.data);
       setVets(res.data);
@@ -35,8 +38,8 @@ function Feed({ navigation }) {
         showsVerticalScrollIndicator={false}
       >
         <View>
-          <Text style={styles.name}>Hello, {userFullName}</Text>
-          <MyComponent/>
+          <Text style={styles.name}>Hello {userFullName},</Text>
+          <SearchComponent posts={posts} setPosts={setPosts} />
         </View>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.Vets}>
@@ -47,10 +50,12 @@ function Feed({ navigation }) {
         </ScrollView>
         <View style={styles.Posts}>
           {posts.map((post) => {
+            // console.warn(post);
             return (
               <Post
                 key={post._id}
                 nav={navigation}
+                petImage={post.image}
                 pet_name={post.pet_name}
                 duration={post.duration}
                 description={post.description}
@@ -59,7 +64,6 @@ function Feed({ navigation }) {
           })}
         </View>
       </ScrollView>
- 
     </View>
   );
 }
@@ -68,9 +72,9 @@ const styles = StyleSheet.create({
   container: {
     padding: 25,
   },
-  name:{
-    fontSize:30,
-    fontWeight:'400',
+  name: {
+    fontSize: 30,
+    fontWeight: "400",
   },
   userContainer: {
     display: "flex",
