@@ -5,11 +5,11 @@ import {
   Modal,
   TextInput,
   Pressable,
-  TouchableOpacity,
 } from "react-native";
 import axios from "axios";
 import { useState } from "react";
 import { MaterialIcons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
 
 function ProfBox(props) {
   const [posts, setPosts] = useState([]);
@@ -20,16 +20,18 @@ function ProfBox(props) {
   const [duration, setDuration] = useState("");
   const [description, setDescription] = useState("");
 
+  // console.warn(props.petImage.toString());
   const handleSubmitPost = () => {
     const data = {
       pet_name: petName,
       duration: duration,
+      image: petImage,
       description: description,
     };
     axios({
       method: "POST",
       data,
-      url: "http://192.168.1.6:5000/user/addPost",
+      url: "http://192.168.1.4:5000/user/addPost",
     })
       .then((res) => {
         console.log(res);
@@ -52,9 +54,11 @@ function ProfBox(props) {
 
   return (
     <View style={styles.profBox}>
-      <Text style={styles.name} onPress={handleModalVisibility}>{props.name}</Text>
+      <Ionicons name="add" size={24} color="#FF914A" style={styles.request} onPress={handleModalVisibility} />
+      <Text style={styles.name} onPress={handleModalVisibility}>
+        {props.name}
+      </Text>
       <Text style={styles.petType}>{props.petType}</Text>
-
       <Modal
         animationType="slide"
         transparent={true}
@@ -75,19 +79,19 @@ function ProfBox(props) {
               />
               <TextInput
                 style={styles.modalText}
-                placeholder="Add Pet Name"
+                placeholder="Add pet name"
                 value={petName}
                 onChangeText={handlePetNameChange}
               ></TextInput>
               <TextInput
                 style={styles.modalText}
-                placeholder="Add duration"
+                placeholder="Requested petsitting duration"
                 value={duration}
                 onChangeText={handleDurationChange}
               ></TextInput>
               <TextInput
                 style={styles.modalText}
-                placeholder="Add description"
+                placeholder="Add pet description"
                 value={description}
                 onChangeText={handleDescriptionChange}
               ></TextInput>
@@ -106,12 +110,16 @@ const styles = StyleSheet.create({
   profBox: {
     width: "80%",
     height: 120,
-    padding:20,
+    padding: 20,
     backgroundColor: "white",
     borderRadius: 30,
     top: -80,
     alignSelf: "center",
-    elevation:10
+    elevation: 10,
+  },
+  request:{
+fontSize:20,
+textAlign:'right'
   },
   addPet: {
     width: "16%",
@@ -129,7 +137,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   name: {
-    padding: 5,
+    // padding: 5,
     textAlign: "center",
     fontWeight: "600",
     fontSize: 30,
@@ -148,7 +156,7 @@ const styles = StyleSheet.create({
   },
   modalView: {
     margin: 20,
-    width:'80%',
+    width: "80%",
     backgroundColor: "white",
     borderRadius: 20,
     padding: 35,
@@ -164,8 +172,8 @@ const styles = StyleSheet.create({
   },
   close: {
     alignSelf: "flex-end",
-    right:-80,
-    top:-20
+    right: -40,
+    top: -20,
   },
   savebutton: {
     backgroundColor: "transparent",
