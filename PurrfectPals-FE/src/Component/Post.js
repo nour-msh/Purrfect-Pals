@@ -1,13 +1,17 @@
 import { View, Text, StyleSheet, Image } from "react-native";
 
-function Post({ nav, petId,duration,description,pet_name }) {
+function Post({ nav, petId, duration, description, pet_name, petImage,petBreed }) {
+  // console.warn(petImage)
   return (
     <View style={styles.Container}>
       <View style={styles.imageContainer}>
-        <Image source={require("../../assets/dog1.jpeg")} style={styles.dog1} />
+        <Image source={{ uri: petImage }} style={styles.dog1} />
       </View>
       <View style={styles.textContainer}>
-        <Text style={styles.name} onPress={()=>nav.navigate("PetProfile", {data: {petId: petId}})}>
+        <Text
+          style={styles.name}
+          onPress={() => nav.navigate("PetProfile", { data: { petId,petImage,pet_name,petBreed } })}
+        >
           {pet_name}
         </Text>
         <Text style={styles.duration}>{duration}</Text>
@@ -26,13 +30,13 @@ const styles = StyleSheet.create({
   dog1: {
     width: 150,
     height: 178,
-    borderRadius:20
+    borderRadius: 20,
   },
   textContainer: {
     // width: 143,
-    flex:0.9,
+    flex: 0.9,
     height: 150,
-    top:15,
+    top: 15,
     backgroundColor: "white",
     borderLeftColor: "white",
     borderRightColor: "#e5e5e5",
