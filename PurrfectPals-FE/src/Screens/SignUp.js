@@ -11,6 +11,7 @@ function SignUp({ navigation }) {
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [user_type, setUser_type] = useState("");
+  // const [userImage, setUserImage] = useState("");
 
   const handleSubmitSignup = () => {
     const data = {
@@ -18,12 +19,13 @@ function SignUp({ navigation }) {
       email: email,
       password: password,
       phone_number: phoneNumber,
+      // image:userImage,
       user_type: checked ? "1" : "0",
     };
     axios({
       method: "POST",
       data,
-      url: "http://192.168.1.3:5000/user/register",
+      url: "http://192.168.1.4:5000/user/register",
     })
       .then((res) => {
         console.log(res);

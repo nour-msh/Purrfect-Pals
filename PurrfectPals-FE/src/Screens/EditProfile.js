@@ -25,7 +25,7 @@ function EditProfile({ navigation }) {
     await axios({
         method: "PUT",
         data,
-        url: `http://192.168.1.3:5000/user/updateUserProfile/${userId}`,
+        url: `http://192.168.1.4:5000/user/updateUserProfile/${userId}`,
     }).then((response) => {
         console.log('1')
         setUserFullName(fullName)
@@ -57,9 +57,7 @@ function EditProfile({ navigation }) {
   const handleFullNameChange = (value) => {
     setFullName(value);
   };
-  const handleImageChange = (value) => {
-    setFullName(value);
-  };
+
   const handleNumberChange = (value) => {
     setPhoneNumber(value);
   };

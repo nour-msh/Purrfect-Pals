@@ -16,7 +16,7 @@ function LogIn({ navigation }) {
   const { setUserId, setUserToken, setUserFullName, setUserPhoneNumber } = useContext(UserContext);
   const storeData = async (value) => {
     toggleState(value);
-    console.warn(id_token);
+    // console.warn(id_token);
     await AsyncStorage.setItem("@id_token", value);
     window.location.reload(false);
   };
@@ -29,7 +29,7 @@ function LogIn({ navigation }) {
     axios({
       method: "post",
       data,
-      url: "http://192.168.1.3:5000/user/login",
+      url: "http://192.168.1.4:5000/user/login",
     })
       .then((res) => {
         console.log(res.data)
@@ -37,8 +37,12 @@ function LogIn({ navigation }) {
         setUserToken(res.data.token)
         setUserFullName(res.data.user_name)
         setUserPhoneNumber(res.data.user_phone)
-        console.log(2)
-        navigation.navigate("Tabs");
+        if(res?.data.user_type==="1"){
+          navigation.navigate("VetProfile")}
+          else{
+
+            navigation.navigate("Tabs");
+          }
       })
       .catch((error) => {
         console.log(error)});

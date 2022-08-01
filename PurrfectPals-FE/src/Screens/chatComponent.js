@@ -16,6 +16,9 @@ import { GiftedChat } from "react-native-gifted-chat";
 const ChatComponent = () => {
   const { userId, userToken, userFullName } = useContext(UserContext);
   const [messages, setMessages] = useState([]);
+
+
+  
   useEffect(() => {
     const collectionRef = collection(database, "chats");
     const q = query(collectionRef, orderBy("createdAt", "desc"));

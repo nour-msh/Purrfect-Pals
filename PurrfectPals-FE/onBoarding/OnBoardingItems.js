@@ -70,7 +70,7 @@ const OnBoardingItems = ({ navigation }) => {
                   style={styles.doggy}
                 />
               ),
-              title: "Hi Pal.",
+              title: "Hi Pal",
               subtitle: "Pet set. Pet ready. \n Pet go!",
             },
             {
@@ -81,7 +81,7 @@ const OnBoardingItems = ({ navigation }) => {
                   style={styles.kitty}
                 />
               ),
-              title: "Hi Hooman.",
+              title: "Hi Hooman",
               subtitle: "I really wanna see you soon. \n Sign Up hooman",
             },
             {
@@ -92,7 +92,7 @@ const OnBoardingItems = ({ navigation }) => {
                   style={styles.cat}
                 />
               ),
-              title: "‘pal, \n Come On’",
+              title: "Pal come on!",
             },
           ]}
         />
