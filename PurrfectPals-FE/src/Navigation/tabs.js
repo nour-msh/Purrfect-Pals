@@ -3,12 +3,13 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 import Feed from "../Screens/Feed";
 import Profile from "../Screens/Profile";
-import VetProfile from "../Screens/VetProfile";
+import VetAppointment from "../Screens/VetAppointment";
 import PetProfile from "../Screens/PetProfile";
 import EditProfile from "../Screens/EditProfile";
 import LogIn from "../Screens/LogIn";
 import SignUp from "../Screens/SignUp";
 import chatComponent from "../Screens/chatComponent";
+import VetProfile from "../Screens/VetProfile";
 import Maps from '../Screens/Maps';
 import OnboardingItems from "../../onBoarding/OnBoardingItems";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -26,10 +27,11 @@ function Stacks() {
       <Stack.Screen name="LogIn" component={LogIn} />
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="Feed" component={Feed} />
-      <Stack.Screen name="VetProfile" component={VetProfile} />
+      <Stack.Screen name="VetAppointment" component={VetAppointment} />
       <Stack.Screen name="PetProfile" component={PetProfile} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Maps" component={Maps}/>
+      <Stack.Screen name="VetProfile" component={VetProfile}/>
     </Stack.Navigator>
   );
 }
@@ -75,7 +77,7 @@ function Tabs() {
             name="chatComponent"
             component={chatComponent}
             options={{
-              tabBarLabel: "Messages",
+              tabBarLabel: "Community",
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons
                   name="message"
