@@ -37,12 +37,12 @@ export default function App() {
                 <Text>Purrfect</Text>
             </Callout>
         </Marker>
-        <Circle 
+        {/* <Circle 
             center={pin}
             radius={1000}
             fillColor="#ffdec8"
             strokeColor='transparent'
-        />
+        /> */}
     </MapView>
 
     </View>
