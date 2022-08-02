@@ -10,12 +10,12 @@ import LogIn from "../Screens/LogIn";
 import SignUp from "../Screens/SignUp";
 import chatComponent from "../Screens/chatComponent";
 import VetProfile from "../Screens/VetProfile";
+import Agenda from "../Screens/Agenda";
 import Maps from '../Screens/Maps';
 import OnboardingItems from "../../onBoarding/OnBoardingItems";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { UserContext } from "../../App";
-
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
@@ -32,6 +32,7 @@ function Stacks() {
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Maps" component={Maps}/>
       <Stack.Screen name="VetProfile" component={VetProfile}/>
+
     </Stack.Navigator>
   );
 }
@@ -81,6 +82,20 @@ function Tabs() {
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons
                   name="message"
+                  color={color}
+                  size={size}
+                />
+              ),
+            }}
+          />
+          <Tab.Screen
+            name="agenda"
+            component={Agenda}
+            options={{
+              tabBarLabel: "Agenda",
+              tabBarIcon: ({ color, size }) => (
+                <MaterialCommunityIcons
+                  name="clipboard-text-outline"
                   color={color}
                   size={size}
                 />
