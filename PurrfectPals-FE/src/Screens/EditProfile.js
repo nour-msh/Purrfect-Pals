@@ -15,12 +15,14 @@ function EditProfile({ navigation }) {
     userPhoneNumber,
     setUserPhoneNumber,
     setUserImage,
+    userImage
   } = useContext(UserContext);
   const [fullName, setFullName] = useState(userFullName);
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState(userImage);
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState(userPhoneNumber);
-
+console.log(phoneNumber)
+console.log(userPhoneNumber)
   const handleUpdate = async () => {
     const data = {
       full_name: fullName,
@@ -34,7 +36,7 @@ function EditProfile({ navigation }) {
     }).then((response) => {
       console.log("1");
       setUserFullName(fullName);
-      setUserPhoneNumber(userPhoneNumber);
+      setUserPhoneNumber(phoneNumber);
       setUserImage(image);
       console.log(response);
     });
@@ -95,7 +97,7 @@ function EditProfile({ navigation }) {
         <Text style={styles.info}>Phone Number</Text>
         <TextInput
           style={styles.input}
-          value={phoneNumber}
+          value={""+phoneNumber}
           onChangeText={handleNumberChange}
         ></TextInput>
 
