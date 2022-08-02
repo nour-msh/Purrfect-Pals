@@ -26,13 +26,21 @@
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
-| OnBoarding  | Feed/Search  |
-| -----------------| -----|
-| ![Landing](https://github.com/julescript/spotifyndr/blob/master/demo/Landing_Page.jpg) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
 
-| Artists results  | Artist's Albums  |
-| -----------------| -----|
-| ![Artists results](https://github.com/julescript/spotifyndr/blob/master/demo/Artists_Page.jpg) | ![Artist's Albums](https://github.com/julescript/spotifyndr/blob/master/demo/Albums_Page.jpg) |
+| ![Android Large - 1](https://user-images.githubusercontent.com/96622211/182365959-5bfa3808-625f-4746-9a57-09ebbbbd0872.png)
+|![Android Large - 2](https://user-images.githubusercontent.com/96622211/182366470-f061761e-2de0-4343-bb22-a283ba054179.png)
+|![Android Large - 4](https://user-images.githubusercontent.com/96622211/182366503-5aaec8f9-9ee0-4f32-8d9f-f76933541092.png)
+|![Android Large - 1-1](https://user-images.githubusercontent.com/96622211/182366535-f0c6094d-18f7-4927-a022-f3e1e1dd1746.png)
+|![Android Large - 13](https://user-images.githubusercontent.com/96622211/182366582-abc67046-2c46-48c4-933e-b2d91ea11d35.png)
+|![Android Large - 4](https://user-images.githubusercontent.com/96622211/182366642-480c0ff2-abd4-4297-b7f9-7d6150d30b5c.png)
+|![Android Large - 3](https://user-images.githubusercontent.com/96622211/182366687-f20a6943-326a-43d6-855e-9ec97883714a.png)
+| ![Android Large - 5](https://user-images.githubusercontent.com/96622211/182366976-74438ff8-6f20-496f-a789-fa5982dc5cb2.png)
+|![Android Large - 8](https://user-images.githubusercontent.com/96622211/182367096-53127fae-0c7a-4500-8afc-c794b23bbe70.png)
+|![Component 4](https://user-images.githubusercontent.com/96622211/182368001-9aa69e6c-9764-4ebb-a1e3-e7275fb00c6e.png)
+|![Android Large - 10](https://user-images.githubusercontent.com/96622211/182368242-6e3fa414-121d-4d1d-9c16-c645b2764c90.png)
+|![Android Large - 11](https://user-images.githubusercontent.com/96622211/182368249-45ffa5ff-ec4c-494b-b0d0-8f44d0d21d2e.png)
+|![Android Large - 12](https://user-images.githubusercontent.com/96622211/182368303-b73fb190-acd8-475c-bb93-d6cbcee047e0.png)
+|
 
 
 <br><br>
