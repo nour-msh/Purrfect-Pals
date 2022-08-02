@@ -42,7 +42,6 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 |![Component 4](https://user-images.githubusercontent.com/96622211/182368001-9aa69e6c-9764-4ebb-a1e3-e7275fb00c6e.png)
 |![Android Large - 10](https://user-images.githubusercontent.com/96622211/182368242-6e3fa414-121d-4d1d-9c16-c645b2764c90.png)
 |![Android Large - 11](https://user-images.githubusercontent.com/96622211/182368249-45ffa5ff-ec4c-494b-b0d0-8f44d0d21d2e.png)
-|![Android Large - 12](https://user-images.githubusercontent.com/96622211/182368303-b73fb190-acd8-475c-bb93-d6cbcee047e0.png)
 |
 
 
