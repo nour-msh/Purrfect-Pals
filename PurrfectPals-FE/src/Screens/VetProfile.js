@@ -14,22 +14,26 @@ import { TextInput } from 'react-native-gesture-handler';
 
 
 function VetProfile({navigation}){
-    const [date, setDate] = useState([])
-    const [time, setTime] = useState([]);
+    const [email, setEmail] = useState('')
+    const [number, setNumber] = useState('');
+    const [specialty, setSpecialty] = useState('');
+    const [story, setStory] = useState('');
   const [image, setImage] = useState(null);
 
   const { userId, userToken, userFullName, userImage } =
   useContext(UserContext);
 
-    const handleSubmitAppointment = () => {
+    const handleSubmitPortfolio = () => {
         const data = {
-          date: date,
-          time: time,
+            email,
+            number,
+            specialty,
+            story,
         };
         axios({
           method: "POST",
           data,
-          url: `http://192.168.1.4:5000/user/addAppointment`,
+          url: `http://192.168.1.4:5000/user/addPortfolio`,
         })
           .then((res) => {
               console.log(res);
@@ -54,12 +58,18 @@ function VetProfile({navigation}){
       }
     }
 
-      const handleDateChange = (value) => {
-        setDate(value)
+      const handleEmailChange = (value) => {
+        setEmail(value)
       }
 
-      const handleTimeChange = (value) => {
-        setTime(value)
+      const handleNumberChange = (value) => {
+        setNumber(value)
+      }
+      const handleSpecialtyChange = (value) => {
+        setSpecialty(value)
+      }
+      const handleStoryChange = (value) => {
+        setStory(value)
       }
     return(
         <View style={styles.container}>
@@ -72,18 +82,30 @@ function VetProfile({navigation}){
             <View style={styles.help}>
       <Ionicons name="add" size={24} onPress={pickImage} color="#FF914A" style={styles.addImage}/>
                 <Text style={styles.drName} >Dr. {userFullName}</Text>
-                <TextInput placeholder='My Email' style={styles.input}></TextInput>
-                <TextInput placeholder='My Phone Number' style={styles.input}></TextInput>
+                <TextInput placeholder='My Email' style={styles.input}
+                value={email}
+                onChangeText={handleEmailChange}
+                ></TextInput>
+                <TextInput placeholder='My Phone Number' style={styles.input}
+                value={number}
+                onChangeText={handleNumberChange}
+                ></TextInput>
             </View>
             <View style={styles.inputContainer}>
             <Text style={styles.about}>My specialty:</Text>
-            <TextInput style={styles.about}></TextInput>
+            <TextInput style={styles.about}
+            value={specialty}
+            onChangeText={handleSpecialtyChange}
+            ></TextInput>
             </View>
             <View style={styles.inputContainer}>
             <Text style={styles.about}>My success story:</Text>
-            <TextInput style={styles.about}></TextInput>
+            <TextInput style={styles.about}
+            value={story}
+            onChangeText={handleStoryChange}
+            ></TextInput>
             </View>
-            <TouchableOpacity style={styles.save} onPress={handleSubmitAppointment}>
+            <TouchableOpacity style={styles.save} onPress={handleSubmitPortfolio}>
                 <Text style={styles.saveText}>Save</Text>
             </TouchableOpacity>
                 </ScrollView>
