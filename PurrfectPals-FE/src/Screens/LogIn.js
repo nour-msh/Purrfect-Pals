@@ -10,10 +10,12 @@ import { UserContext } from "../../App";
 import { ScrollView } from "react-native-gesture-handler";
 
 function LogIn({ navigation }) {
+
+
   const [myEmail, setMyEmail] = useState("");
   const [myPassword, setMyPassword] = useState("");
-  const [trigger, setTrigger] = useState(false);
-  const { setUserId, setUserToken, setUserFullName, setUserPhoneNumber } = useContext(UserContext);
+  // const [trigger, setTrigger] = useState(false);
+  const { setUserId, setUserToken, setUserFullName, setUserPhoneNumber,setUserImage } = useContext(UserContext);
   const storeData = async (value) => {
     toggleState(value);
     // console.warn(id_token);
@@ -32,9 +34,10 @@ function LogIn({ navigation }) {
       url: "http://192.168.1.4:5000/user/login",
     })
       .then((res) => {
-        console.log(res.data)
+        console.warn(res.data)
         setUserId(res.data.user_id)
         setUserToken(res.data.token)
+        setUserImage(res.data.image)
         setUserFullName(res.data.user_name)
         setUserPhoneNumber(res.data.user_phone)
         if(res?.data.user_type==="1"){
