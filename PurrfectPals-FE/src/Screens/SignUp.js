@@ -11,7 +11,7 @@ function SignUp({ navigation }) {
   const [password, setPassword] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [user_type, setUser_type] = useState("");
-  // const [userImage, setUserImage] = useState("");
+  const [image, setImage] = useState("");
 
   const handleSubmitSignup = () => {
     const data = {
@@ -19,7 +19,7 @@ function SignUp({ navigation }) {
       email: email,
       password: password,
       phone_number: phoneNumber,
-      // image:userImage,
+      image:image,
       user_type: checked ? "1" : "0",
     };
     axios({
