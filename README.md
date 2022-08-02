@@ -26,9 +26,9 @@
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
-| OnBoarding  | Sign Up/Sign In  |
+| OnBoarding  | Feed/Search  |
 | -----------------| -----|
-| ![Onboarding](https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?node-id=257%3A80)(https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?node-id=257%3A90)(https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?node-id=257%3A103)(https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?node-id=325%3A433) | ![Sign Up/Sign In](https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?node-id=257%3A142)(https://www.figma.com/file/LsuOx5Wnh5YTGSEtrgvz4l/Purrfect-Pals?node-id=257%3A116) |
+| ![Landing](https://github.com/julescript/spotifyndr/blob/master/demo/Landing_Page.jpg) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
@@ -51,10 +51,10 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <br><br>
 <img src="./readme/title5.svg"/>
 
-> Uing the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are screenshots from the real app
-| Landing  | Home/Search  |
+> Uing the above mentioned tech stacks and the wireframes built with figma from the user sries we have, the implementation of the app is shown as below, these are screenshots from the real app
+| OnBoarding  | Signup/Login  |
 | -----------------| -----|
-| ![Landing] | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+| ![OnBoarding](![](../figma%20images/Android%20Large%20-%201.png)) | ![Signup/Login](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
 
 
 <br><br>
