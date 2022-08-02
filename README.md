@@ -94,15 +94,19 @@ This is an example of how to list things you need to use the software and how to
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/nour-msh/Purrfect-Pals
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Run expo: expo start
-5. Run NodeJs: npm start
-6. 
+3. Run expo
+   ```sh
+   expo start
+   ```
+4. Run NodeJs
+   ```sh
+   npm start
+   ```
