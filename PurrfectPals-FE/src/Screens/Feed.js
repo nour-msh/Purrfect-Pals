@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { View, StyleSheet, ScrollView, TextInput, Text } from "react-native";
-import Vet from "../Component/Vet";
-import axios from "axios";
+import { View, StyleSheet, ScrollView, Text } from "react-native";
 import { useContext } from "react";
-import Post from "../Component/Post";
 import { UserContext } from "../../App";
+import axios from "axios";
+
+import Vet from "../Component/Vet";
+import Post from "../Component/Post";
 import SearchComponent from "../Component/Search";
 
 
