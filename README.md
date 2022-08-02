@@ -15,6 +15,9 @@
 > Purrfect Pals application is an app that links pet owners, pet sitters and veterinarians together. Upon clicking on a request sent by the pet owner or the pet sitter, because each pet owner can be a pet sitter and vice versa, users can access eachothers profiles and communicate.
 > 
 > Users can communicate through a community chat and can find eachother using the google maps feature.
+> Each user can add his/her pets to their profile, edit his/her profile, add a post requesting a pet sitter, and accessing the veterinaries' profiles.
+> A vet can add his contact information and share his specialty and a success story.
+
 ### User Stories
 - As a user, I want to be able to go out without leaving my pet without supervision.
 - As a user, I want to be able to find pet owners like me and communicate with them.
