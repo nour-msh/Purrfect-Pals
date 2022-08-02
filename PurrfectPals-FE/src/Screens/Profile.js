@@ -12,28 +12,27 @@ import { TextInput } from "react-native-gesture-handler";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { UserContext } from "../../App";
-import * as ImagePicker from "expo-image-picker";
+import axios from "axios";
 
+import * as ImagePicker from "expo-image-picker";
 import { MaterialIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-
-import axios from "axios";
 
 import Pet from "../Component/Pet";
 
 function Profile({ navigation }) {
   const [isModalVisible, setModalVisible] = useState(false);
   const handleModal = () => setModalVisible(() => !isModalVisible);
-  const [image, setImage] = useState(null);
 
-  // const [user, setUser] = useState("");
   const [pets, setPets] = useState([]);
+
+  const [image, setImage] = useState(null);
   const [petName, setPetname] = useState("");
-  // const [petImage, setPetImage] = useState("");
   const [petBreed, setPetBreed] = useState("");
   const [petAge, setPetAge] = useState("");
-  const { userId, userToken, userFullName} =
+
+  const { userId, userToken, userFullName, userImage } =
     useContext(UserContext);
 
   const handleSubmitPet = () => {
@@ -76,7 +75,6 @@ function Profile({ navigation }) {
     setPetname(value);
   };
 
-
   const handleBreedChange = (value) => {
     setPetBreed(value);
   };
@@ -93,7 +91,6 @@ function Profile({ navigation }) {
       setPets(res.data);
     });
   }, []);
-
 
   return (
     <View style={styles.container}>
@@ -113,10 +110,7 @@ function Profile({ navigation }) {
       </View>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.profileContainer}>
-          <Image
-            source={require("../../assets/profile-pic.jpeg")}
-            style={styles.profilePic}
-          />
+          <Image source={{ uri: userImage }} style={styles.profilePic} />
           <View style={{ flex: 0.3 }} />
           <View style={styles.textContainer}>
             <Text style={styles.name}>{userFullName}</Text>
