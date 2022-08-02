@@ -14,7 +14,7 @@ import { UserContext } from "../../App";
 import { useContext } from "react";
 import { GiftedChat } from "react-native-gifted-chat";
 const ChatComponent = () => {
-  const { userId, userToken, userFullName } = useContext(UserContext);
+  const { userId, userToken, userFullName,userImage } = useContext(UserContext);
   const [messages, setMessages] = useState([]);
 
 
@@ -30,11 +30,14 @@ const ChatComponent = () => {
           createdAt: doc.data().createdAt.toDate(),
           text: doc.data().text,
           user: doc.data().user,
+          avatar: doc.data().avatar
         }))
       );
     });
     return unsubscribe;
   }, []);
+
+  console.log(messages)
   //   const db = firebase.firestore();
   const onSend = useCallback((messages = []) => {
     setMessages((previousMessages) =>
@@ -66,7 +69,7 @@ const ChatComponent = () => {
       user={{
         _id: userId,
         name: userFullName,
-        avatar: "https://i.pravatar.cc/300",
+        avatar:userImage,
       }}
       messagesContainerStyle={{
         backgroundColor: "white",        
