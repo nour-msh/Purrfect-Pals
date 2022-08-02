@@ -60,9 +60,15 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="./readme/title5.svg"/>
 
 > Uing the above mentioned tech stacks and the wireframes built with figma from the user sries we have, the implementation of the app is shown as below, these are screenshots from the real app
-| OnBoarding  | Signup/Login  |
-| -----------------| -----|
-| ![OnBoarding](../figma%20images/Android%20Large%20-%201.png) | ![Signup/Login](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+|![Screenshot_20220802_150029_host exp exponent](https://user-images.githubusercontent.com/96622211/182371208-190ac12d-215f-472e-9176-63047f7d9be4.jpg)|
+![Screenshot_20220802_150032_host exp exponent](https://user-images.githubusercontent.com/96622211/182371243-9bdd4738-2b49-4038-985c-e4e5cccc49a6.jpg)|
+![Screenshot_20220802_150034_host exp exponent](https://user-images.githubusercontent.com/96622211/182371283-4afd81bf-001e-4ffc-ad4b-f9b51fa98597.jpg)|
+|![Screenshot_20220802_150035_host exp exponent](https://user-images.githubusercontent.com/96622211/182371346-7eebce5b-3f72-461e-9a89-84690e9f039a.jpg)|
+|![Screenshot_20220802_150043_host exp exponent](https://user-images.githubusercontent.com/96622211/182371388-ea34bc1f-214a-4e9e-8828-a0a88cf3b456.jpg)|![Screenshot_20220802_151112_host exp exponent](https://user-images.githubusercontent.com/96622211/182371759-0e16f218-3c42-4a26-a516-bb029111c31d.jpg)|
+![Screenshot_20220802_150544_host exp exponent](https://user-images.githubusercontent.com/96622211/182371804-3507682a-b282-424d-a407-c5f40e9891dd.jpg)|![Screenshot_20220802_150234_host exp exponent](https://user-images.githubusercontent.com/96622211/182371827-f7b04fe0-907e-48d2-9277-4f1c821a11cc.jpg)|
+![Screenshot_20220802_150457_host exp exponent](https://user-images.githubusercontent.com/96622211/182371847-691012b7-4536-435b-b084-3893aaeb80dd.jpg)|
+![Screenshot_20220802_150504_host exp exponent](https://user-images.githubusercontent.com/96622211/182371872-4d805fc6-82eb-463a-8eab-5012e617b7ca.jpg)|
+
 
 
 <br><br>
