@@ -16,7 +16,9 @@ import { Ionicons } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
 import { UserContext } from "../../App";
 
-function PetProfile({ route, navigation }) {
+function PetProfile({ route, navigation}) {
+
+
   const [isReviewModalVisible, setReviewModalVisible] = useState(false);
   const handleReviewModal = () =>
     setReviewModalVisible(() => !isReviewModalVisible);
@@ -27,7 +29,7 @@ function PetProfile({ route, navigation }) {
   const { data } = route.params;
 
   useEffect(() => {
-    // console.log("data?.petId", data?.petId);
+
     axios({
       method: "GET",
       url: `http://192.168.1.4:5000/user/getAllReviewsByPetId/${data?.petId}`,
@@ -36,16 +38,11 @@ function PetProfile({ route, navigation }) {
         setReviews(res.data);
       })
       .catch((error) => {
-        // console.warn(error);
       });
   }, []);
 
   const data2 = data;
   const handleSubmitReview = () => {
-    // console.log(
-    //   "userId,data?.petId",
-    //   `http://192.168.1.3:5000/user/addReview/${userId}/${data?.petId}`
-    // );
     const data = {
       content: reviewText,
     };
@@ -55,7 +52,6 @@ function PetProfile({ route, navigation }) {
       url: `http://192.168.1.4:5000/user/addReview/${userId}/${data2?.petId}`,
     })
       .then((res) => {
-        // console.log("res adding review", res.config.data2);
         setReviews([...reviews, res?.data]);
         setReviewModalVisible(false);
       })
