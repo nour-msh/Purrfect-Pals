@@ -3,11 +3,23 @@ import DateBox from '../Component/DateBox'
 import TimeBox from '../Component/TimeBox'
 import axios from 'axios';
 import { useState } from 'react';
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import * as ImagePicker from "expo-image-picker";
+import { useContext } from "react";
+import { MaterialIcons } from "@expo/vector-icons";
+import { UserContext } from "../../App";
+import { TextInput } from 'react-native-gesture-handler';
+
 
 
 function VetProfile({navigation}){
     const [date, setDate] = useState([])
     const [time, setTime] = useState([]);
+  const [image, setImage] = useState(null);
+
+  const { userId, userToken, userFullName, userImage } =
+  useContext(UserContext);
 
     const handleSubmitAppointment = () => {
         const data = {
@@ -26,6 +38,22 @@ function VetProfile({navigation}){
           .catch((error) => console.log(error));
       };
 
+      const pickImage = async () =>{
+        let result = await ImagePicker.launchImageLibraryAsync({
+          mediaTypes: ImagePicker.MediaTypeOptions.All,
+          allowsEditing: true,
+          aspect: [4, 3],
+          quality: 1,
+        });
+    
+        console.log(result);
+    
+        if (!result.cancelled) {
+          setImage(result.uri);
+      console.warn("you clicked me")  
+      }
+    }
+
       const handleDateChange = (value) => {
         setDate(value)
       }
@@ -40,38 +68,21 @@ function VetProfile({navigation}){
             <View style={styles.profContainer}>
                 <Image source={require('../../assets/Doctor1.png')}
                 style={styles.vetPhoto}/>
-                <Text style={styles.drName}>Dr. Name</Text>
             </View>
-
-            <View>
-                <Text style={styles.date}>Add my weekly available dates:</Text>
+            <View style={styles.help}>
+      <Ionicons name="add" size={24} onPress={pickImage} color="#FF914A" style={styles.addImage}/>
+                <Text style={styles.drName} >Dr. {userFullName}</Text>
+                <TextInput placeholder='My Email' style={styles.input}></TextInput>
+                <TextInput placeholder='My Phone Number' style={styles.input}></TextInput>
             </View>
-            <ScrollView horizontal={true} style={styles.scrollView} showsHorizontalScrollIndicator={false}>
-
-            <View style={styles.dateCont}>
-                <DateBox value={date} onChangeText={handleDateChange}/>
-                <DateBox value={date} onChangeText={handleDateChange}/>
-                <DateBox value={date} onChangeText={handleDateChange}/>
-                <DateBox value={date} onChangeText={handleDateChange}/>
-                <DateBox value={date} onChangeText={handleDateChange}/>
-                <DateBox value={date} onChangeText={handleDateChange}/>
-                <DateBox value={date} onChangeText={handleDateChange}/>
-
+            <View style={styles.inputContainer}>
+            <Text style={styles.about}>My specialty:</Text>
+            <TextInput style={styles.about}></TextInput>
             </View>
-            </ScrollView>
-            <Text style={styles.date}>Add my weekly available times:</Text>
-            <ScrollView horizontal={true} style={styles.scrollView} showsHorizontalScrollIndicator={false}>
-
-            <View style={styles.timeCont}>
-                <TimeBox value={time} onChangeText={handleTimeChange}/>
-                <TimeBox value={time} onChangeText={handleTimeChange}/>
-                <TimeBox value={time} onChangeText={handleTimeChange}/>
-                <TimeBox value={time} onChangeText={handleTimeChange}/>
-                <TimeBox value={time} onChangeText={handleTimeChange}/>
-                <TimeBox value={time} onChangeText={handleTimeChange}/>
-                <TimeBox value={time} onChangeText={handleTimeChange}/>
+            <View style={styles.inputContainer}>
+            <Text style={styles.about}>My success story:</Text>
+            <TextInput style={styles.about}></TextInput>
             </View>
-            </ScrollView>
             <TouchableOpacity style={styles.save} onPress={handleSubmitAppointment}>
                 <Text style={styles.saveText}>Save</Text>
             </TouchableOpacity>
@@ -83,41 +94,67 @@ function VetProfile({navigation}){
 
 
 const styles=StyleSheet.create({
-    container:{
-        alignSelf:'center',
-        // backgroundColor:"pink",
-        padding:20,
-    },
     profContainer:{
-        padding:50
-    },
-    vetPhoto:{
-        width: 135,
-        height: 135,
-        borderRadius: 100,
-        alignSelf:'center',
-    },
-    drName:{
-        top:20,
-        textAlign:'center',
-        fontSize:18
-    },
-    date:{
-        fontSize:18,
-        padding:20
-    },
-    dateCont:{
-        display:'flex',
-        flexDirection:'row',
-        marginBottom:20,
-        marginTop:20
+        height:360,
+        width:'100%',
+        backgroundColor:"#008080",
+        position:'relative',
 
     },
-    timeCont:{
-        display:'flex',
-        flexDirection:'row',
-        marginBottom:15,
-        marginTop:20
+    vetPhoto:{
+        width:'100%',
+        flex:1,
+        height:360,
+        position:'absolute',
+    },
+        addImage:{
+    justifyContent:'center',
+    right:-250,
+    top:10, 
+    position:'relative',
+    fontSize:30
+        },
+    drName:{
+        padding:15,
+        textAlign:'center',
+        fontSize:25
+    },
+    about:{
+        marginLeft:20,
+        fontSize:15,
+        padding:10
+    },
+    help:{
+        height:150,
+        width:'80%',
+        alignSelf:'center',
+        borderRadius:30,
+        top:-90,
+        elevation:3,
+        backgroundColor:"white",
+      
+    },
+    num:{
+        textAlign:'center',
+        fontSize:20,
+        color:'grey'
+    },
+    input:{
+        textAlign:'center',
+        fontSize:10,
+        color:'grey',
+        // padding:10
+
+    },
+    inputContainer:{
+        height:80,
+        width:'90%',
+        alignSelf:'center',
+        borderRadius:20,
+        top:-70,
+        elevation:3,
+        backgroundColor:"white",
+        marginBottom:10
     },
     save:{
         backgroundColor:'#FF914A',
@@ -126,8 +163,8 @@ const styles=StyleSheet.create({
         borderRadius:30,
         padding:14,
         alignSelf:'center',
-        marginTop:30,
-        marginBottom:20
+        marginTop:-50,
+        // marginBottom:20
     },
     saveText:{
         color:'white',
