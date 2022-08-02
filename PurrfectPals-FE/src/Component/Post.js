@@ -10,7 +10,7 @@ function Post({ nav, petId, duration, description, pet_name, petImage,petBreed }
       <View style={styles.textContainer}>
         <Text
           style={styles.name}
-          onPress={() => nav.navigate("PetProfile", { data: { petId,petImage,pet_name,petBreed } })}
+          onPress={() => nav.navigate("Profile", { data: { petId,petImage,pet_name,petBreed } })}
         >
           {pet_name}
         </Text>
