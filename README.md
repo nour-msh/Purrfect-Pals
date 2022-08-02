@@ -68,7 +68,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 ![signup](https://user-images.githubusercontent.com/96622211/182374985-13710be6-8861-4213-b2b1-f4d1cfbf9174.jpg)|
 ![feed](https://user-images.githubusercontent.com/96622211/182375023-43bf8623-e87c-418f-8083-7cbf3aa94c0e.jpg)|
 ![profile](https://user-images.githubusercontent.com/96622211/182375074-e576d94b-fb61-44f2-acdf-096eaf870ad2.jpg)|
-![communityChat](https://user-images.githubusercontent.com/96622211/182375109-c5eccb84-44d8-409c-a4d7-b83ff46454c7.jpg)|
+![communityChat](https://user-images.githubusercontent.com/96622211/182391127-88fee1f7-eea9-43e4-aba5-ea6c03cb8804.jpg)|
 ![agenda](https://user-images.githubusercontent.com/96622211/182375129-0ed4bae8-5f98-425e-8531-a0684fdc45fa.jpg)|
 
 
