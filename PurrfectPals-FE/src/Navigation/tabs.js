@@ -11,6 +11,7 @@ import SignUp from "../Screens/SignUp";
 import chatComponent from "../Screens/chatComponent";
 import VetProfile from "../Screens/VetProfile";
 import Agenda from "../Screens/Agenda";
+import VetPortfolio from "../Screens/VetPortfolio"
 import Maps from '../Screens/Maps';
 import OnboardingItems from "../../onBoarding/OnBoardingItems";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
@@ -32,6 +33,8 @@ function Stacks() {
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="Maps" component={Maps}/>
       <Stack.Screen name="VetProfile" component={VetProfile}/>
+      <Stack.Screen name="VetPortfolio" component={VetPortfolio}/>
+
 
     </Stack.Navigator>
   );
