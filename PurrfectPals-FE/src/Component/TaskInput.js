@@ -44,8 +44,8 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     button: {
-        height: 30,
-        width: 30,
+        height: 40,
+        width: 40,
         borderRadius: 5,
         backgroundColor: '#fff',
         alignItems: 'center',
