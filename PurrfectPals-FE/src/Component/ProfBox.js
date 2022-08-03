@@ -19,13 +19,12 @@ function ProfBox(props) {
   const [petName, setPetName] = useState("");
   const [duration, setDuration] = useState("");
   const [description, setDescription] = useState("");
-
-  // console.warn(props.petImage.toString());
+  
   const handleSubmitPost = () => {
     const data = {
       pet_name: petName,
       duration: duration,
-      image: petImage,
+      image: props.petImage,
       description: description,
     };
     axios({
@@ -119,7 +118,7 @@ const styles = StyleSheet.create({
   },
   request:{
 fontSize:20,
-textAlign:'right'
+left:220
   },
   addPet: {
     width: "16%",
@@ -137,7 +136,7 @@ textAlign:'right'
     textAlign: "center",
   },
   name: {
-    // padding: 5,
+    padding: 5,
     textAlign: "center",
     fontWeight: "600",
     fontSize: 30,
