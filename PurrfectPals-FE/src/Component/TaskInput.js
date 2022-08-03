@@ -23,3 +23,19 @@ export default TaskInputField = (props) => {
       </KeyboardAvoidingView>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        borderColor: '#fff',
+        backgroundColor: '#007180',
+        borderWidth: 1,
+        marginHorizontal: 20,
+        borderRadius: 12,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
+        position: 'absolute',
+        bottom: 20,
+    },
+});
