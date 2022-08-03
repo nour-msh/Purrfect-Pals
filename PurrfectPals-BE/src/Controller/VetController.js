@@ -30,3 +30,14 @@ export async function addPortfolio(req, res) {
   }
 }
 
+export async function getPortfolios(req, res) {
+  try {
+    console.log(req.params.id)
+    const results = await Portfolio.find({ user_id: req.params.id });
+    res.status(200).json(results);
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+}
