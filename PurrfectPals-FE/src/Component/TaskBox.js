@@ -47,4 +47,12 @@ const styles = StyleSheet.create({
         padding: 10,
         minHeight: 50,
     },
+    task: {
+        color: '#fff',
+        width: '90%',
+        fontSize: 16,
+    },
+    delete: {
+        marginLeft: 10,
+    },
 });
