@@ -1,12 +1,27 @@
-import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import React,{useState} from 'react';
+import { View, StyleSheet,Keyboard,ScrollView, Text } from 'react-native';
 import TaskBox from '../Component/TaskBox';
 import TaskInput from '../Component/TaskInput';
 
 export default function Todo() {
+    const [tasks, setTasks] = useState([]);
+
+    
   return (
     <View style={styles.container}>
         <Text style={styles.heading}>TODO LIST</Text>
+        <ScrollView style={styles.scrollView}>
+        {
+        tasks.map((task, index) => {
+          return (
+            <View key={index} style={styles.taskContainer}>
+              <TaskBox index={index + 1} task={task}/>
+            </View>
+          );
+        })
+      }
+      </ScrollView>
+      <TaskInput/>
     </View>
   );
 }
@@ -24,4 +39,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     marginLeft: 20,
   },
+  scrollView: {
+    marginBottom: 70,
+  },
+  taskContainer: {
+    marginTop: 20,
+  }
 });
