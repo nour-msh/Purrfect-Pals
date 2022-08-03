@@ -27,7 +27,7 @@ function Profile({ navigation }) {
 
   const [pets, setPets] = useState([]);
 
-  const [image, setImage] = useState(userImage);
+  const [image, setImage] = useState(null);
   const [petName, setPetname] = useState("");
   const [petBreed, setPetBreed] = useState("");
   const [petAge, setPetAge] = useState("");
