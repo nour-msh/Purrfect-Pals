@@ -1,4 +1,4 @@
-import { Task } from "../Model/Task";
+import { Task } from "../Model/Task.js";
 
 export async function addTask(req, res) {
     try {
@@ -7,7 +7,7 @@ export async function addTask(req, res) {
         todo
       });
       await task.save();
-      res.status(201).send(post);
+      res.status(201).send(task);
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
