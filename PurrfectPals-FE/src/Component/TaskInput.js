@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     },
     inputField: {
         color: '#fff',
-        height: 50,
+        height: 60,
         flex: 1,
     },
     button: {
