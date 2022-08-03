@@ -34,7 +34,7 @@ function VetPortfolio({
     }).then((res) => {
       // console.log(res.data);
       console.log(res)
-      setVetPortfolio(res.data[6]);
+      setVetPortfolio(res.data[0]);
     });
   }, []);
 console.log('data',vetPortfolio)
@@ -51,7 +51,7 @@ console.log('data',vetPortfolio)
               onPress={() => navigation.goBack()}
             />
             <Image
-              source={{uri:dataFromVet.image}}
+              source={{uri:vetPortfolio.vet_image}}
               style={styles.vetPhoto}
             />
           </View>
