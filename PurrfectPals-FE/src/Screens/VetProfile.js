@@ -1,34 +1,31 @@
 import {View,Text,StyleSheet, Image,ScrollView,TouchableOpacity,KeyboardAvoidingView} from 'react-native'
-import DateBox from '../Component/DateBox'
-import TimeBox from '../Component/TimeBox'
 import axios from 'axios';
 import { useState } from 'react';
 import { Ionicons } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
 import * as ImagePicker from "expo-image-picker";
 import { useContext } from "react";
-import { MaterialIcons } from "@expo/vector-icons";
 import { UserContext } from "../../App";
 import { TextInput } from 'react-native-gesture-handler';
 
 
 
 function VetProfile({navigation}){
-    const [email, setEmail] = useState('')
-    const [number, setNumber] = useState('');
-    const [specialty, setSpecialty] = useState('');
-    const [story, setStory] = useState('');
-  const [image, setImage] = useState(null);
+    const [vetEmail, setVetEmail] = useState('')
+    const [vetNumber, setVetNumber] = useState('');
+    const [vetSpecialty, setVetSpecialty] = useState('');
+    const [vetStory, setVetStory] = useState('');
+  const [image, setImage] = useState(userImage);
 
-  const { userId, userToken, userFullName, userImage } =
-  useContext(UserContext);
+  const { userId, userToken, userFullName, userImage } =useContext(UserContext);
 
     const handleSubmitPortfolio = () => {
         const data = {
-            email,
-            number,
-            specialty,
-            story,
+            vet_email:vetEmail,
+            vet_number:vetNumber,
+            vet_image:image,
+            vet_specialty:vetSpecialty,
+            vet_story:vetStory,
+            user_id:userId
         };
         axios({
           method: "POST",
@@ -37,6 +34,7 @@ function VetProfile({navigation}){
         })
           .then((res) => {
               console.log(res);
+              
           }
           )
           .catch((error) => console.log(error));
@@ -59,49 +57,49 @@ function VetProfile({navigation}){
     }
 
       const handleEmailChange = (value) => {
-        setEmail(value)
+        setVetEmail(value)
       }
 
       const handleNumberChange = (value) => {
-        setNumber(value)
+        setVetNumber(value)
       }
       const handleSpecialtyChange = (value) => {
-        setSpecialty(value)
+        setVetSpecialty(value)
       }
       const handleStoryChange = (value) => {
-        setStory(value)
+        setVetStory(value)
       }
     return(
         <View style={styles.container}>
                 <KeyboardAvoidingView>
                     <ScrollView showsVerticalScrollIndicator={false} >
             <View style={styles.profContainer}>
-                <Image source={require('../../assets/Doctor1.png')}
+                <Image source={{uri: image}}
                 style={styles.vetPhoto}/>
             </View>
             <View style={styles.help}>
       <Ionicons name="add" size={24} onPress={pickImage} color="#FF914A" style={styles.addImage}/>
                 <Text style={styles.drName} >Dr. {userFullName}</Text>
                 <TextInput placeholder='My Email' style={styles.input}
-                value={email}
+                value={vetEmail}
                 onChangeText={handleEmailChange}
                 ></TextInput>
                 <TextInput placeholder='My Phone Number' style={styles.input}
-                value={number}
+                value={vetNumber}
                 onChangeText={handleNumberChange}
                 ></TextInput>
             </View>
             <View style={styles.inputContainer}>
             <Text style={styles.about}>My specialty:</Text>
             <TextInput style={styles.about}
-            value={specialty}
+            value={vetSpecialty}
             onChangeText={handleSpecialtyChange}
             ></TextInput>
             </View>
             <View style={styles.inputContainer}>
             <Text style={styles.about}>My success story:</Text>
             <TextInput style={styles.about}
-            value={story}
+            value={vetStory}
             onChangeText={handleStoryChange}
             ></TextInput>
             </View>
