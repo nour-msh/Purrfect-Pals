@@ -20,5 +20,17 @@ export default TaskItem = (props) => {
 
 
 const styles = StyleSheet.create({
-   
+    container: {
+        flexDirection: 'row',
+        marginHorizontal: 20,
+    },
+    indexContainer: {
+        backgroundColor: '#007180',
+        borderRadius: 12,
+        marginRight: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 50,
+        height: 50,
+    }
 });
