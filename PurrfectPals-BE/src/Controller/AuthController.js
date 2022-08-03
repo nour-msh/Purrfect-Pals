@@ -70,6 +70,8 @@ export async function login(req,res){
       user_id: user._id,
       user_name: user.full_name,
       user_phone: user.phone_number,
+      user_type: user.user_type,
+      image:user.image,
       token: token
     })
   } catch (error) {
