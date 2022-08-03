@@ -1,24 +1,21 @@
-import { NavigationHelpersContext } from "@react-navigation/native";
 import axios from "axios";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { UserContext } from "../../App";
+import { ScrollView } from "react-native-gesture-handler";
 
 import { View, TextInput, Text, Image, KeyboardAvoidingView,StyleSheet } from "react-native";
 import AccessButton from "../Component/AccessButton";
 import Logo from "../Component/Logo";
-import { UserContext } from "../../App";
-import { ScrollView } from "react-native-gesture-handler";
 
 function LogIn({ navigation }) {
 
 
   const [myEmail, setMyEmail] = useState("");
   const [myPassword, setMyPassword] = useState("");
-  // const [trigger, setTrigger] = useState(false);
   const { setUserId, setUserToken, setUserFullName, setUserPhoneNumber,setUserImage } = useContext(UserContext);
   const storeData = async (value) => {
     toggleState(value);
-    // console.warn(id_token);
     await AsyncStorage.setItem("@id_token", value);
     window.location.reload(false);
   };
@@ -39,6 +36,7 @@ function LogIn({ navigation }) {
         setUserToken(res.data.token)
         setUserImage(res.data.image)
         setUserFullName(res.data.user_name)
+        console.log(res.data)
         setUserPhoneNumber(res.data.user_phone)
         if(res?.data.user_type==="1"){
           navigation.navigate("VetProfile")}
