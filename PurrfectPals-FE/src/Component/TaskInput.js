@@ -38,4 +38,17 @@ const styles = StyleSheet.create({
         position: 'absolute',
         bottom: 20,
     },
+    inputField: {
+        color: '#fff',
+        height: 50,
+        flex: 1,
+    },
+    button: {
+        height: 30,
+        width: 30,
+        borderRadius: 5,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
 });
