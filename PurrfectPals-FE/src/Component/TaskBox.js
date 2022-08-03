@@ -32,5 +32,19 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         width: 50,
         height: 50,
-    }
+    },
+    index: {
+        color: '#fff',
+        fontSize: 20,
+    },
+    taskContainer: {
+        backgroundColor: '#007180',
+        borderRadius: 12,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flex: 1,
+        padding: 10,
+        minHeight: 50,
+    },
 });
