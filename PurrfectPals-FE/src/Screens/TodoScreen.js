@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import { View, StyleSheet,Keyboard,ScrollView, Text } from 'react-native';
+import { View, StyleSheet,Keyboard,ScrollView,Image, Text } from 'react-native';
 import TaskBox from '../Component/TaskBox';
 import TaskInput from '../Component/TaskInput';
 
@@ -17,7 +17,10 @@ export default function Todo() {
       }
   return (
     <View style={styles.container}>
-        <Text style={styles.heading}>TODO LIST</Text>
+        <Text style={styles.heading}>MY PET'S TODO LIST</Text>
+        <Image source={require("../../assets/kitty.png")}
+        style={styles.kitty}
+        />
         <ScrollView style={styles.scrollView}>
         {
         tasks.map((task, index) => {
@@ -40,17 +43,26 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   heading: {
-    color: 'black',
+    color: '#FF914A',
     fontSize: 20,
     fontWeight: '600',
-    marginTop: 30,
+    marginTop: 50,
     marginBottom: 10,
     marginLeft: 20,
+    textAlign:"center"
   },
   scrollView: {
     marginBottom: 70,
   },
   taskContainer: {
     marginTop: 20,
-  }
+  },
+  kitty:{
+    height:200,
+    width:200,
+    alignSelf:"center",
+    top:200,
+    opacity:0.3,
+    position:"absolute"
+ }
 });
