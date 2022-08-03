@@ -6,6 +6,12 @@ import TaskInput from '../Component/TaskInput';
 export default function Todo() {
     const [tasks, setTasks] = useState([]);
 
+    const addTask = (task) => {
+        if (task == null) return;
+        setTasks([...tasks, task]);
+        Keyboard.dismiss();
+      }
+    
     
   return (
     <View style={styles.container}>
