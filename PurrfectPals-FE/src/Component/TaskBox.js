@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     container: {
         flexDirection: 'row',
         marginHorizontal: 20,
+        // top :100
     },
     indexContainer: {
         backgroundColor: '#007180',
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: 50,
-        height: 50,
+        height: 60,
     },
     index: {
         color: '#fff',
