@@ -45,13 +45,12 @@ function Feed({ navigation }) {
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
           <View style={styles.Vets}>
             {vets.map((vet) => {
-              return <Vet name={vet.full_name} nav={navigation} />;
+              return <Vet vetData={vet} nav={navigation} />;
             })}
           </View>
         </ScrollView>
         <View style={styles.Posts}>
           {posts.map((post) => {
-            // console.warn(post);
             return (
               <Post
                 key={post._id}
