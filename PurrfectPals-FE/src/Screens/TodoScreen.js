@@ -23,13 +23,13 @@ export default function Todo() {
         tasks.map((task, index) => {
           return (
             <View key={index} style={styles.taskContainer}>
-              <TaskBox index={index + 1} task={task}/>
+              <TaskBox index={index + 1} task={task} deleteTask={() => deleteTask(index)}/>
             </View>
           );
         })
       }
       </ScrollView>
-      <TaskInput/>
+      <TaskInput addTask={addTask}/>
     </View>
   );
 }
