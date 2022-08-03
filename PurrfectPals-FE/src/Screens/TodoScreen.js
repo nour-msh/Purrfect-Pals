@@ -8,3 +8,18 @@ export default function Todo() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'white',
+  },
+  heading: {
+    color: 'black',
+    fontSize: 20,
+    fontWeight: '600',
+    marginTop: 30,
+    marginBottom: 10,
+    marginLeft: 20,
+  },
+});
