@@ -10,9 +10,9 @@ import LogIn from "../Screens/LogIn";
 import SignUp from "../Screens/SignUp";
 import chatComponent from "../Screens/chatComponent";
 import VetProfile from "../Screens/VetProfile";
-import Agenda from "../Screens/Agenda";
 import VetPortfolio from "../Screens/VetPortfolio"
 import Maps from '../Screens/Maps';
+import Todo from "../Screens/TodoScreen";
 import OnboardingItems from "../../onBoarding/OnBoardingItems";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -92,10 +92,10 @@ function Tabs() {
             }}
           />
           <Tab.Screen
-            name="agenda"
-            component={Agenda}
+            name="Todo"
+            component={Todo}
             options={{
-              tabBarLabel: "Agenda",
+              tabBarLabel: "Tasks",
               tabBarIcon: ({ color, size }) => (
                 <MaterialCommunityIcons
                   name="clipboard-text-outline"
