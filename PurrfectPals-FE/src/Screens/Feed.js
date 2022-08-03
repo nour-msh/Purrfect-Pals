@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { View, StyleSheet, ScrollView, Text } from "react-native";
 import { useContext } from "react";
 import { UserContext } from "../../App";
+import { useFonts,Chilanka_400Regular } from '@expo-google-fonts/chilanka';
+import AppLoading from 'expo-app-loading';
 import axios from "axios";
 
 import Vet from "../Component/Vet";
@@ -32,6 +34,13 @@ function Feed({ navigation }) {
       setVets(res.data);
     });
   }, []);
+
+  let [fontsLoaded] = useFonts({
+    Chilanka_400Regular,
+  });
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
     <View style={styles.container}>
       <ScrollView
@@ -39,7 +48,7 @@ function Feed({ navigation }) {
         showsVerticalScrollIndicator={false}
       >
         <View>
-          <Text style={styles.name}>Hello {userFullName},</Text>
+          <Text style={styles.name}>Hi {userFullName},</Text>
           <SearchComponent posts={posts} setPosts={setPosts} />
         </View>
         <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -74,7 +83,8 @@ const styles = StyleSheet.create({
   },
   name: {
     fontSize: 30,
-    fontWeight: "400",
+    fontFamily: 'Chilanka_400Regular',
+    marginLeft:10
   },
   userContainer: {
     display: "flex",
