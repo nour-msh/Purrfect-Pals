@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
+import TaskBox from '../Component/TaskBox';
+import TaskInput from '../Component/TaskInput';
 
 export default function Todo() {
   return (
