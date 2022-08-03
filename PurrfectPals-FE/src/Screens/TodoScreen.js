@@ -12,7 +12,9 @@ export default function Todo() {
         Keyboard.dismiss();
       }
     
-    
+      const deleteTask = (deleteIndex) => {
+        setTasks(tasks.filter((value, index) => index != deleteIndex));
+      }
   return (
     <View style={styles.container}>
         <Text style={styles.heading}>TODO LIST</Text>
