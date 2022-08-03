@@ -12,7 +12,7 @@ export async function addPet(req, res){
             age,
             pet_type,
         } = req.body;
-    
+        
         const pet= new Pet({
             pet_name,
             image,

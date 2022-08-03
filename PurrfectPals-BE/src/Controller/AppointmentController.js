@@ -8,7 +8,7 @@ export async function addAppointment(req,res){
         }=req.body;
         const appointment= new Appointment({
             date,
-            time,
+            [time],
         })
         await appointment.save();
         res.status(201).send(appointment);

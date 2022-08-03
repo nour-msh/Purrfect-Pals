@@ -3,6 +3,12 @@ const reviewSchema = new mongoose.Schema({
   content: {
     type: String,
   },
+  userName: {
+    type: String,
+  },
+  userImage: {
+    type: String,
+  },
   pet_id: {
     type: mongoose.Types.ObjectId,
     ref: "Pet",
