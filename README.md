@@ -3,7 +3,7 @@
 <div align="center">
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
-**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals#project-philosophy) • [WIREFRAMES](https://github.com/nour-msh/Purrfect-Pals#wireframes) • [TECH STACK](https://github.com/nour-msh/Purrfect-Pals#stacks) • [IMPLEMENTATION]() • [HOW TO RUN?]()**
+**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals#project-philosophy) • [WIREFRAMES](https://github.com/nour-msh/Purrfect-Pals#wireframes) • [TECH STACK](https://github.com/nour-msh/Purrfect-Pals#stacks) • [IMPLEMENTATION](https://github.com/nour-msh/Purrfect-Pals#implementation) • [HOW TO RUN?]()**
 
 </div>
 
@@ -69,7 +69,7 @@ Here's a brief high-level overview of the tech stacks the app uses:
 
 
 <br><br>
-<img src="./readme/title5.svg"/>
+<img src="./readme/title5.svg" id="implementation"/>
 
 > Using the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are gifs from the real app.
 
