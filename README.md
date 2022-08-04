@@ -34,7 +34,7 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 | OnBoarding  | Feed/Search  |
 | -----------------| -----|
-| ![](PurrfectPals-FE/assets/Android%20Large%20-%201.png) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+| ![Landing](/PurrfectPals-FE/assets/onboarding1.png) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
