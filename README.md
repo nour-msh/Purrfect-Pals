@@ -3,7 +3,7 @@
 <div align="center">
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
-**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals#project-philosophy) • [WIREFRAMES](https://github.com/nour-msh/Purrfect-Pals#wireframes) • [TECH STACK]() • [IMPLEMENTATION]() • [HOW TO RUN?]()**
+**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals#project-philosophy) • [WIREFRAMES](https://github.com/nour-msh/Purrfect-Pals#wireframes) • [TECH STACK](https://github.com/nour-msh/Purrfect-Pals#stacks) • [IMPLEMENTATION]() • [HOW TO RUN?]()**
 
 </div>
 
@@ -56,7 +56,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 <br><br>
 
-<img src="./readme/title4.svg"/>
+<img src="./readme/title4.svg" id="stacks"/>
 
 Here's a brief high-level overview of the tech stacks the app uses:
 
