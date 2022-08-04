@@ -52,11 +52,9 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <br><br>
 <img src="./readme/title5.svg"/>
 
-> Uing the above mentioned tech stacks and the wireframes built with figma from the user sries we have, the implementation of the app is shown as below, these are screenshots from the real app
-| OnBoarding  | Signup/Login  |
-| -----------------| -----|
-| ![OnBoarding](https://github.com/julescript/spotifyndr/blob/master/demo/Landing_Page.jpg) | ![Signup/Login](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+> Uing the above mentioned tech stacks and the wireframes built with figma from the user sries we have, the implementation of the app is shown as below, these are gifs from the real app
 
+![Landing](/readme/gifs/onBoardingGif.gif)
 
 <br><br>
 <img src="./readme/title6.svg"/>
