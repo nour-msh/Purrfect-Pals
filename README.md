@@ -33,8 +33,26 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-| ![Landing](/readme/figma/onboarding1.png)![Landing](/readme/figma/onboarding2.png)![Landing](/readme/figma/onboarding3.png)![Landing](/readme/figma/onboarding4.png)
-![Login](/readme/figma/login.png)![Signup](/readme/figma/signup.png)![Feed](/readme/figma/feed.png)![Profile](/readme/figma/profile.png)![petProfile](/readme/figma/petProfile.png)![petReview](/readme/figma/reviewPet.png)![messages](/readme/figma/messages.png)![maps](/readme/figma/maps.png)
+| OnBoarding  | OnBoarding  |
+| -----------------| -----|
+| ![Landing](/readme/figma/onboarding1.png)|![Landing](/readme/figma/onboarding2.png)|
+|![Landing](/readme/figma/onboarding3.png)|![Landing](/readme/figma/onboarding4.png)|
+
+| LogIn  | SignUp  |
+| -----------------| -----|
+|![Login](/readme/figma/login.png)|![Signup](/readme/figma/signup.png)|
+
+| Feed  | Profile  |
+| -----------------| -----|
+|![Feed](/readme/figma/feed.png)|![Profile](/readme/figma/profile.png)|
+
+| Pet Profile  | Pet Review  |
+| -----------------| -----|
+|![petProfile](/readme/figma/petProfile.png)|![petReview](/readme/figma/reviewPet.png)|
+
+| Messages  | Maps  |
+| -----------------| -----|
+|![messages](/readme/figma/messages.png)|![maps](/readme/figma/maps.png)|
 
 <br><br>
 
