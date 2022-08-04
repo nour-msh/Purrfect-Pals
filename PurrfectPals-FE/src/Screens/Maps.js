@@ -1,7 +1,6 @@
 import * as React from 'react';
 import MapView, { Callout, Marker } from 'react-native-maps';
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
-import { Circle } from 'react-native-maps';
 
 export default function App() {
 
@@ -37,12 +36,6 @@ export default function App() {
                 <Text>Purrfect</Text>
             </Callout>
         </Marker>
-        {/* <Circle 
-            center={pin}
-            radius={1000}
-            fillColor="#ffdec8"
-            strokeColor='transparent'
-        /> */}
     </MapView>
 
     </View>
