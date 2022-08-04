@@ -32,15 +32,9 @@
 
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
-| OnBoarding  | Feed/Search  |
-| -----------------| -----|
+
 | ![Landing](/readme/figma/onboarding1.png)![Landing](/readme/figma/onboarding2.png)![Landing](/readme/figma/onboarding3.png)![Landing](/readme/figma/onboarding4.png)
-![Login](/readme/figma/login.png)![Signup](/readme/figma/signup.png)![Feed](/readme/figma/feed.png)![Profile](/readme/figma/profile.png)![petProfile](/readme/figma/petProfile.png)![petReview](/readme/figma/reviewPet.png)![messages](/readme/figma/messages.png)![maps](/readme/figma/maps.png)![vetProfile](/readme/figma/vetProfile.png)![vetPortfolio](/readme/figma/vetPortfolio.png)
-
-| Artists results  | Artist's Albums  |
-| -----------------| -----|
-| ![Artists results](https://github.com/julescript/spotifyndr/blob/master/demo/Artists_Page.jpg) | ![Artist's Albums](https://github.com/julescript/spotifyndr/blob/master/demo/Albums_Page.jpg) |
-
+![Login](/readme/figma/login.png)![Signup](/readme/figma/signup.png)![Feed](/readme/figma/feed.png)![Profile](/readme/figma/profile.png)![petProfile](/readme/figma/petProfile.png)![petReview](/readme/figma/reviewPet.png)![messages](/readme/figma/messages.png)![maps](/readme/figma/maps.png)
 
 <br><br>
 
