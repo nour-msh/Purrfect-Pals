@@ -34,7 +34,7 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 | OnBoarding  | Feed/Search  |
 | -----------------| -----|
-| ![Landing](/readme/gifs/onboarding1.png)|(/readme/gifs/onboarding2.png)|(/readme/gifs/onboarding3.png)|(/readme/gifs/onboarding4.png) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+| ![Landing]|(/readme/gifs/onboarding1.png)|(/readme/gifs/onboarding2.png)|(/readme/gifs/onboarding3.png)|(/readme/gifs/onboarding4.png) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
