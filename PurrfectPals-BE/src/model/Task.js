@@ -1,6 +1,6 @@
 import mongoose from "../Database/database.js";
 const taskSchema=new mongoose.Schema({ 
-    task:{
+    todo:{
         type: String
     }
 
