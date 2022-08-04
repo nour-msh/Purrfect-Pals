@@ -39,7 +39,7 @@ export default function App() {
     </MapView>
     <TouchableOpacity style={styles.saveButton}>
       <Text style={styles.saveText}>
-      Save
+      Save Location
       </Text>
     </TouchableOpacity>
 
@@ -66,6 +66,11 @@ const styles = StyleSheet.create({
     position:"relative",
     bottom:100,
     borderRadius:40
-
+  },
+  saveText:{
+    fontSize:18,
+    textAlign:"center",
+    padding:13,
+    color:"#c5c6d0",
   }
 });
