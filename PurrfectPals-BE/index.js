@@ -1,7 +1,7 @@
 import express from "express";
-import mongoose from "./src/Database/database.js";
-import jwt from "jsonwebtoken";
 import UserRoutes from "./src/Routes/UserRoutes.js";
+import PetRoutes from "./src/Routes/PetRoutes.js";
+import VetRoutes from "./src/Routes/VetRoutes.js";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config();
@@ -13,6 +13,9 @@ app.use(cors("*"))
 app.use(express.json());
 
 app.use("/user",UserRoutes);
+app.use("/pet",PetRoutes);
+app.use("/vet",VetRoutes);
+
 
 
 
