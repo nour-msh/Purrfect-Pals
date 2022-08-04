@@ -3,7 +3,7 @@
 <div align="center">
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
-**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals) • [WIREFRAMES](https://github.com/julescript/well_app#-wireframes) • [TECH STACK](https://github.com/julescript/well_app#-tech-stack) • [IMPLEMENTATION](https://github.com/julescript/well_app#-impplementation) • [HOW TO RUN?](https://github.com/julescript/well_app#-how-to-run)**
+**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals) • [WIREFRAMES]() • [TECH STACK]() • [IMPLEMENTATION]() • [HOW TO RUN?]()**
 
 </div>
 
@@ -45,7 +45,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 - This project uses the [React Native framework](https://reactnative.dev/). React native is an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications, utilizing the very same code base. It is based on React, and it brings all its glory to mobile app development.
 - For persistent storage (database), the app uses the [MongoDB](https://www.mongodb.com/) package which allows storing data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time.
 - For the messages, the app uses react-native-gifted-chat which is a great tool for implementing chat in React Native, helping you to improve communication within your application.
-- For store messages, the app uses the [Firebase](https://firebase.google.com/) package which is a Realtime Database lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code.
+- For store messages, the app uses the [Firebase](https://firebase.google.com/) package which is a Realtime Database that lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code.
 - For displaying maps and allowing users to mark their location, the app uses React Native Maps which is a component system for maps that ships with platform-native code that needs to be compiled together with React Native.
 
 
@@ -55,7 +55,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 > Using the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are gifs from the real app.
 
-![Landing](/readme/gifs/onBoardingGif.gif)![Login/Signup](/readme/gifs/loginSignupGif.gif)![addPet](/readme/gifs/addPetGif.gif)![addTask](/readme/gifs/addTaskGif.gif)![communityChat](/readme/gifs/communityChatGif.gif)![maps](/readme/gifs/mapsGif.gif)![editProfile](/readme/gifs/editProfileGif.gif)
+![Landing](/readme/gifs/onBoardingGif.gif)![Login/Signup](/readme/gifs/loginSignupGif.gif)![addPet](/readme/gifs/addPetGif.gif)![addTask](/readme/gifs/addTaskGif.gif)![communityChat](/readme/gifs/communityChatGif.gif)![maps](/readme/gifs/mapsGif.gif)![editProfile](/readme/gifs/editProfileGif.gif)![addPortfolio](/readme/gifs/addPortfolio.gif)
 
 
 <br><br>
