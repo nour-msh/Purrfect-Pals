@@ -33,7 +33,7 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-| ![Landing](/readme/figma/onboarding1.png)![Landing](/readme/figma/onboarding2.png)![Landing](/readme/figma/onboarding3.png)![Landing](/readme/figma/onboarding4.png)
+| <img src="readme/figma/onboarding1.png" width:"250" height:"500"/>![Landing](/readme/figma/onboarding2.png)![Landing](/readme/figma/onboarding3.png)![Landing](/readme/figma/onboarding4.png)
 ![Login](/readme/figma/login.png)![Signup](/readme/figma/signup.png)![Feed](/readme/figma/feed.png)![Profile](/readme/figma/profile.png)![petProfile](/readme/figma/petProfile.png)![petReview](/readme/figma/reviewPet.png)![messages](/readme/figma/messages.png)![maps](/readme/figma/maps.png)
 
 <br><br>
@@ -52,7 +52,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <br><br>
 <img src="./readme/title5.svg"/>
 
-> Uing the above mentioned tech stacks and the wireframes built with figma from the user sries we have, the implementation of the app is shown as below, these are gifs from the real app
+> Using the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are gifs from the real app.
 
 ![Landing](/readme/gifs/onBoardingGif.gif)![Login/Signup](/readme/gifs/loginSignupGif.gif)![addPet](/readme/gifs/addPetGif.gif)![addTask](/readme/gifs/addTaskGif.gif)![communityChat](/readme/gifs/communityChatGif.gif)![maps](/readme/gifs/mapsGif.gif)![profilePic](/readme/gifs/editProfilePicGif.gif)
 
