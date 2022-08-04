@@ -67,7 +67,7 @@ function Profile({ navigation }) {
 
     if (!result.cancelled) {
       setImage(result.uri);
-      console.warn("Image Added");
+      // console.warn("Image Added");
     }
   };
 
