@@ -28,7 +28,7 @@ function Feed({ navigation }) {
     useEffect(() => {
     axios({
       method: "GET",
-      url: `http://192.168.1.4:5000/user/getVets`,
+      url: `http://192.168.1.4:5000/vet/getVets`,
     }).then((res) => {
       console.log(res.data);
       setVets(res.data);
@@ -65,9 +65,11 @@ function Feed({ navigation }) {
                 key={post._id}
                 nav={navigation}
                 petImage={post.image}
-                pet_name={post.pet_name}
+                petName={post.pet_name}
                 duration={post.duration}
                 description={post.description}
+                petBreed={post.breed}
+                pet_name={post.pet_name}
               />
             );
           })}

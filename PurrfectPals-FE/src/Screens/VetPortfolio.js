@@ -30,7 +30,7 @@ function VetPortfolio({
     console.log(dataFromVet)
     axios({
       method: "GET",
-      url: `http://192.168.1.4:5000/user/getPortfolios/${dataFromVet._id}`,
+      url: `http://192.168.1.4:5000/vet/getPortfolios/${dataFromVet._id}`,
     }).then((res) => {
       // console.log(res.data);
       console.log(res)

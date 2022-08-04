@@ -45,7 +45,7 @@ function Profile({ navigation }) {
     axios({
       method: "POST",
       data,
-      url: `http://192.168.1.4:5000/user/addPet/${userId}`,
+      url: `http://192.168.1.4:5000/pet/addPet/${userId}`,
     })
       .then((res) => {
         console.log(res);
@@ -86,7 +86,7 @@ function Profile({ navigation }) {
   useEffect(() => {
     axios({
       method: "GET",
-      url: `http://192.168.1.4:5000/user/getPets/${userId}`,
+      url: `http://192.168.1.4:5000/pet/getPets/${userId}`,
     }).then((res) => {
       setPets(res.data);
     });

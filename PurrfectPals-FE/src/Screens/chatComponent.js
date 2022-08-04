@@ -1,5 +1,4 @@
-import firebase, { database } from "../../firebase";
-import { StatusBar } from "expo-status-bar";
+import { database } from "../../firebase";
 import { Header } from 'react-native-elements';
 import {
   collection,
@@ -9,7 +8,7 @@ import {
   addDoc,
 } from "firebase/firestore";
 import { useState, useCallback, useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { UserContext } from "../../App";
 import { useContext } from "react";
 import { GiftedChat } from "react-native-gifted-chat";

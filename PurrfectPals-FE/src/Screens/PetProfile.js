@@ -32,7 +32,7 @@ function PetProfile({ route, navigation}) {
 
     axios({
       method: "GET",
-      url: `http://192.168.1.4:5000/user/getAllReviewsByPetId/${data?.petId}`,
+      url: `http://192.168.1.4:5000/pet/getAllReviewsByPetId/${data?.petId}`,
     })
       .then((res) => {
         setReviews(res.data);
@@ -49,7 +49,7 @@ function PetProfile({ route, navigation}) {
     axios({
       method: "POST",
       data,
-      url: `http://192.168.1.4:5000/user/addReview/${userId}/${data2?.petId}`,
+      url: `http://192.168.1.4:5000/pet/addReview/${userId}/${data2?.petId}`,
     })
       .then((res) => {
         setReviews([...reviews, res?.data]);

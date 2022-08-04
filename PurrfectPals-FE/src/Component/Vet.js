@@ -7,7 +7,8 @@ function Vet({ nav, vetData }) {
       <View style={styles.upperContainer}></View>
       <View style={styles.imageContainer}>
         <Image
-          source={require("../../assets/Doctor1.png")}
+        source={require("../../assets/Doctor1.png")}
+          // source={vetData.image}
           style={styles.Doctor1}
         />
       </View>

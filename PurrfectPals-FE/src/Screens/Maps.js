@@ -1,14 +1,10 @@
 // import * as React from 'react';
-import { React, useState, useEffect, useRef } from "react";
+import { React, useState } from "react";
 import MapView, { Callout, Marker } from 'react-native-maps';
 import { StyleSheet,TouchableOpacity, Text, View, Dimensions } from 'react-native';
 import axios from 'axios';
 
 export default function App() {
-
-    // const [pin,setPin]= React.useState({
-    //     latitude:33.888630 ,
-    //     longitude:35.495480})
         const[selectedLong,setLongitude]=useState(null)
         const[selectedLat,setLatitude]=useState(null)
 
@@ -31,7 +27,18 @@ export default function App() {
             .catch((error) => console.log(error));
         };
 
+        // useEffect(() => {
+        //   const data={user_id:"62e82cc1c6b53e607694e3aa"}
+        //   axios({
+        //     method: "POST",
+        //     url: `http://192.168.1.4:5000/user/getMark`,
 
+        //     data
+        //   }).then((res) => {
+        //     console.log(res.data);
+            
+        //   });
+        // }, [])
   return (
     <View style={styles.container}>
       <MapView style={styles.map}

@@ -30,7 +30,7 @@ function VetProfile({navigation}){
         axios({
           method: "POST",
           data,
-          url: `http://192.168.1.4:5000/user/addPortfolio`,
+          url: `http://192.168.1.4:5000/vet/addPortfolio`,
         })
           .then((res) => {
               console.log(res);
