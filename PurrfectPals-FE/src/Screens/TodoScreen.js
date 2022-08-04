@@ -6,9 +6,9 @@ import TaskInput from '../Component/TaskInput';
 export default function Todo() {
     const [tasks, setTasks] = useState([]);
 
-    const addTask = (task) => {
-        if (task == null) return;
-        setTasks([...tasks, task]);
+    const addTodo = (todo) => {
+        if (todo == null) return;
+        setTasks([...tasks, todo]);
         Keyboard.dismiss();
       }
     
@@ -23,16 +23,16 @@ export default function Todo() {
         />
         <ScrollView style={styles.scrollView}>
         {
-        tasks.map((task, index) => {
+        tasks.map((todo, index) => {
           return (
             <View key={index} style={styles.taskContainer}>
-              <TaskBox index={index + 1} task={task} deleteTask={() => deleteTask(index)}/>
+              <TaskBox index={index + 1} task={todo} deleteTask={() => deleteTask(index)}/>
             </View>
           );
         })
       }
       </ScrollView>
-      <TaskInput addTask={addTask}/>
+      <TaskInput addTodo={addTodo}/>
     </View>
   );
 }
