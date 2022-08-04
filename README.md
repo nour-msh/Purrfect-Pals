@@ -3,7 +3,7 @@
 <div align="center">
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
-**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals#project-philosophy) • [WIREFRAMES](https://github.com/nour-msh/Purrfect-Pals#wireframes) • [TECH STACK](https://github.com/nour-msh/Purrfect-Pals#stacks) • [IMPLEMENTATION](https://github.com/nour-msh/Purrfect-Pals#implementation) • [HOW TO RUN?]()**
+**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals#project-philosophy) • [WIREFRAMES](https://github.com/nour-msh/Purrfect-Pals#wireframes) • [TECH STACK](https://github.com/nour-msh/Purrfect-Pals#stacks) • [IMPLEMENTATION](https://github.com/nour-msh/Purrfect-Pals#implementation) • [HOW TO RUN?](https://github.com/nour-msh/Purrfect-Pals#installation)**
 
 </div>
 
@@ -89,7 +89,7 @@ Here's a brief high-level overview of the tech stacks the app uses:
 
 
 <br><br>
-<img src="./readme/title6.svg"/>
+<img src="./readme/title6.svg" id="installation"/>
 
 
 > This is an example of how you may give instructions on setting up your project locally.
