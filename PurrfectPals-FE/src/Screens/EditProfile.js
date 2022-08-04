@@ -54,7 +54,7 @@ console.log(userPhoneNumber)
 
     if (!result.cancelled) {
       setImage(result.uri);
-      console.warn("you clicked me");
+      // console.warn("you clicked me");
     }
   };
 
