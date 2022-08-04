@@ -72,9 +72,10 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 <img src="./readme/title5.svg"/>
 
 > Using the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are gifs from the real app.
+
+
 | OnBoarding  | Login SignUp  | Add My Pets| Add Post Request|
 | -----------------| -----------------|-----------------|-----------------|
-
 |![Landing](/readme/gifs/onBoardingGif.gif)|![Login/Signup](/readme/gifs/loginSignupGif.gif)|![addPet](/readme/gifs/addPetGif.gif)|![addPost](/readme/gifs/addPost.gif)|
 
 | Add Tasks  | Community Chat  | Maps| Edit Profile|
@@ -84,7 +85,6 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | Add Vet Portfolio  | Vet's Portfolio  |
 | -----------------| -----------------|
-
 |![addPortfolio](/readme/gifs/addPortfolio.gif)|![vetPortfolio](/readme/gifs/vetPortfolio.gif)|
 
 
