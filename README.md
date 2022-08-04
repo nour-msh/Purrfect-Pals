@@ -3,14 +3,14 @@
 <div align="center">
 
 > Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available.  
-**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals) • [WIREFRAMES]() • [TECH STACK]() • [IMPLEMENTATION]() • [HOW TO RUN?]()**
+**[PROJECT PHILOSOPHY](https://github.com/nour-msh/Purrfect-Pals#project-philosophy) • [WIREFRAMES]() • [TECH STACK]() • [IMPLEMENTATION]() • [HOW TO RUN?]()**
 
 </div>
 
 <br><br>
 
 
-<img src="./readme/title2.svg"/>
+<img src="./readme/title2.svg" id="project-philosophy"/>
 
 > Purrfect Pals application is an app that links pet owners, pet sitters and veterinarians together. Upon clicking on a request sent by the pet owner or the pet sitter, because each pet owner can be a pet sitter and vice versa, users can access eachothers profiles and communicate.
 > 
