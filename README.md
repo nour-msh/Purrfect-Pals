@@ -22,8 +22,11 @@
 - As a user, I want to contact veterinarians for consultation.
 - As a user, I want to be able to have an idea about the veterinarians before i contact them.
 - As a user, I want to be able to jot down tasks concerning my pets.
+- As a user, I want to be able to review other pets and showcase my experience as a pet sitter with them.
 
 <br><br>
+### Veterinarian Stories
+- As a vet, I want to be able to add my portfolio to increase my connections.
 
 <img src="./readme/title3.svg"/>
 
@@ -31,7 +34,7 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 | OnBoarding  | Feed/Search  |
 | -----------------| -----|
-| ![Landing](https://github.com/julescript/spotifyndr/blob/master/demo/Landing_Page.jpg) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
+| ![Landing](![](readme/Android%20Large%20-%201.png)) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
