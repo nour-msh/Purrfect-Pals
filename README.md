@@ -45,6 +45,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 - This project uses the [React Native framework](https://reactnative.dev/). React native is an open-source JavaScript framework, designed for building apps on multiple platforms like iOS, Android, and also web applications, utilizing the very same code base. It is based on React, and it brings all its glory to mobile app development.
 - For persistent storage (database), the app uses the [MongoDB](https://www.mongodb.com/) package which allows storing data in flexible, JSON-like documents, meaning fields can vary from document to document and data structure can be changed over time.
 - For the messages, the app uses react-native-gifted-chat which is a great tool for implementing chat in React Native, helping you to improve communication within your application.
+- For store messages, the app uses the [Firebase](https://firebase.google.com/) package which is a Realtime Database lets you build rich, collaborative applications by allowing secure access to the database directly from client-side code.
 - For displaying maps and allowing users to mark their location, the app uses React Native Maps which is a component system for maps that ships with platform-native code that needs to be compiled together with React Native.
 
 
