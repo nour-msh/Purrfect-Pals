@@ -6,6 +6,10 @@ const locationSchema=new mongoose.Schema({
     latitude:{
         type:String
     },
+    user_id: {
+        type: mongoose.Types.ObjectId,
+        ref: "User",
+      },
 
 })
 

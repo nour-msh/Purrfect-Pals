@@ -35,7 +35,11 @@ const userSchema = new mongoose.Schema(
         posts:[{
             type: mongoose.Types.ObjectId,
             ref: 'Post'
-        }]
+        }],
+        location:{
+            type: mongoose.Types.ObjectId,
+                ref: 'MarkedLocation'
+        },
     },
     {
         timestamps: true

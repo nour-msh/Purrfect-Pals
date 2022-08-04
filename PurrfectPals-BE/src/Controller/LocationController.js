@@ -17,4 +17,16 @@ export async function addMark(req, res){
     }catch (error) {
             res.status(400).json({ message: error.message });
           }
-        }
+        };
+
+
+// export async function getMark(req,res){
+//     try{
+//         const results = await MarkedLocation.find({user_id: req.params.user_id})
+//         res.status(200).json(results)
+//     } catch (error) {
+//         res.status(500).json({
+//             message: error.message
+//         })
+//     }
+// };
