@@ -24,7 +24,7 @@ function Feed({ navigation }) {
       console.log(res.data);
       setPosts(res.data);
     });
-  }, []);
+  }, [posts])
     useEffect(() => {
     axios({
       method: "GET",
