@@ -33,8 +33,8 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-<img src="readme/figma/onboarding1.png" width:"200" height:"400"/><img src="readme/figma/onboarding2.png" width:"200" height:"400"/><img src="readme/figma/onboarding3.png" width:"200" height:"400"/><img src="readme/figma/onboarding4.png" width:"200" height:"400"/>
-<img src="readme/figma/login.png" width:"200" height:"400"/><img src="readme/figma/signup.png" width:"200" height:"400"/><img src="readme/figma/feed.png" width:"200" height:"400"/><img src="readme/figma/profile.png" width:"200" height:"400"/><img src="readme/figma/petProfile.png" width:"200" height:"400"/><img src="readme/figma/reviewPet.png" width:"200" height:"400"/><img src="readme/figma/messages.png" width:"200" height:"400"/><img src="readme/figma/maps.png" width:"200" height:"400"/>
+| ![Landing](/readme/figma/onboarding1.png)![Landing](/readme/figma/onboarding2.png)![Landing](/readme/figma/onboarding3.png)![Landing](/readme/figma/onboarding4.png)
+![Login](/readme/figma/login.png)![Signup](/readme/figma/signup.png)![Feed](/readme/figma/feed.png)![Profile](/readme/figma/profile.png)![petProfile](/readme/figma/petProfile.png)![petReview](/readme/figma/reviewPet.png)![messages](/readme/figma/messages.png)![maps](/readme/figma/maps.png)
 
 <br><br>
 
