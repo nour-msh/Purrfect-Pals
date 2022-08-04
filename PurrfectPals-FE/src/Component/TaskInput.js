@@ -1,21 +1,37 @@
 import React, {useState} from 'react';
 import { KeyboardAvoidingView, StyleSheet, View, TextInput, TouchableOpacity, } from "react-native";
 import { MaterialIcons } from '@expo/vector-icons'; 
+import axios from 'axios';
 
 export default TaskInputField = (props) => {
-    const [task, setTask] = useState();
+    // const [task, setTask] = useState();
+    const [todo, setTodo] = useState();
 
     const handleAddTask = (value) => {
-        props.addTask(value);
-        setTask(null);
-    }
-
+        props.addTodo(value);
+        // setTodo(null);
+        console.log(value)
+        const data = {
+            todo:value
+        };
+        axios({
+            method: "post",
+            data,
+            url: "http://192.168.1.4:5000/user/addTask",
+        })
+        .then((res) => {
+            console.log(res)
+            })
+            .catch((error) => {
+              console.log(error)});
+        };
+        
     return (
         <KeyboardAvoidingView 
         style={styles.container}
       >
-        <TextInput style={styles.inputField} value={task} onChangeText={text => setTask(text)} placeholder={'Write a task'} placeholderTextColor={'#fff'}/>
-        <TouchableOpacity onPress={() => handleAddTask(task)}>
+        <TextInput style={styles.inputField} value={todo} onChangeText={text => setTodo(text)} placeholder={'Write a task'} placeholderTextColor={'#fff'}/>
+        <TouchableOpacity onPress={() => handleAddTask(todo)}>
           <View style={styles.button}>
               <MaterialIcons name="keyboard-arrow-up" size={24} color="black" />
           </View>
