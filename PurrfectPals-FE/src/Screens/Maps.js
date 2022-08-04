@@ -1,12 +1,37 @@
-import * as React from 'react';
+// import * as React from 'react';
+import { React, useState, useEffect, useRef } from "react";
 import MapView, { Callout, Marker } from 'react-native-maps';
 import { StyleSheet,TouchableOpacity, Text, View, Dimensions } from 'react-native';
+import axios from 'axios';
 
 export default function App() {
 
-    const [pin,setPin]= React.useState({
-        latitude:33.888630 ,
-        longitude:35.495480})
+    // const [pin,setPin]= React.useState({
+    //     latitude:33.888630 ,
+    //     longitude:35.495480})
+        const[selectedLong,setLongitude]=useState(null)
+        const[selectedLat,setLatitude]=useState(null)
+
+
+        const handleSubmitChange = () => {
+          console.log(selectedLong)
+          console.log(selectedLat)
+          const data = {
+            longitude:`${selectedLong}`,
+            latitude:`${selectedLat}`
+          };
+          axios({
+            method: "POST",
+            data,
+            url: `http://192.168.1.4:5000/user/addMark`,
+          })
+            .then((res) => {
+              console.log(res);
+            })
+            .catch((error) => console.log(error));
+        };
+
+
   return (
     <View style={styles.container}>
       <MapView style={styles.map}
@@ -18,18 +43,13 @@ export default function App() {
       }}
       provider="google" >
 
-      <Marker coordinate={pin} 
+      <Marker coordinate={{latitude: 33.888630,
+        longitude:35.495480}}
         pinColor='#FF914A'
         draggable={true}
-        onDragStart={(e)=>{
-            console.log("Drag start", e.nativeEvent.coordinate)
-        }}
         onDragEnd={(e)=>{
-            setPin({
-
-                latitue: e.nativeEvent.coordinate.latitude,
-                longitude: e.nativeEvent.coordinate.longitude
-            })
+            setLatitude( e.nativeEvent.coordinate.latitude)
+            setLongitude( e.nativeEvent.coordinate.longitude)
         }}
         >
             <Callout>
@@ -37,7 +57,7 @@ export default function App() {
             </Callout>
         </Marker>
     </MapView>
-    <TouchableOpacity style={styles.saveButton}>
+    <TouchableOpacity style={styles.saveButton} onPress={handleSubmitChange}>
       <Text style={styles.saveText}>
       Save Location
       </Text>
