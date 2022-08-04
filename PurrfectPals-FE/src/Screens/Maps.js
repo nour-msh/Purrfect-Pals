@@ -58,4 +58,14 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     height: Dimensions.get('window').height,
   },
+  saveButton:{
+    height:55,
+    width:"75%",
+    elevation:3,
+    backgroundColor:"white",
+    position:"relative",
+    bottom:100,
+    borderRadius:40
+
+  }
 });
