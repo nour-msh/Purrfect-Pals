@@ -34,7 +34,7 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 | OnBoarding  | Feed/Search  |
 | -----------------| -----|
-| ![Landing](/readme/figma/onboarding1.png)(/readme/figma/onboarding2.png)(/readme/figma/onboarding3.png)(/readme/figma/onboarding4.png) |
+| ![Landing](/readme/figma/onboarding1.png)|![Landing](/readme/figma/onboarding2.png)|![Landing](/readme/figma/onboarding3.png)|![Landing](/readme/figma/onboarding4.png) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
