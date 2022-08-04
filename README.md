@@ -55,7 +55,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 > Using the above mentioned tech stacks and the wireframes built with figma from the user stories we have, the implementation of the app is shown as below, these are gifs from the real app.
 
-![Landing](/readme/gifs/onBoardingGif.gif)![Login/Signup](/readme/gifs/loginSignupGif.gif)![addPet](/readme/gifs/addPetGif.gif)![addTask](/readme/gifs/addTaskGif.gif)![communityChat](/readme/gifs/communityChatGif.gif)![maps](/readme/gifs/mapsGif.gif)![profilePic](/readme/gifs/editProfilePicGif.gif)
+![Landing](/readme/gifs/onBoardingGif.gif)![Login/Signup](/readme/gifs/loginSignupGif.gif)![addPet](/readme/gifs/addPetGif.gif)![addTask](/readme/gifs/addTaskGif.gif)![communityChat](/readme/gifs/communityChatGif.gif)![maps](/readme/gifs/mapsGif.gif)![editProfile](/readme/gifs/editProfileGif.gif)
 
 
 <br><br>
