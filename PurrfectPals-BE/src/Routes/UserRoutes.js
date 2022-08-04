@@ -7,6 +7,7 @@ import { getPosts,addPost } from "../Controller/PostController.js";
 import { getVets,addPortfolio,getPortfolios } from "../Controller/VetController.js";
 import { search } from "../Controller/SearchController.js";
 import {addTask} from "../Controller/TaskController.js";
+import {addMark} from "../Controller/LocationController.js";
 
 const router = Router();
 
@@ -24,6 +25,7 @@ router.get("/getPosts", getPosts);
 router.get("/search/:key", search);
 router.post("/addPortfolio", addPortfolio);
 router.post("/addTask", addTask);
+router.post("/addMark", addMark);
 router.get("/getPortfolios/:id", getPortfolios);
 
 
