@@ -94,6 +94,10 @@ Here's a brief high-level overview of the tech stacks the app uses:
 | ![Landing](/readme/screenshots/onBoarding1.jpg)|![Landing](/readme/screenshots/onBoarding2.jpg)|
 |![Landing](/readme/screenshots/onBoarding3.jpg)|![Landing](/readme/screenshots/onBoarding4.jpg)|
 
+| LogIn  | SignUp  |
+| -----------------| -----|
+|![Login](/readme/screenshots/login.jpg)|![Signup](/readme/screenshots/signup.jpg)|
+
 <br><br>
 <img src="./readme/title6.svg" id="installation"/>
 
