@@ -102,6 +102,10 @@ Here's a brief high-level overview of the tech stacks the app uses:
 | Feed  | Profile  |
 | -----------------| -----|
 |![Feed](/readme/screenshots/feed.jpg)|![Profile](/readme/screenshots/profile.jpg)|
+
+| Edit Profile  | Tasks  |
+| -----------------| -----|
+|![petProfile](/readme/screenshots/editProfile.jpg)|![petReview](/readme/screenshots/task.jpg)|
 <br><br>
 <img src="./readme/title6.svg" id="installation"/>
 
