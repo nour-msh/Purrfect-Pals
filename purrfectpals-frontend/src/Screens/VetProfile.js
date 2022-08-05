@@ -6,6 +6,9 @@ import * as ImagePicker from "expo-image-picker";
 import { useContext } from "react";
 import { UserContext } from "../../App";
 import { TextInput } from 'react-native-gesture-handler';
+import { useFonts,Chilanka_400Regular } from '@expo-google-fonts/chilanka';
+import AppLoading from 'expo-app-loading';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
 
@@ -69,6 +72,13 @@ function VetProfile({navigation}){
       const handleStoryChange = (value) => {
         setVetStory(value)
       }
+
+      let [fontsLoaded] = useFonts({
+        Chilanka_400Regular,
+      });
+      if (!fontsLoaded) {
+        return <AppLoading />;
+      }
     return(
         <View style={styles.container}>
                 <KeyboardAvoidingView>
@@ -103,6 +113,14 @@ function VetProfile({navigation}){
             onChangeText={handleStoryChange}
             ></TextInput>
             </View>
+            <View style={styles.tipsTitle}>
+                <MaterialCommunityIcons name="lightbulb-on-outline" size={24} color="black" />
+                <Text style={styles.addTips}>Tips and Tricks</Text>
+            </View>
+            <View style={styles.tipsContainer}>
+                <View style={styles.tips}></View>
+                <View style={styles.tips}></View>
+            </View>
             <TouchableOpacity style={styles.save} onPress={handleSubmitPortfolio}>
                 <Text style={styles.saveText}>Save</Text>
             </TouchableOpacity>
@@ -114,6 +132,10 @@ function VetProfile({navigation}){
 
 
 const styles=StyleSheet.create({
+    container:{
+        position:'relative',
+
+    },
     profContainer:{
         height:360,
         width:'100%',
@@ -183,8 +205,9 @@ const styles=StyleSheet.create({
         borderRadius:30,
         padding:14,
         alignSelf:'center',
-        marginTop:-50,
-        // marginBottom:20
+        marginTop:15,
+        marginBottom:20,
+        position:"relative",
     },
     saveText:{
         color:'white',
