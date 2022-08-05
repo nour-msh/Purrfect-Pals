@@ -111,6 +111,10 @@ Here's a brief high-level overview of the tech stacks the app uses:
 | -----------------| -----|
 |![messages](/readme/screenshots/chat.jpg)|![maps](/readme/screenshots/maps.jpg)|
 
+| Add Vet Portfolio  | Vet's Portfolio  |
+| -----------------| -----------------|
+|![addPortfolio](/readme/screenshots/vetAddsPortofilo.jpg)|![vetPortfolio](/readme/screenshots/vetPortfolioSeen.jpg)|
+
 <br><br>
 <img src="./readme/title6.svg" id="installation"/>
 
