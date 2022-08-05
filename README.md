@@ -98,6 +98,10 @@ Here's a brief high-level overview of the tech stacks the app uses:
 | -----------------| -----|
 |![Login](/readme/screenshots/login.jpg)|![Signup](/readme/screenshots/signup.jpg)|
 
+
+| Feed  | Profile  |
+| -----------------| -----|
+|![Feed](/readme/screenshots/feed.jpg)|![Profile](/readme/screenshots/profile.jpg)|
 <br><br>
 <img src="./readme/title6.svg" id="installation"/>
 
