@@ -198,6 +198,30 @@ const styles=StyleSheet.create({
         backgroundColor:"white",
         marginBottom:10
     },
+    addTips:{
+        fontFamily: 'Chilanka_400Regular',
+        fontSize:20,
+    },
+    tipsTitle:{
+        flexDirection:"row",
+        alignSelf:'center',
+        top:-50,
+    },
+    tips:{
+        height:150,
+        width:'40%',
+        alignSelf:'center',
+        borderRadius:20,
+        elevation:3,
+        backgroundColor:"white",
+        marginRight:10,
+        marginLeft:10
+    },
+    tipsContainer:{
+        flexDirection:"row",
+        alignSelf:'center',
+        top:-30
+    },
     save:{
         backgroundColor:'#FF914A',
         width:255,
