@@ -103,9 +103,14 @@ Here's a brief high-level overview of the tech stacks the app uses:
 | -----------------| -----|
 |![Feed](/readme/screenshots/feed.jpg)|![Profile](/readme/screenshots/profile.jpg)|
 
-| Edit Profile  | Tasks  |
+| Edit Profile  | Pet Review  |
 | -----------------| -----|
-|![petProfile](/readme/screenshots/editProfile.jpg)|![petReview](/readme/screenshots/task.jpg)|
+|![editProfile](/readme/screenshots/editProfile.jpg)|![petReview](/readme/screenshots/review.jpg)|
+
+| Messages  | Maps  |
+| -----------------| -----|
+|![messages](/readme/screenshots/chat.jpg)|![maps](/readme/screenshots/maps.jpg)|
+
 <br><br>
 <img src="./readme/title6.svg" id="installation"/>
 
