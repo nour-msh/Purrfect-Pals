@@ -4,16 +4,16 @@ import { TextInput } from "react-native-gesture-handler";
 function DateBox(){
     return(
         <View style={styles.container}>
-            <TextInput style={styles.dayNum}>4</TextInput>
+            {/* <TextInput style={styles.dayNum}>4</TextInput> */}
             <TextInput style={styles.day}>Sat</TextInput>
         </View>
     )}
 
 const styles=StyleSheet.create({
     container:{
-        width:51,
-        height:80,
-        borderRadius:20,
+        width:"90%",
+        height:40,
+        borderRadius:15,
         backgroundColor:'white',
         marginTop:10,
         marginLeft:20,
