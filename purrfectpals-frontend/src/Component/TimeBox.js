@@ -13,10 +13,11 @@ const styles=StyleSheet.create({
     container:{
         width:79,
         height:33,
-        borderRadius:20,
+        borderRadius:13,
         backgroundColor:'white',
         marginLeft:20,
-        elevation:5
+        elevation:5,
+        marginBottom:10
 
     },
     time:{
