@@ -1,3 +1,4 @@
+
 import {
   View,
   Text,
@@ -16,10 +17,6 @@ import { UserContext } from "../../App";
 import { TextInput } from "react-native-gesture-handler";
 import { useFonts, Chilanka_400Regular } from "@expo-google-fonts/chilanka";
 import AppLoading from "expo-app-loading";
-import DateBox from "../Component/DateBox";
-import TimeBox from "../Component/TimeBox";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Fontisto } from "@expo/vector-icons";
 
 function VetProfile({ navigation }) {
   const [vetEmail, setVetEmail] = useState("");
@@ -27,23 +24,31 @@ function VetProfile({ navigation }) {
   const [vetSpecialty, setVetSpecialty] = useState("");
   const [vetStory, setVetStory] = useState("");
   const [image, setImage] = useState(userImage);
+  const [dateState, setValueDateState] = useState("");
+  const [value1, setValue1] = useState("");
+  const [value2, setValue2] = useState("");
+  const [value3, setValue3] = useState("");
+  const [value4, setValue4] = useState("");
 
   const { userId, userToken, userFullName, userImage } =
     useContext(UserContext);
 
   const handleSubmitPortfolio = () => {
+    // console.warn(data);
     const data = {
       vet_email: vetEmail,
       vet_number: vetNumber,
       vet_image: image,
       vet_specialty: vetSpecialty,
       vet_story: vetStory,
+      day: dateState,
+      time: [value1,value2, value3, value4],
       user_id: userId,
     };
     axios({
       method: "POST",
       data: data,
-      url: `http://192.168.1.6:5000/vet/addPortfolio`,
+      url: `http://192.168.1.4:5000/vet/addPortfolio`,
     })
       .then((res) => {
         console.log(res);
@@ -55,7 +60,7 @@ function VetProfile({ navigation }) {
     axios({
       method: "PUT",
       data: data2,
-      url: `http://192.168.1.6:5000/user/updateUserProfile/${userId}`,
+      url: `http://192.168.1.4:5000/user/updateUserProfile/${userId}`,
     }).then((response) => {
       console.log(response);
     });
@@ -89,6 +94,21 @@ function VetProfile({ navigation }) {
   };
   const handleStoryChange = (value) => {
     setVetStory(value);
+  };
+  const handleDayChange = (value) => {
+    setValueDateState(value);
+  };
+  const handleValue1Change = (value) => {
+    setValue1(value);
+  };
+  const handleValue2Change = (value) => {
+    setValue2(value);
+  };
+  const handleValue3Change = (value) => {
+    setValue3(value);
+  };
+  const handleValue4Change = (value) => {
+    setValue4(value);
   };
 
   let [fontsLoaded] = useFonts({
@@ -146,9 +166,14 @@ function VetProfile({ navigation }) {
             <Text style={styles.schedule}>Schedule</Text>
           </View>
           <View style={styles.dateCont}>
-            <DateBox />
+            <View style={styles.containerDate}>
+              <TextInput
+                value={dateState}
+                onChangeText={handleDayChange}
+                style={styles.day}
+              />
+            </View>
           </View>
-
           <Text style={styles.hours}>Visiting Hours</Text>
           <ScrollView
             horizontal={true}
@@ -156,16 +181,36 @@ function VetProfile({ navigation }) {
             showsHorizontalScrollIndicator={false}
           >
             <View style={styles.timeCont}>
-              <TimeBox />
-              <TimeBox />
-              <TimeBox />
-              <TimeBox />
-              <TimeBox />
-              <TimeBox />
-              <TimeBox />
-              <TimeBox />
-              <TimeBox />
-              <TimeBox />
+              <View style={styles.containertime}>
+                <TextInput
+                  onChangeText={handleValue1Change}
+                  value={value1}
+                  style={styles.time}
+                />
+                  
+              
+              </View>
+              <View style={styles.containertime}>
+                <TextInput
+                  onChangeText={handleValue2Change}
+                  value={value2}
+                  style={styles.time}
+               />
+              </View>
+              <View style={styles.containertime}>
+                <TextInput
+                  onChangeText={handleValue3Change}
+                  value={value3}
+                  style={styles.time}
+                />
+              </View>
+              <View style={styles.containertime}>
+                <TextInput
+                  onChangeText={handleValue4Change}
+                  value={value4}
+                  style={styles.time}
+               />
+              </View>
             </View>
           </ScrollView>
           <TouchableOpacity style={styles.save} onPress={handleSubmitPortfolio}>
@@ -277,6 +322,35 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
   },
+  containertime: {
+    width: 79,
+    height: 33,
+    borderRadius: 13,
+    backgroundColor: "white",
+    marginLeft: 20,
+    elevation: 5,
+    marginBottom: 10,
+  },
+  time: {
+    textAlign: "center",
+    padding: 8,
+    fontWeight: "100",
+  },
+  containerDate: {
+    width: "90%",
+    height: 40,
+    borderRadius: 15,
+    backgroundColor: "white",
+    marginTop: 10,
+    marginLeft: 20,
+    elevation: 5,
+  },
+  day: {
+    textAlign: "center",
+    marginTop: 10,
+    fontWeight: "100",
+  },
 });
 
 export default VetProfile;
+
