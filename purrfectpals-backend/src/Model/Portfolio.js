@@ -16,9 +16,15 @@ const portfolioSchema = new mongoose.Schema({
   vet_image: {
     type: String,
   },
+  day: {
+    type: String,
+  },
+  time: [
+    {
+      type: String,
+    },
+  ],
   user_id: {
-    // type: mongoose.Types.ObjectId,
-    // ref: "User",
     type: String,
   },
 });
