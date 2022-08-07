@@ -1,13 +1,13 @@
 import { Text, View, StyleSheet, Image } from "react-native";
 
 function Vet({ nav, vetData }) {
-  console.log(vetData)
+  // console.warn(vetData)
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}></View>
       <View style={styles.imageContainer}>
         <Image
-        source={require("../../assets/Doctor1.png")}
+        source={{uri:vetData.image}}
           // source={vetData.image}
           style={styles.Doctor1}
         />
