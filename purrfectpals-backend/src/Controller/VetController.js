@@ -14,13 +14,15 @@ export async function getVets(req, res) {
 
 export async function addPortfolio(req, res) {
   try {
-    const { vet_email, vet_number, vet_specialty, vet_story, vet_image, user_id } = req.body;
+    const { vet_email, vet_number, vet_specialty, vet_story, vet_image,day,time, user_id } = req.body;
     const portfolio = new Portfolio({
       vet_email,
       vet_number,
       vet_specialty,
       vet_story,
       vet_image,
+      day,
+      time,
       user_id,
     });
     await portfolio.save();
