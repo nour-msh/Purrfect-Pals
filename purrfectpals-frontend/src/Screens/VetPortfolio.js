@@ -1,3 +1,4 @@
+
 import {
   View,
   Text,
@@ -10,6 +11,8 @@ import {
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../App";
 import { Ionicons } from "@expo/vector-icons";
+import DateBox from "../Component/DateBox";
+import TimeBox from "../Component/TimeBox.js";
 import axios from "axios";
 
 function VetPortfolio({
@@ -24,20 +27,15 @@ function VetPortfolio({
     useContext(UserContext);
   const [vetPortfolio, setVetPortfolio] = useState({});
   const { dataFromVet } = route.params;
-  console.log(dataFromVet)
-  // console.log(`http://192.168.1.4:5000/user/getPortfolios?${dataFromVet._id}`)
   useEffect(() => {
-    console.log(dataFromVet)
     axios({
       method: "GET",
-      url: `http://192.168.1.4:5000/vet/getPortfolios/${dataFromVet._id}`,
+      url: `http://192.168.1.4:5000/vet/getPortfolios/${dataFromVet?._id}`,
     }).then((res) => {
-      // console.log(res.data);
-      console.log(res)
+      console.warn(res.data);
       setVetPortfolio(res.data[0]);
     });
   }, []);
-console.log('data',vetPortfolio)
   return (
     <View style={styles.container}>
       <KeyboardAvoidingView>
@@ -51,23 +49,50 @@ console.log('data',vetPortfolio)
               onPress={() => navigation.goBack()}
             />
             <Image
-              source={{uri:vetPortfolio.vet_image}}
+              source={{ uri: vetPortfolio?.vet_image }}
               style={styles.vetPhoto}
             />
           </View>
           <View style={styles.help}>
-            <Text style={styles.drName}>Dr.{dataFromVet.full_name}</Text>
-            <Text style={styles.input}>{vetPortfolio.vet_email}</Text>
-            <Text style={styles.input}>{vetPortfolio.vet_number}</Text>
+            <Text style={styles.drName}>Dr.{dataFromVet?.full_name}</Text>
+            <Text style={styles.input}>{vetPortfolio?.vet_email}</Text>
+            <Text style={styles.input}>{vetPortfolio?.vet_number}</Text>
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.about}>My specialty:</Text>
-            <Text style={styles.about}>{vetPortfolio.vet_specialty}</Text>
+            <Text style={styles.about}>{vetPortfolio?.vet_specialty}</Text>
           </View>
           <View style={styles.inputContainer}>
             <Text style={styles.about}>My success story:</Text>
-            <Text style={styles.about}>{vetPortfolio.vet_story}</Text>
+            <Text style={styles.about}>{vetPortfolio?.vet_story}</Text>
           </View>
+          <View>
+            <Text style={styles.schedule}>Schedule</Text>
+          </View>
+          <View style={styles.dateCont}>
+            <DateBox info={vetPortfolio?.day} />
+          </View>
+          <Text style={styles.hours}>Visiting Hours</Text>
+          <ScrollView
+            horizontal={true}
+            style={styles.scrollView}
+            showsHorizontalScrollIndicator={false}
+          >
+            <View style={styles.timeCont}>
+              {vetPortfolio?.time?.map((oneTime) => {
+                return(
+                  <TimeBox info={oneTime} />
+
+                )
+              })}
+            </View>
+          </ScrollView>
+          <TouchableOpacity
+            style={styles.submit}
+            //  onPress={handleSubmitPortfolio}
+          >
+            <Text style={styles.submitText}>Call to book an appointment</Text>
+          </TouchableOpacity>
         </ScrollView>
       </KeyboardAvoidingView>
     </View>
@@ -126,9 +151,9 @@ const styles = StyleSheet.create({
   },
   input: {
     textAlign: "center",
-    fontSize: 10,
+    fontSize: 15,
     color: "grey",
-    // padding:10
+    padding: 10,
   },
   inputContainer: {
     height: 130,
@@ -140,17 +165,37 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     marginBottom: 10,
   },
-  save: {
+  schedule: {
+    marginTop: -50,
+    fontSize: 20,
+    fontWeight: "500",
+    textAlign: "center",
+  },
+  dateCont: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  timeCont: {
+    display: "flex",
+    flexDirection: "row",
+  },
+  hours: {
+    padding: 15,
+    textAlign: "center",
+    fontSize: 13,
+    color: "grey",
+  },
+  submit: {
     backgroundColor: "#FF914A",
     width: 255,
     height: 55,
     borderRadius: 30,
     padding: 14,
     alignSelf: "center",
-    marginTop: -50,
-    // marginBottom:20
+    marginTop: 40,
+    bottom: 20,
   },
-  saveText: {
+  submitText: {
     color: "white",
     fontWeight: "600",
     textAlign: "center",
