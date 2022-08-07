@@ -117,6 +117,10 @@ Here's a brief high-level overview of the tech stacks the app uses:
 | -----------------| -----------------|
 |![addPortfolio](/readme/screenshots/vetAddsPortofilo.jpg)|![vetPortfolio](/readme/screenshots/vetPortfolioSeen.jpg)|
 
+| Add Vet Schedule  | Vet's Schedule  |
+| -----------------| -----------------|
+|![addPortfolio](/readme/screenshots/vetAddsSchedule.jpg)|![vetPortfolio](/readme/screenshots/vetScheduleSeen.jpg)|
+
 <br><br>
 <img src="./readme/title6.svg" id="installation"/>
 
