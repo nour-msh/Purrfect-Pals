@@ -27,6 +27,8 @@
 <br><br>
 ### Veterinarian Stories
 - As a vet, I want to be able to add my portfolio to increase my connections.
+- As a vet, I want to be able to share my daily schedule with pet owners. 
+
 
 <img src="./readme/title3.svg" id="wireframes"/>
 
