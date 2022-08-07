@@ -11,7 +11,7 @@ import { updateUserProfile } from "../Controller/UserController.js";
 import { getPosts,addPost } from "../Controller/PostController.js";
 import { search } from "../Controller/SearchController.js";
 import {addTask} from "../Controller/TaskController.js";
-import {addMark,getMark} from "../Controller/LocationController.js";
+import {addMark} from "../Controller/LocationController.js";
 
 
 router.put("/updateUserProfile/:id", updateUserProfile);
@@ -20,7 +20,7 @@ router.get("/getPosts", getPosts);
 router.get("/search/:key", search);
 router.post("/addTask", addTask);
 router.post("/addMark", addMark);
-router.post("/getMark", getMark);
+// router.post("/getMark", getMark);
 
 
 export default router;
